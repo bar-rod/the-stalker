@@ -7,18 +7,18 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] InputActionAsset inputActions;
     [SerializeField] float charSpeed;
-    [SerializeField] Rigidbody2D rb;
+    [SerializeField] Rigidbody rb;
     private Vector2 currentMoveInput;
 
     private InputActionMap actionMap;
     private InputAction moveAction;
 
+    private Vector2 moveInput;
+
     void Awake()
     {
         actionMap = inputActions.FindActionMap("Player");
         moveAction = actionMap.FindAction("Move");
-
-
     }
 
     private void OnEnable()
@@ -38,11 +38,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(currentMoveInput.x * charSpeed, currentMoveInput.y * charSpeed);
+        Vector3 direction = new Vector3(moveInput.x, 0f, moveInput.y);
+        rb.linearVelocity = direction * charSpeed;
     }
     
     void OnMove(InputAction.CallbackContext ctx)
     {
-        currentMoveInput = ctx.ReadValue<Vector2>();
+        moveInput = ctx.ReadValue<Vector2>();
     }
 }
