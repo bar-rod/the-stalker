@@ -40,9 +40,19 @@ public class Player : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(currentMoveInput.x * charSpeed, currentMoveInput.y * charSpeed);
     }
-    
+
     void OnMove(InputAction.CallbackContext ctx)
     {
         currentMoveInput = ctx.ReadValue<Vector2>();
     }
+    
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Player can open clue: " + collider.gameObject.name);
+    }
+
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     Debug.Log("Player can open clue: " + other.gameObject.name);
+    // }
 }
