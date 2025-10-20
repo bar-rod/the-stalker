@@ -46,13 +46,13 @@ public class Player : MonoBehaviour
         currentMoveInput = ctx.ReadValue<Vector2>();
     }
     
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        Debug.Log("Player can open clue: " + collider.gameObject.name);
-    }
-
-    // void OnCollisionEnter2D(Collision2D other)
+    // void OnTriggerEnter2D(Collider2D collider)
     // {
-    //     Debug.Log("Player can open clue: " + other.gameObject.name);
+    //     Debug.Log("Player can open clue: " + collider.gameObject.name);
     // }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Player can open clue: " + other.gameObject.name);
+    }
 }
