@@ -281,9 +281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   isChained: 1
+  anchor: {fileID: 1690285387}
   radiusX: 1.5
   radiusY: 0.75
-  anchor: {fileID: 1690285387}
 --- !u!1 &1153731836
 GameObject:
   m_ObjectHideFlags: 0

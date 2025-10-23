@@ -5,11 +5,11 @@ public class ChainConstraint : MonoBehaviour
     [Tooltip("\"True\" if still chained, \"False\" to free movement")]
     [SerializeField]
     private bool isChained = true;
-    [Header("Ellipse Dimensions")] // i had to do ellipse math for this shit. please kill me.
+    public GameObject anchor;
+    [Header("Ellipse Dimensions")]
     [SerializeField] public float radiusX = 0.75f; 
     [SerializeField] public float radiusY = 0.5f; 
     private Vector2 currentRadius;
-    public GameObject anchor;
     private Rigidbody2D rb;
 
     void Awake()
@@ -27,7 +27,8 @@ public class ChainConstraint : MonoBehaviour
 
     // called by player movement
     // modifies movement direction vector
-    // if player reaches or passes maxRadius, sets the movement direction vector to 0
+    // if player reaches or passes maxRadius, adjusts desiredVelocity to keep it within the radius
+    // otherwise, enables free movement
     public Vector2 FilterMovement(Vector2 desiredVelocity)
     {
         if (!isChained) return desiredVelocity;
@@ -35,7 +36,7 @@ public class ChainConstraint : MonoBehaviour
         Vector2 offset = rb.position - (Vector2)anchor.transform.position;
         Vector2 proposed = offset + desiredVelocity;
 
-        // convert to unit circle space
+        // convert to unit circle space to test if it's out of bounds
         Vector2 scaled = new Vector2(proposed.x / radiusX, proposed.y / radiusY);
         float mag = scaled.magnitude;
 
@@ -49,6 +50,7 @@ public class ChainConstraint : MonoBehaviour
         return desiredVelocity;
     }
 
+    // UNUSED
     // this part is just a safety net, in case the player somehow lands outside the ellipse
     public Vector2 ClampPosition(Vector2 position)
     {
