@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 proposedVelocity = new Vector2(currentMoveInput.x * charSpeed, currentMoveInput.y * charSpeed);
-        rb.linearVelocity = chain.FilterMovement(proposedVelocity) * charSpeed;
+        rb.linearVelocity = chain.FilterMovement(proposedVelocity) * charSpeed; // when chain is not enabled, FIlterMovement returns proposedVelocity with no modifications
     }
 
     void OnMove(InputAction.CallbackContext ctx)
