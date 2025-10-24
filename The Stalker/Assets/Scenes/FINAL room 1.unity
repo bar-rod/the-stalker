@@ -675,6 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueBoardCanvas
   _ClueBoardCanvas: {fileID: 1087230583}
+  inputActions: {fileID: 0}
 --- !u!61 &1213103901
 BoxCollider2D:
   m_ObjectHideFlags: 0
