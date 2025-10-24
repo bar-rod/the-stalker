@@ -13,11 +13,12 @@ public class ClueBoardCanvas : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        _ClueBoardCanvas.SetActive(true);
         //Debug.Log("Clueboard is being touched");
         /*
         if (Input.GetKeyDown(KeyCode.E))
         {
-            _ClueBoardCanvas.SetActive(true);
+            
         }
         */
 
