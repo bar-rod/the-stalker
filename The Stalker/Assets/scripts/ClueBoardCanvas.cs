@@ -19,7 +19,7 @@ public class ClueBoardCanvas : MonoBehaviour
         playerInteract = actionMap.FindAction("Interact");
         _playerTouchingClue = false;
         ClueBoardOpen = false;
-
+        //hi
     }
     
     //enables e as interact key
