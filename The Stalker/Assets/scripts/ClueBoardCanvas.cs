@@ -10,7 +10,8 @@ public class ClueBoardCanvas : MonoBehaviour
     private InputAction playerInteract;
     private bool _playerTouchingClue;
     private bool ClueBoardOpen;
-    
+
+    //setting up the Canvas and E key, and some bools
     private void Awake()
     {
         _ClueBoardCanvas.SetActive(false);
@@ -20,10 +21,10 @@ public class ClueBoardCanvas : MonoBehaviour
         ClueBoardOpen = false;
 
     }
+    
+    //enables e as interact key
     private void OnEnable()
     {
-
-        //playerInteract = inputActions.Player.Interact;
         
         playerInteract.started += Interact;
         playerInteract.Enable();
@@ -34,6 +35,8 @@ public class ClueBoardCanvas : MonoBehaviour
         playerInteract.Disable();
     }
 
+    // if player is close to clue board or if clueboard is already open
+    // clue board will open or close when player presses E
     private void Interact(InputAction.CallbackContext context)
     {
         if (_playerTouchingClue == true && ClueBoardOpen == false)
@@ -47,11 +50,11 @@ public class ClueBoardCanvas : MonoBehaviour
             _ClueBoardCanvas.SetActive(false);
             ClueBoardOpen = false;
         }
-        
+
     }
 
     
-
+    //determines whether player is within touching vicinity of clue board to interact with it
     private void OnTriggerEnter2D(Collider2D collider)
     {
         _playerTouchingClue = true;
@@ -59,7 +62,7 @@ public class ClueBoardCanvas : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collider)
     {
-       // _ClueBoardCanvas.SetActive(false);
+       
         _playerTouchingClue = false;
     }
 
@@ -71,11 +74,6 @@ public class ClueBoardCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (playerInteract.triggered)
-        {
-            Debug.Log("hi");
-        }
-        */
+    
     }
 }
