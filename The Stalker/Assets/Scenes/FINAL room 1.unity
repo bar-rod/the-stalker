@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClueBoardCanvas
   _ClueBoardCanvas: {fileID: 1087230583}
-  inputActions: {fileID: 0}
+  playerControls: {fileID: -944628639613478452, guid: f051a05a7a2a64fba83c75dfd3cbef54, type: 3}
 --- !u!61 &1213103901
 BoxCollider2D:
   m_ObjectHideFlags: 0
