@@ -1107,8 +1107,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 453.99988, y: 461.744}
-  m_SizeDelta: {x: 92, y: 76.511}
+  m_AnchoredPosition: {x: 499.15, y: 464}
+  m_SizeDelta: {x: 106.9, y: 96.009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148021196
 MonoBehaviour:
@@ -1699,8 +1699,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 0.000015259}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: 0, y: -0.000030518}
+  m_SizeDelta: {x: 1105.198, y: 1140.264}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1458633802
 MonoBehaviour:
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   inputActions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
-  charSpeed: 3
+  charSpeed: 1.5
 --- !u!61 &1484331124
 BoxCollider2D:
   m_ObjectHideFlags: 0
