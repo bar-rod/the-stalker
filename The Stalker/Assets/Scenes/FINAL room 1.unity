@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 208388461}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Clock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208388457}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c92910b5e0d264878a2634065974ddc9, type: 3}
   m_Name: 
@@ -1217,10 +1217,9 @@ GameObject:
   - component: {fileID: 1213103899}
   - component: {fileID: 1213103898}
   - component: {fileID: 1213103901}
-  - component: {fileID: 1213103900}
   m_Layer: 0
   m_Name: ClueBoard
-  m_TagString: Untagged
+  m_TagString: ClueBoard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1298,20 +1297,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1213103900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213103897}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1548e188e24cf3742bbbcc86797cb998, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClueBoardCanvas
-  _ClueBoardCanvas: {fileID: 1087230583}
-  playerControls: {fileID: -944628639613478452, guid: f051a05a7a2a64fba83c75dfd3cbef54, type: 3}
 --- !u!61 &1213103901
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1754,6 +1739,7 @@ GameObject:
   - component: {fileID: 1484331123}
   - component: {fileID: 1484331122}
   - component: {fileID: 1484331127}
+  - component: {fileID: 1484331128}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1937,6 +1923,22 @@ MonoBehaviour:
   anchor: {fileID: 861813607}
   radiusX: 8
   radiusY: 4
+--- !u!114 &1484331128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484331121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90bcf13be76e34643a128366b4e56eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpenClue
+  _ClueCanvases:
+  - {fileID: 1087230583}
+  - {fileID: 1458633800}
+  playerControls: {fileID: -944628639613478452, guid: f051a05a7a2a64fba83c75dfd3cbef54, type: 3}
 --- !u!1 &1661569535
 GameObject:
   m_ObjectHideFlags: 0

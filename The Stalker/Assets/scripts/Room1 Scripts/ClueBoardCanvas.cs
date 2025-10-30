@@ -32,6 +32,7 @@ public class ClueBoardCanvas : MonoBehaviour
 
     private void OnDisable()
     {
+        playerInteract.started -= Interact;
         playerInteract.Disable();
     }
 

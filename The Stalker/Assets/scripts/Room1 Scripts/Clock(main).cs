@@ -10,7 +10,7 @@ public class Clock : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //Debug.Log("Player!");
-            clock.SetActive(true);
+            //clock.SetActive(true);
         }
             
         //Debug.Log("Collided with: " + other.tag);
