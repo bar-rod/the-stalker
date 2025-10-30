@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class ClueBoardCanvas : MonoBehaviour
 {
+
     [SerializeField] private GameObject _ClueBoardCanvas;
     [SerializeField] InputActionAsset playerControls;
 
