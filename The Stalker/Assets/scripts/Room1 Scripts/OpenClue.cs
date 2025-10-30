@@ -64,7 +64,7 @@ public class OpenClue : MonoBehaviour
         if (collider.CompareTag("ClueBoard"))
         {
             _clueCanvasIndex = 0;
-            Debug.Log("Player collided with" + collider.gameObject.name);
+            //Debug.Log("Player collided with" + collider.gameObject.name);
         } 
         else if (collider.CompareTag("Clock"))
         {
