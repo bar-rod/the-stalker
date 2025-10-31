@@ -10,6 +10,7 @@ IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        randomizeCluePos();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -34,5 +35,33 @@ IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
     public void OnPointerDown(PointerEventData eventData)
     {
        // Debug.Log("OnPointerDown");
+    }
+
+    // TODO: Add rotation randomization
+    void randomizeCluePos()
+    {
+        GameObject[] clues = GameObject.FindGameObjectsWithTag("Clue");
+        Debug.Log("Found " + clues.Length + " clues to position.");
+        foreach (GameObject clue in clues)
+        {
+            float minimumDistance = (float) 1.5 * clues[0].GetComponent<RectTransform>().rect.width;
+
+            // create a min and max range for x and y positions based on the parent canvas size
+            // TODO: Remove magic numbers
+            float minX = rectTransform.rect.min.x - 100f;
+            float maxX = rectTransform.rect.max.x + 100f;
+            float minY = rectTransform.rect.min.y - 50f;
+            float maxY = rectTransform.rect.max.y + 50f;
+            Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+
+            // first clue can be placed anywhere
+            if (clue == clues[0])
+                clue.GetComponent<RectTransform>().anchoredPosition = randomPosition;
+            else
+            {
+                // TODO: implement logic to ensure clues are not overlapping here
+                clue.GetComponent<RectTransform>().anchoredPosition = randomPosition;
+            }
+        }
     }
 }
