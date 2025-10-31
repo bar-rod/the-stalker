@@ -93,5 +93,6 @@ public class OpenClue : MonoBehaviour
             _ClueOpen = false;
         }
 
+        // add control flow here for when the player wants to pick up an item -Jackson
     }
 }
