@@ -22,8 +22,8 @@ public class Inventory : MonoBehaviour
     }
     public Item GetItemFromInventory(int index)
     {
-        if (index - 1 < 0 || index - 1 >= inventoryList.Count) return null;
-        return inventoryList[index - 1];
+        if (index < 0 || index >= inventoryList.Count) return null;
+        return inventoryList[index];
     }
 
 }

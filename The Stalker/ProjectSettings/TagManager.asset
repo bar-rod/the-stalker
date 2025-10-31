@@ -7,6 +7,7 @@ TagManager:
   - ClueBoard
   - Clock
   - Light
+  - Clue
   layers:
   - Default
   - TransparentFX
