@@ -13,16 +13,6 @@ public class OpenClue : MonoBehaviour
     private bool _playerTouchingClue;
     private bool _ClueOpen;
     private int _clueCanvasIndex;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void Awake()
     {

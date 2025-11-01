@@ -1,7 +1,5 @@
 using UnityEngine;
-
-[ExecuteInEditMode]
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour, Iinteractable
 {
     public string itemName;
     public Sprite itemSprite;
@@ -12,9 +10,10 @@ public class Item : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = itemSprite;
     }
-    
-    public void PickUp()
+
+    public void Interact()
     {
         gameObject.SetActive(false);
     }
+    
 }
