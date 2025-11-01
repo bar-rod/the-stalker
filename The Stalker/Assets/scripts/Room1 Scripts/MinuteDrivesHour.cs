@@ -10,7 +10,7 @@ public class MinuteDrivesHour : MonoBehaviour
     float prevMinuteCW;
     float unwrappedMinuteCW;
 
-    void Start()
+    void Awake()
     {
         if (minuteHand) prevMinuteCW = minuteHand.GetClockwiseAngle();
         unwrappedMinuteCW = 0f;
