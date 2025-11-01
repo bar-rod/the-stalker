@@ -81,6 +81,8 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         _playerTouchingInteractable = true;
+        //Getting the Iinteractable component, because both item and InteractableUI inherits from Iinteractable interface
+        //and will allow us to use the same method from different scripts depending on what was collided with
         interactableObject = collision.GetComponent<Iinteractable>();
         Debug.Log($"collided with {collision.name}");
         _touchedObject = collision;
