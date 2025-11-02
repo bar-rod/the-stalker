@@ -55,10 +55,14 @@ public class OpenClue : MonoBehaviour
         {
             _clueCanvasIndex = 0;
             //Debug.Log("Player collided with" + collider.gameObject.name);
-        } 
+        }
         else if (collider.CompareTag("Clock"))
         {
             _clueCanvasIndex = 1;
+        }
+        else
+        {
+            _clueCanvasIndex = -1;
         }
     }
     private void OnTriggerExit2D(Collider2D collider)
@@ -70,17 +74,19 @@ public class OpenClue : MonoBehaviour
     private void Interact(InputAction.CallbackContext context)
     {
         //when the player presses E, it should open to the correct canvas
-        if (_playerTouchingClue == true && _ClueOpen == false)
-        {
+        if (_clueCanvasIndex != -1){
+             if (_playerTouchingClue == true && _ClueOpen == false)
+            {
             _ClueCanvases[_clueCanvasIndex].SetActive(true);
             _ClueOpen = true;
             //Debug.Log("We interacted with E key!");
-        }
+            }
         //if one is already open, then pressing E should close it
-        else if (_ClueOpen == true)
-        {
+            else if (_ClueOpen == true)
+            {
             _ClueCanvases[_clueCanvasIndex].SetActive(false);
             _ClueOpen = false;
+            }
         }
 
         // add control flow here for when the player wants to pick up an item -Jackson
