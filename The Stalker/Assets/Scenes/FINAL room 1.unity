@@ -3305,7 +3305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   inputActions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
-  charSpeed: 1.5
+  charSpeed: 2
 --- !u!61 &1484331124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3871,6 +3871,7 @@ MonoBehaviour:
   itemSprite: {fileID: -1207437963, guid: 25a0b97fbfedc7c44ad3db031922a78f, type: 3}
   description: Just a normal apple...
   id: 1
+  initiallyActive: 0
 --- !u!4 &1696282080
 Transform:
   m_ObjectHideFlags: 0
@@ -3971,6 +3972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1763360592}
   - component: {fileID: 1763360591}
+  - component: {fileID: 1763360593}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4005,6 +4007,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1763360593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763360590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f84e0213d228ae4082bd19cbad3308c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Timer
+  time: 5
+  runnin: 0
+  gameOver: {fileID: 1800171652}
 --- !u!1 &1771463662
 GameObject:
   m_ObjectHideFlags: 0
