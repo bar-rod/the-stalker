@@ -17,6 +17,7 @@ public class ClockManager : MonoBehaviour
     [Header("Events")]
     public UnityEvent onBothHandsCorrect;
 
+
     // Subscribe to both hands' release events
     void Start()
     {
@@ -77,7 +78,8 @@ public class ClockManager : MonoBehaviour
     }
 
 
-    public void PrintSmth(){
+    public void PrintSmth()
+    {
         Debug.Log("Event Fired");
     }
 }

@@ -13,6 +13,7 @@ public class Item : MonoBehaviour, Iinteractable
         GetComponent<SpriteRenderer>().sprite = itemSprite;
     }
 
+    //equivalence of pick up basically
     public void Interact(Collider2D other)
     {
         gameObject.SetActive(false);
@@ -30,6 +31,11 @@ public class Item : MonoBehaviour, Iinteractable
     public void CloseUI(Collider2D other)
     {
         //set the pop up UI to be Inactive.
+    }
+
+    public void ShowItem()
+    {
+        gameObject.SetActive(true);
     }
     
 }
