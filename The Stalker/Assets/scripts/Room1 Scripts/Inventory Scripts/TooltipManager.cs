@@ -37,6 +37,6 @@ public class TooltipManager : MonoBehaviour
     public void HideTooltip()
     {
         gameObject.SetActive(false);
-        textComponent.text = string.Empty;
+        // textComponent.text = string.Empty;
     }
 }

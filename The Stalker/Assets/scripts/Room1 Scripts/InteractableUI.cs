@@ -40,6 +40,4 @@ public class InteractableUI : MonoBehaviour, Iinteractable
             interactable.theCanvas.SetActive(false);
         }
     }
-
-    
 }

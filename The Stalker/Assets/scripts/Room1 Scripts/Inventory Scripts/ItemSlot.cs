@@ -16,7 +16,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Awake()
     {
-        inventory = GetComponentInParent<Inventory>();
+        inventory = FindFirstObjectByType<Inventory>();
     }
     private void OnEnable()
     {
@@ -43,18 +43,6 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
         }
     }
-    //private void OnMouseEnter()
-    //{
-    //    if (hasItem)
-    //        TooltipManager._instance.SetAndShowTooltip(item.description);
-    //}
-
-    //private void OnMouseExit()
-    //{
-    //    TooltipManager._instance.HideTooltip();
-    //}
-
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (hasItem)

@@ -17,11 +17,11 @@ public class Timer : MonoBehaviour{
             if (time > 0)
             {
                 time -= Time.deltaTime;
-                Debug.Log(time);
+                //Debug.Log(time);
             }
             else
             {
-                Debug.Log("time ran out");
+                //Debug.Log("time ran out");
                 time = 0;
                 runnin = false;
                 gameOver.SetActive(true);

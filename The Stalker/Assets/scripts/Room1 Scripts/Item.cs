@@ -1,4 +1,7 @@
+using System.Data;
 using UnityEngine;
+
+[ExecuteInEditMode]
 public class Item : MonoBehaviour, Iinteractable
 {
     public string itemName;
@@ -17,15 +20,32 @@ public class Item : MonoBehaviour, Iinteractable
     public void Interact(Collider2D other)
     {
         gameObject.SetActive(false);
-        if (other.tag == "ChainKey")
+        Inventory inventory = FindFirstObjectByType<Inventory>();
+        if (inventory != null)
         {
-            //since first key opens the inventory
+            inventory.inventoryList.Add(this);
+
+            //display UI that shows the item that was just collected
+
+
+
+            // check if item was chain key
+            // if it was, force the player through an inventory tutorial
+            if (id == 0) 
+            {
+                inventory.inventoryUI.gameObject.SetActive(true);
+                FindFirstObjectByType<OpenInventory>().Disable();
+
+                //tutorial content
+
+
+                FindFirstObjectByType<OpenInventory>().Disable();
+            }
         }
-        else
+        else // this is just to catch errors
         {
-            //logic for every other item: pop up UI that shows what was collected
+            Debug.LogWarning("No Inventory found on " + other.name);
         }
-        //display UI that shows the item that was just collected
     }
 
     public void CloseUI(Collider2D other)
