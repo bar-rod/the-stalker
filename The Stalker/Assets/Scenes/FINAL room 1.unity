@@ -233,8 +233,9 @@ GameObject:
   - component: {fileID: 208388458}
   - component: {fileID: 208388460}
   - component: {fileID: 208388461}
+  - component: {fileID: 208388462}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Clock
   m_TagString: Clock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -362,6 +363,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Clock
   clock: {fileID: 1458633800}
+--- !u!114 &208388462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208388457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36eaf7d61bb059e43ac295e893aef954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableUI
+  interactable:
+    name: Clock
+    theCanvas: {fileID: 1458633800}
 --- !u!1 &312754910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,6 +2359,7 @@ GameObject:
   - component: {fileID: 1213103899}
   - component: {fileID: 1213103898}
   - component: {fileID: 1213103901}
+  - component: {fileID: 1213103902}
   m_Layer: 0
   m_Name: ClueBoard
   m_TagString: ClueBoard
@@ -2469,6 +2486,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1213103902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213103897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36eaf7d61bb059e43ac295e893aef954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableUI
+  interactable:
+    name: ClueBoard
+    theCanvas: {fileID: 1087230583}
 --- !u!1 &1234829261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,7 +3288,6 @@ GameObject:
   - component: {fileID: 1484331123}
   - component: {fileID: 1484331122}
   - component: {fileID: 1484331127}
-  - component: {fileID: 1484331128}
   - component: {fileID: 1484331129}
   m_Layer: 0
   m_Name: Player
@@ -3441,22 +3472,6 @@ MonoBehaviour:
   anchor: {fileID: 861813607}
   radiusX: 8
   radiusY: 4
---- !u!114 &1484331128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484331121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90bcf13be76e34643a128366b4e56eb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenClue
-  _ClueCanvases:
-  - {fileID: 1087230583}
-  - {fileID: 1458633800}
-  playerControls: {fileID: -944628639613478452, guid: f051a05a7a2a64fba83c75dfd3cbef54, type: 3}
 --- !u!114 &1484331129
 MonoBehaviour:
   m_ObjectHideFlags: 0
