@@ -103,7 +103,7 @@ public class LightController : MonoBehaviour
     // The chance of the light turing off will increase as time decreases.
     public void randomFlicker(float time,float max_time)
     {
-        float threshold = max_time * 0.001f; 
+        float threshold = max_time * 0.003f; 
         float randInt;
         if(time < 0.2 * max_time){
             threshold = 0.5f;
@@ -123,7 +123,7 @@ public class LightController : MonoBehaviour
     // does the opposite of the previous function. Determines random time for light to turn back on again
     public void randomTurnOn(float time,float max_time)
     {
-        float threshold = max_time * 0.01f;
+        float threshold = max_time * 0.35f;
         float randInt = Random.Range(0f, time);
         if (randInt > threshold)
         {
