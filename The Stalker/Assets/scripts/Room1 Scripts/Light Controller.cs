@@ -138,7 +138,7 @@ public class LightController : MonoBehaviour
     private void turnLightsOn()
     {
         SpotLight2D.intensity = 1f;
-        GlobaLight2D.intensity = 0.1f;
+        GlobaLight2D.intensity = 0.3f;
         isOf = false;
         game_over_timer = 20f;
     }
@@ -146,7 +146,7 @@ public class LightController : MonoBehaviour
     private void turnLightsOff()
     {
         SpotLight2D.intensity = 0;
-        GlobaLight2D.intensity = 0.01f;
+        GlobaLight2D.intensity = 0.07f;
         current_flicker_time = Random.Range(15f,30f);
         //flicker_time += 0.05f;
 
