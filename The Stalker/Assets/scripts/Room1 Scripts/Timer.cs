@@ -6,9 +6,19 @@ public class Timer : MonoBehaviour{
     public float time = 5f;
     public bool runnin = false;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private Slider healthBar;
+
+    private float maxTime;
     private void Start()
     {
+        maxTime = time;
         runnin = true;
+
+        if (healthBar != null)
+        {
+            healthBar.maxValue = maxTime;
+            healthBar.value = maxTime;
+        }
     }
 
     void Update()
@@ -19,6 +29,9 @@ public class Timer : MonoBehaviour{
             {
                 time -= Time.deltaTime;
                 //Debug.Log(time);
+
+                if (healthBar != null)
+                    healthBar.value = time;
             }
             else
             {
