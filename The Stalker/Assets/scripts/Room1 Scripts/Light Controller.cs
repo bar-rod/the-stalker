@@ -8,6 +8,7 @@ public class LightController : MonoBehaviour
     public Timer timer;
     [SerializeField] public float current_flicker_time;
     private bool isOf;
+
     [SerializeField] public Light2D SpotLight2D;
     [SerializeField] public Light2D GlobaLight2D;
     [SerializeField] InputActionAsset playerControls;
@@ -39,8 +40,9 @@ public class LightController : MonoBehaviour
     }
     void Start()
     {
-        max_time = GetComponentInParent<Timer>().time;
-        timer = GetComponentInParent<Timer>();
+        max_time = timer.time;
+        
+        //timer = GetComponentInParent<Timer>();
     }
 
     // Update is called once per frame

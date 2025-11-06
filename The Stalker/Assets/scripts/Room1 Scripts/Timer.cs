@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour{
+    //edit max time in the inspector of gameobject that holds the script
     public float time = 5f;
     public bool runnin = false;
     [SerializeField] private GameObject gameOver;
