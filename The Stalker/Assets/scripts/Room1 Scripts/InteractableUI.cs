@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,8 +11,14 @@ public class InteractableUI : MonoBehaviour, Iinteractable
     };
     public CanvasUI interactable;
 
+    IEnumerator Init()
+    {
+        yield return null;
+    }
+
     private void Start()
     {
+        StartCoroutine(Init());
         interactable.theCanvas.SetActive(false);
     }
     public void Interact(Collider2D other)

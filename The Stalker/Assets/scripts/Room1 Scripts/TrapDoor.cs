@@ -17,7 +17,7 @@ public class TrapDoor : MonoBehaviour
     //Set the object's Vector3 to move towards a target Vector3 at the speed of speed/frame
     void FixedUpdate()
     {
-        if (trapDoorSliding)
+        if (trapDoorSliding && transform.position != targetPosition)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }

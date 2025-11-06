@@ -156,7 +156,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000030518, y: 0.000015259}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434658481
 MonoBehaviour:
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: efbceb339845a0e4cb96f082da97afa0, type: 3}
+  m_Sprite: {fileID: -3864186052168532955, guid: 1c0e58927b1b9604b889aaf6aeb96aad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -250,8 +250,8 @@ MonoBehaviour:
   faceRect: {fileID: 434658480}
   canvas: {fileID: 2074880152}
   handGraphic: {fileID: 1346584455}
-  handLength: 150
-  handThickness: 12
+  handLength: 165
+  handThickness: 20
   snapOnRelease: 1
   onCorrectTime:
     m_PersistentCalls:
@@ -1145,7 +1145,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 75}
-  m_SizeDelta: {x: 12, y: 150}
+  m_SizeDelta: {x: 20, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346584456
 MonoBehaviour:
@@ -1180,8 +1180,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -8744876961581811379, guid: cf1b4930316e9a74690db8f8ca1a939d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1252,8 +1252,8 @@ MonoBehaviour:
   faceRect: {fileID: 434658480}
   canvas: {fileID: 2074880152}
   handGraphic: {fileID: 1623041786}
-  handLength: 100
-  handThickness: 12
+  handLength: 110
+  handThickness: 20
   snapOnRelease: 1
   onCorrectTime:
     m_PersistentCalls:
@@ -1331,7 +1331,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 12, y: 100}
+  m_SizeDelta: {x: 20, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623041788
 MonoBehaviour:
@@ -1353,8 +1353,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4480280843607487995, guid: db7c6c7299409b246bfa22376ff6ecdb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

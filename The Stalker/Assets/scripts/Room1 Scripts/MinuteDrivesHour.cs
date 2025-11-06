@@ -10,7 +10,7 @@ public class MinuteDrivesHour : MonoBehaviour
     float prevMinuteCW;
     float unwrappedMinuteCW;
 
-    void Awake()
+    void Start()
     {
         if (minuteHand) prevMinuteCW = minuteHand.GetClockwiseAngle();
         unwrappedMinuteCW = 0f;
@@ -19,7 +19,11 @@ public class MinuteDrivesHour : MonoBehaviour
     // update the hour hand, angle doesn't reset every full 360 rotation
     void LateUpdate()
     {
-        if (!minuteHand.isActiveAndEnabled || !hourHand.isActiveAndEnabled) return;
+        if (!minuteHand.isActiveAndEnabled || !hourHand.isActiveAndEnabled)
+        {
+            Debug.Log("Hands not enable and active");
+            return;
+        }
 
         float currCW = minuteHand.GetClockwiseAngle();
         float delta = Mathf.DeltaAngle(prevMinuteCW, currCW);
