@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] InputActionAsset inputActions;
     [SerializeField] float charSpeed;
+    [SerializeField] GameObject inventory;
     private Rigidbody2D rb;
     private Vector2 currentMoveInput;
     private Vector2 filteredInput;
@@ -20,9 +21,13 @@ public class Player : MonoBehaviour
     private InputActionMap actionMap;
     private InputAction moveAction;
     private InputAction interactAction;
+    private InputAction inventoryAction;
 
 
     private ChainConstraint chain;
+
+    private bool inventoryIsOpen = false;
+    public bool puzzleMode = false;
 
     void Awake()
     {
@@ -32,6 +37,7 @@ public class Player : MonoBehaviour
         actionMap = inputActions.FindActionMap("Player");
         moveAction = actionMap.FindAction("Move");
         interactAction = actionMap.FindAction("Interact");
+        inventoryAction = actionMap.FindAction("Inventory");
     }
 
     private void OnEnable()
@@ -39,15 +45,18 @@ public class Player : MonoBehaviour
         moveAction.performed += OnMove;
         moveAction.canceled += OnMove;
         interactAction.started += OnInteract;
+        inventoryAction.started += OnInventory;
 
         moveAction.Enable();
         interactAction.Enable();
+        inventoryAction.Enable();
     }
     private void OnDisable()
     {
         moveAction.performed -= OnMove;
         moveAction.canceled -= OnMove;
         interactAction.started -= OnInteract;
+        inventoryAction.started -= OnInventory;
 
         moveAction.Disable();
         interactAction.Disable();
@@ -78,6 +87,10 @@ public class Player : MonoBehaviour
             _interactableOpened = false;
         }
     }
+    private void OnInventory(InputAction.CallbackContext context)
+    {
+        ToggleInventory();
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         _playerTouchingInteractable = true;
@@ -94,5 +107,19 @@ public class Player : MonoBehaviour
         _playerTouchingInteractable = false;
         interactableObject = null;
         _touchedObject = null;
+    }
+    public void ToggleInventory(bool fromPuzzle = false)
+    {
+        if (inventoryIsOpen)
+        {
+            inventory.SetActive(false);
+            inventoryIsOpen = false;
+        }
+        else
+        {
+            inventory.SetActive(true);
+            inventoryIsOpen = true;
+        }
+        if (!fromPuzzle) puzzleMode = false;
     }
 }

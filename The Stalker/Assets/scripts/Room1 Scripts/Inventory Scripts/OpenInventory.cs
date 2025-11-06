@@ -11,7 +11,6 @@ public class OpenInventory : MonoBehaviour
     private InputAction playerInventory;
 
     private bool inventoryIsOpen;
-
     private bool isEnabled = true;
 
     void Awake()
@@ -35,6 +34,21 @@ public class OpenInventory : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
+        ToggleInventory();
+    }
+
+    public void Disable()
+    {
+        isEnabled = false;
+    }
+
+    public void Enable()
+    {
+        isEnabled = true;
+    }
+
+    public void ToggleInventory()
+    {
         if (isEnabled)
         {
             if (inventoryIsOpen)
@@ -48,15 +62,5 @@ public class OpenInventory : MonoBehaviour
                 inventoryIsOpen = true;
             }
         }
-    }
-
-    public void Disable()
-    {
-        isEnabled = false;
-    }
-
-    public void Enable()
-    {
-        isEnabled = true;
     }
 }

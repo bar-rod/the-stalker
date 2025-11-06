@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [SerializeField] private int SlotID; // slot 1 has slotid 0, same as indexes in an array
     [SerializeField] private Sprite emptySlotSprite; // empty inventory slot icon needed
@@ -33,6 +33,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             {
                 GetComponentInChildren<TMP_Text>().text = item.itemName;
                 GetComponent<Image>().sprite = item.itemSprite;
+                GetComponent<Image>().preserveAspect = true;
                 hasItem = true;
             }
             else
@@ -52,5 +53,13 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         TooltipManager._instance.HideTooltip();
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (hasItem)
+        {
+            Debug.Log(item.name + " was clicked.");
+            inventory.SelectItem(item);
+        }
     }
 }

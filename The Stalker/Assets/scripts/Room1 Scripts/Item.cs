@@ -33,13 +33,11 @@ public class Item : MonoBehaviour, Iinteractable
             // if it was, force the player through an inventory tutorial
             if (id == 0) 
             {
-                inventory.inventoryUI.gameObject.SetActive(true);
-                FindFirstObjectByType<OpenInventory>().Disable();
+                Player player = GetComponent<Player>();
+                player.ToggleInventory();
 
                 //tutorial content
 
-
-                FindFirstObjectByType<OpenInventory>().Disable();
             }
         }
         else // this is just to catch errors
@@ -58,4 +56,8 @@ public class Item : MonoBehaviour, Iinteractable
         gameObject.SetActive(true);
     }
     
+    public override string ToString()
+    {
+        return itemName + "\nID Number: " + id + "\n" + description + "\n\nInitially Active?: " + initiallyActive + "\nSprite: " + itemSprite;
+    }
 }

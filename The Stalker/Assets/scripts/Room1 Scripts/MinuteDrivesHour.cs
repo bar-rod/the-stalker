@@ -21,7 +21,7 @@ public class MinuteDrivesHour : MonoBehaviour
     {
         if (!minuteHand.isActiveAndEnabled || !hourHand.isActiveAndEnabled)
         {
-            Debug.Log("Hands not enable and active");
+            // Debug.Log("Hands not enable and active");
             return;
         }
 
