@@ -23,6 +23,7 @@ public class InteractableUI : MonoBehaviour, Iinteractable
     }
     public void Interact(Collider2D other)
     {
+        Debug.Log("Called Interact() from InteractableUI");
         if (other == null)
         {
             Debug.Log("Null collider");

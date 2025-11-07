@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     private Vector2 filteredInput;
     private bool _playerTouchingInteractable;
     private Collider2D _touchedObject;
-    private bool _interactableOpened;
+    [SerializeField] private bool _interactableOpened;
     private Iinteractable interactableObject;
 
     private InputActionMap actionMap;
@@ -36,9 +36,6 @@ public class Player : MonoBehaviour
 
 
     private ChainConstraint chain;
-
-    private bool inventoryIsOpen = false;
-    public bool puzzleMode = false;
 
     void Awake()
     {
@@ -114,6 +111,7 @@ public class Player : MonoBehaviour
         if (_playerTouchingInteractable == true && _interactableOpened == false)
         {
             interactableObject.Interact(_touchedObject);
+            if (_touchedObject.gameObject.GetComponent<Item>() != null) return;
             _interactableOpened = true;
         }
         else if (_playerTouchingInteractable == true && _interactableOpened == true)
@@ -134,7 +132,6 @@ public class Player : MonoBehaviour
         interactableObject = collision.GetComponent<Iinteractable>();
         Debug.Log($"collided with {collision.name}");
         _touchedObject = collision;
-
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -143,19 +140,18 @@ public class Player : MonoBehaviour
         interactableObject = null;
         _touchedObject = null;
     }
-    public void ToggleInventory(bool fromPuzzle = false)
+    public void ToggleInventory()
     {
-        if (inventoryIsOpen)
+        if (_interactableOpened)
         {
             inventory.SetActive(false);
-            inventoryIsOpen = false;
+            _interactableOpened = false;
         }
         else
         {
             inventory.SetActive(true);
-            inventoryIsOpen = true;
+            _interactableOpened = true;
         }
-        if (!fromPuzzle) puzzleMode = false;
     }
 
     private void OnDrag(InputAction.CallbackContext ctx)

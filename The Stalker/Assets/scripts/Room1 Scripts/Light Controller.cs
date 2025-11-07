@@ -66,6 +66,7 @@ public class LightController : MonoBehaviour, Iinteractable
     //turns light on and off
     public void Interact(Collider2D collider)
     {
+        Debug.Log("Called Interact() from LightController");
         if (isOf == true)
         {
             Debug.Log("Light Switch turned on");

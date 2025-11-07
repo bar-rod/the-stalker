@@ -11,7 +11,7 @@ public class TESTINTERACTABLE : PuzzleInteractable
         }
         else
         {
-            // this is where you would have a hint message pop up to guide the player to the correct item
+            // this is where you would have a hint message pop up to guide the player to the correct item (or a different fail condition)
             Debug.Log(item.name + " is the incorrect item");
         }
         CloseUI(null);

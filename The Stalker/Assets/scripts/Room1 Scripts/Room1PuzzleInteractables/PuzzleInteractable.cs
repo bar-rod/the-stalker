@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
 {
@@ -29,9 +30,8 @@ public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
 
     public virtual void Interact(Collider2D other)
     {
+        Debug.Log("Called Interact() from PuzzleInteractable");
         if (isSolved) return;
-
-        player.puzzleMode = true;
         inventory.OpenForPuzzle(UseItem);
     }
 

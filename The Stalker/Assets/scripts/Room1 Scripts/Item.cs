@@ -19,6 +19,7 @@ public class Item : MonoBehaviour, Iinteractable
     //equivalence of pick up basically
     public void Interact(Collider2D other)
     {
+        Debug.Log("Called Interact() from Item");
         gameObject.SetActive(false);
         Inventory inventory = FindFirstObjectByType<Inventory>();
         if (inventory != null)
@@ -44,11 +45,13 @@ public class Item : MonoBehaviour, Iinteractable
         {
             Debug.LogWarning("No Inventory found on " + other.name);
         }
+        CloseUI(other);
     }
 
     public void CloseUI(Collider2D other)
     {
-        //set the pop up UI to be Inactive.
+        // theres no UI for item, but we need to call it anyways
+        // this function just resert
     }
 
     public void ShowItem()

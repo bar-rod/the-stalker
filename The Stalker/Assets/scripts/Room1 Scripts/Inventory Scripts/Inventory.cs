@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+[ExecuteInEditMode]
 public class Inventory : MonoBehaviour
 {
     public Canvas inventoryUI;
@@ -34,9 +36,9 @@ public class Inventory : MonoBehaviour
             Debug.Log("Item: " + item.name + " " + item.id);
             ItemUsedOnPuzzle(item);
         }
-        else
+        else if (ItemUsedOnPuzzle == null)
         {
-            Debug.Log("hey vro. u arent in puzzle mode :wilted_rose: (look in Inventory.cs)");
+            Debug.Log("ItemUsedOnPuzzle is null");
         }
 
     }
@@ -45,5 +47,18 @@ public class Inventory : MonoBehaviour
     {
         ItemUsedOnPuzzle = callback; // assign delegate
         inventoryUI.gameObject.SetActive(true);
+
+        Player player = FindFirstObjectByType<Player>();
+        if (player != null)
+        {
+            player.ToggleInventory();
+        }
+    }
+
+    public bool isShowing()
+    {
+        if (inventoryUI.isActiveAndEnabled == true)
+            return true;
+        return false;
     }
 }
