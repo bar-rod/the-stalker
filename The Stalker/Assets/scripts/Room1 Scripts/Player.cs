@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] InputActionAsset inputActions;
     [SerializeField] float charSpeed;
     [SerializeField] GameObject inventory;
+    [SerializeField] Animator _animator;
+    [SerializeField] SpriteRenderer _sprite;
 
     private bool clicking = false;
     private bool dragging = false;
@@ -90,6 +92,17 @@ public class Player : MonoBehaviour
     void OnMove(InputAction.CallbackContext ctx)
     {
         currentMoveInput = ctx.ReadValue<Vector2>().normalized;
+
+        //animation!! 
+        _sprite.flipX = currentMoveInput[0] > 0f;
+        if (currentMoveInput != new Vector2(0,0))
+        {
+            _animator.SetBool("isWalking", true);
+        } 
+        else
+        {
+            _animator.SetBool("isWalking", false);
+        }
     }
 
     //triggers when e is pressed and is currently within the range of an interactable object's colliders
