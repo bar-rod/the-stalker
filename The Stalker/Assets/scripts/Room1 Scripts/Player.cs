@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _sprite;
 
+    [SerializeField] GameObject _bedCollider;
+
     private bool clicking = false;
     private bool dragging = false;
     private Rigidbody2D rb;
@@ -72,7 +74,7 @@ public class Player : MonoBehaviour
         moveAction.canceled -= OnMove;
         interactAction.started -= OnInteract;
         inventoryAction.started -= OnInventory;
-        dragAction.performed -= OnDrag;
+        //dragAction.performed -= OnDrag;
         clickAction.canceled -= OnClick;
 
 
@@ -172,5 +174,17 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(.4f);
 
+    }
+
+    void Update()
+    {
+        if (this.transform.position.y < _bedCollider.transform.position.y)
+        {
+            _bedCollider.SetActive(false);
+        }
+        else
+        {
+            _bedCollider.SetActive(true);
+        }
     }
 }
