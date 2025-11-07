@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     [SerializeField] SpriteRenderer _sprite;
 
     [SerializeField] GameObject _bedCollider;
+    [SerializeField] CapsuleCollider2D _collider;
+    Vector2 currentY;
+    private bool waitingToChange;
+    private float exitTimer = 0f;
 
 
     private bool clicking = false;
@@ -177,13 +181,77 @@ public class Player : MonoBehaviour
     {
         if (this.transform.position.y < _bedCollider.transform.position.y)
         {
-            _bedCollider.SetActive(false);
+            //_bedCollider.SetActive(false);
             _sprite.sortingOrder = 6;
         }
         else
         {
-            _bedCollider.SetActive(true);
+            //_bedCollider.SetActive(true);
             _sprite.sortingOrder = 5;
         }
+
+        if(waitingToChange)
+        {
+            exitTimer += Time.deltaTime; 
+            Debug.Log(exitTimer);
+            
+            if (exitTimer >= 1f)
+            {
+                Vector2 currentSize = _collider.size;
+                currentY = _collider.offset;
+                Vector2 newHeight = new Vector2(currentY.x, 0.067f);
+                Vector2 newSize = new Vector2(currentSize.x, 9.38f);
+                _collider.size = newSize;
+                _collider.offset = newHeight;
+                exitTimer = 0f;
+            }
+        }
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("bed"))
+        {
+            waitingToChange = false;
+
+            Vector2 currentSize = _collider.size;
+            currentY = _collider.offset;
+            Vector2 newHeight = new Vector2(currentY.x, -3.25f);
+            Vector2 newSize = new Vector2(currentSize.x, 2.8f); //2.8
+            _collider.size = newSize;
+            _collider.offset = newHeight;
+        }
+        // else
+        // {
+        //     Vector2 currentSize = _collider.size;
+        //     currentY = _collider.offset;
+        //     Vector2 newHeight = new Vector2(currentY.x, 0.067f);
+        //     Vector2 newSize = new Vector2(currentSize.x, 9.38f);
+        //     _collider.size = newSize;
+        //     _collider.offset = newHeight;
+        // }
+
+    }
+    
+    void OnCollisionExit2D(Collision2D other)
+    {
+       if (other.gameObject.CompareTag("bed"))
+        {
+            waitingToChange = true;
+            
+
+            // if (exitTimer >= 1f)
+            // {
+            //     Vector2 currentSize = _collider.size;
+            //     currentY = _collider.offset;
+            //     Vector2 newHeight = new Vector2(currentY.x, 0.067f);
+            //     Vector2 newSize = new Vector2(currentSize.x, 9.38f);
+            //     _collider.size = newSize;
+            //     _collider.offset = newHeight;
+            //     exitTimer = 0f;
+            // }
+        }
+    }
+
+    
 }

@@ -8,6 +8,7 @@ TagManager:
   - Clock
   - Light
   - Clue
+  - bed
   layers:
   - Default
   - TransparentFX
