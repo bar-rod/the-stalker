@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class Screw : MonoBehaviour
 {
-    private int screw_clicks;
+    public int screw_clicks;
     private bool unscrewed;
+    [SerializeField ]public bool screwdriver_equipped;
     public void OnButtonClick()
     {
+        if(screwdriver_equipped){
         //rotate screw
         screw_clicks++;
-        transform.rotate(0,0,45);
+        Vector3 rotation = new Vector3(0f,0f,45f);
+        gameObject.transform.Rotate(rotation);
         if(screw_clicks == 3){
-            unscrewed==true;
+            unscrewed=true;
         }
+    }
     }
 }
