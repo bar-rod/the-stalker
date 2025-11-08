@@ -98,6 +98,11 @@ public class DraggableClockRoot : MonoBehaviour, IPointerDownHandler, IDragHandl
     // Read the hand angle clockwise from 12 o'clock in degrees
     float GetClockwiseAngleFromUp()
     {
+        if (handRoot == null)
+        {
+            Debug.Log("fix me - anushka");
+            return 0f;
+        }
         float zCounterClockwiseFromUp = handRoot.localEulerAngles.z;
         return Mathf.Repeat(-zCounterClockwiseFromUp, 360f);
     }
