@@ -9,6 +9,9 @@ public class LightController : MonoBehaviour, Iinteractable
     [SerializeField] public float current_flicker_time;
     private bool isOf;
 
+    [SerializeField] private GameObject lightOff;
+    [SerializeField] private GameObject lightOn;
+
     [SerializeField] public Light2D SpotLight2D;
     [SerializeField] public Light2D GlobaLight2D;
     [SerializeField] InputActionAsset playerControls;
@@ -129,6 +132,9 @@ public class LightController : MonoBehaviour, Iinteractable
         GlobaLight2D.intensity = 0.3f;
         isOf = false;
         game_over_timer = 20f;
+        
+        lightOff.SetActive(false);
+        lightOn.SetActive(true);
     }
     //turns the lights off
     private void turnLightsOff()
@@ -137,6 +143,9 @@ public class LightController : MonoBehaviour, Iinteractable
         GlobaLight2D.intensity = 0.07f;
         current_flicker_time = Random.Range(15f, 30f);
         //flicker_time += 0.05f;
+        
+        lightOn.SetActive(false);
+        lightOff.SetActive(true);
 
         isOf = true;
     }

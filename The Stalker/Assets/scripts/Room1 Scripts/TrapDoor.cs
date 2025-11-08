@@ -4,6 +4,9 @@ public class TrapDoor : MonoBehaviour
 {
     public bool trapDoorSliding = false;
     [SerializeField] private float speed;
+    [SerializeField] private GameObject key;
+
+    [SerializeField] private SpriteRenderer _door;
 
     [Header("The transform of the target location")]
     [SerializeField] private Transform target;
@@ -11,6 +14,7 @@ public class TrapDoor : MonoBehaviour
     private void Start()
     {
         targetPosition = target.position;
+
     }
 
 
@@ -32,5 +36,7 @@ public class TrapDoor : MonoBehaviour
     public void SetMovingTrue()
     {
         trapDoorSliding = true;
+        _door.sortingOrder = 0;
+        key.SetActive(true);
     }
 }

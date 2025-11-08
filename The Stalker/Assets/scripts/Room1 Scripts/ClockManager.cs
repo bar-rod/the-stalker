@@ -3,6 +3,9 @@ using UnityEngine.Events;
 
 public class ClockManager : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private TrapDoor _trapDoor;
+
     [Header("Hand References")]
     public DraggableClockRoot minuteHand;
     public DraggableClockRoot hourHand;
@@ -40,6 +43,10 @@ public class ClockManager : MonoBehaviour
         if (AreBothHandsCorrect())
         {
             Debug.Log("Correct, Both hands are in position");
+
+            gameManager.TurnOffClockCanvas();
+            _trapDoor.SetMovingTrue();
+            
             onBothHandsCorrect?.Invoke();
         }
         else
