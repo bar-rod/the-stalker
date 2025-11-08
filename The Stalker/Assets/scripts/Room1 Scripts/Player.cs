@@ -220,6 +220,8 @@ public class Player : MonoBehaviour
             Vector2 newSize = new Vector2(currentSize.x, 2.8f); //2.8
             _collider.size = newSize;
             _collider.offset = newHeight;
+
+            
         }
         // else
         // {
