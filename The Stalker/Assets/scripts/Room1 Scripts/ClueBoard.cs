@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -37,31 +38,50 @@ IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
        // Debug.Log("OnPointerDown");
     }
 
-    // TODO: Add rotation randomization
+    // If this breaks, it's probably tag related or you changed a gameobject name
     void randomizeCluePos()
     {
         GameObject[] clues = GameObject.FindGameObjectsWithTag("Clue");
-        Debug.Log("Found " + clues.Length + " clues to position.");
-        foreach (GameObject clue in clues)
+        GameObject[] spawnPoint = GameObject.FindGameObjectsWithTag("Spawn");
+        // Debug.Log("Found " + clues.Length + " clues to position.");
+
+        //uses the Fisher-Yates method of shuffling
+        Array tempArr = Array.CreateInstance(typeof(int), spawnPoint.Length);
+        for (int i = 0; i < spawnPoint.Length; i++)
         {
-            float minimumDistance = (float) 1.5 * clues[0].GetComponent<RectTransform>().rect.width;
+            tempArr.SetValue(i, i); 
+        }
 
-            // create a min and max range for x and y positions based on the parent canvas size
-            // TODO: Remove magic numbers
-            float minX = rectTransform.rect.min.x - 100f;
-            float maxX = rectTransform.rect.max.x + 100f;
-            float minY = rectTransform.rect.min.y - 50f;
-            float maxY = rectTransform.rect.max.y + 50f;
-            Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        Array shuffled = Array.CreateInstance(typeof(int), tempArr.Length);
+        var randomness = new System.Random();
 
-            // first clue can be placed anywhere
-            if (clue == clues[0])
-                clue.GetComponent<RectTransform>().anchoredPosition = randomPosition;
-            else
+        // this removes elements from tempArr as they are added to shuffled 
+        Debug.Log("Shuffling spawn points...");
+        for (int i = tempArr.Length - 1; i >= 0; --i)
+        {   
+            int rand = randomness.Next(tempArr.Length);
+            shuffled.SetValue(tempArr.GetValue(rand), i);
+            var index = rand;
+            if (index < tempArr.Length && tempArr.Length > 0)
             {
-                // TODO: implement logic to ensure clues are not overlapping here
-                clue.GetComponent<RectTransform>().anchoredPosition = randomPosition;
+                Array tempTempArr = Array.CreateInstance(typeof(int), tempArr.Length - 1);
+                for (int j = 0; j < index; j++)
+                { tempTempArr.SetValue(tempArr.GetValue(j), j); }
+                for (int j = index; j < tempTempArr.Length; j++)
+                { tempTempArr.SetValue(tempArr.GetValue(j + 1), j); }
+
+                tempArr = tempTempArr;
             }
         }
+
+        for (int i = 0; i < clues.Length; i++)
+        {
+            clues[i].GetComponent<RectTransform>().position = spawnPoint[(int)shuffled.GetValue(i)].GetComponent<RectTransform>().position;
+            clues[i].GetComponent<RectTransform>().Rotate(0, 0, UnityEngine.Random.Range(-10f, 10));
+        }
+
     }
+
 }
+
+

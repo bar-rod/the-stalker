@@ -9,6 +9,7 @@ TagManager:
   - Light
   - Clue
   - bed
+  - Spawn
   layers:
   - Default
   - TransparentFX
