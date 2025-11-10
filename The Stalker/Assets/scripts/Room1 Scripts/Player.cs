@@ -98,7 +98,6 @@ public class Player : MonoBehaviour
         currentMoveInput = ctx.ReadValue<Vector2>().normalized;
 
         //animation!! 
-        
         if (currentMoveInput != new Vector2(0,0))
         {
             _animator.SetBool("isWalking", true);
