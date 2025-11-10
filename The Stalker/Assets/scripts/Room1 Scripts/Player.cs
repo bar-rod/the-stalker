@@ -35,8 +35,6 @@ public class Player : MonoBehaviour
     private InputAction moveAction;
     private InputAction interactAction;
     private InputAction inventoryAction;
-    private InputAction dragAction;
-    private InputAction clickAction;
 
 
     private ChainConstraint chain;
@@ -50,8 +48,6 @@ public class Player : MonoBehaviour
         moveAction = actionMap.FindAction("Move");
         interactAction = actionMap.FindAction("Interact");
         inventoryAction = actionMap.FindAction("Inventory");
-        dragAction = actionMap.FindAction("Drag");
-        clickAction = actionMap.FindAction("Click");
     }
 
     private void OnEnable()
@@ -60,15 +56,11 @@ public class Player : MonoBehaviour
         moveAction.canceled += OnMove;
         interactAction.started += OnInteract;
         inventoryAction.started += OnInventory;
-        dragAction.performed += OnDrag;
-        clickAction.canceled += OnClick;
         
 
         moveAction.Enable();
         interactAction.Enable();
         inventoryAction.Enable();
-        dragAction.Enable();
-        clickAction.Enable();
     }
     private void OnDisable()
     {
@@ -76,15 +68,11 @@ public class Player : MonoBehaviour
         moveAction.canceled -= OnMove;
         interactAction.started -= OnInteract;
         inventoryAction.started -= OnInventory;
-        dragAction.performed -= OnDrag;
-        clickAction.canceled -= OnClick;
 
 
         moveAction.Disable();
         interactAction.Disable();
         inventoryAction.Disable();
-        dragAction.Disable();
-        clickAction.Disable();
     }
 
     void FixedUpdate()
@@ -158,24 +146,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnDrag(InputAction.CallbackContext ctx)
-    {
-        dragging = true;
-        Debug.Log("Dragging");
-    
-    }
-
-    private void OnClick(InputAction.CallbackContext ctx)
-    {
-        clicking = true;
-        Debug.Log("Clicking");
-    }
-
-    IEnumerator WaitUntilDrag()
-    {
-        yield return new WaitForSeconds(.4f);
-
-    }
 
     void Update()
     {
