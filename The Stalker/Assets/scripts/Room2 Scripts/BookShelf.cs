@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Unity.VisualScripting;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
@@ -37,7 +38,7 @@ public class BookShelf : MonoBehaviour
     {
         pngs = Addressables.LoadAssetsAsync<Array>("Assets/art assets/room2artassets/books").WaitForCompletion().ToArrayPooled();
         allBooks = Array.CreateInstance(typeof(Book), pngs.Length);
-        shelves = Array.CreateInstance(typeof(Book*), totalShelves);
+        shelves = Array.CreateInstance(typeof(Book), totalShelves);
     }
 
     // Update is called once per frame
