@@ -1,7 +1,7 @@
 /*
- * Add all book assets to this folder
+ * Add all book assets to the labeled folders
+ *
  * 
- * name the valid solutions for the puzzle differently from filler books
- * 
- * When adding the assets, please delete the old temp assets.
+ * When adding the assets, please delete the old temp assets. 
+ *
  */
