@@ -36,7 +36,7 @@ public class TrapDoor : MonoBehaviour
     public void SetMovingTrue()
     {
         trapDoorSliding = true;
-        _door.sortingOrder = 0;
+        _door.sortingOrder = 1;
         key.SetActive(true);
     }
 }
