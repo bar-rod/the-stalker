@@ -26,7 +26,7 @@ IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
         //Debug.Log("OnBeginDrag");
     }
 
-    //hi wasssuppppp ahhh
+    //:P
 
     public void OnEndDrag(PointerEventData eventData)
     {
