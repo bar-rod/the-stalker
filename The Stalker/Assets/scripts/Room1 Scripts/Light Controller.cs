@@ -39,7 +39,7 @@ public class LightController : MonoBehaviour, Iinteractable
             randomFlicker(time, max_time);
         }
         // checks if light is off to and gambles for chance of light to turn on
-        else if (isOf == true && time > max_time * 0.40)
+        else if (isOf == true && time > max_time * 0.40 && current_flicker_time <= 0f)
         {
             randomTurnOn(time, max_time);
         }
@@ -49,10 +49,8 @@ public class LightController : MonoBehaviour, Iinteractable
             turnLightsOn();
         }
         //decreases flicker timer
-        else if (time > max_time * 0.2 && isOf == true && time < max_time * 0.40)
-        {
-            current_flicker_time -= Time.deltaTime;
-        }
+        current_flicker_time -= Time.deltaTime;
+      
         // decreases game over timer 
         if (isOf == true)
         {
@@ -93,7 +91,7 @@ public class LightController : MonoBehaviour, Iinteractable
     // The chance of the light turing off will increase as time decreases.
     public void randomFlicker(float time, float max_time)
     {
-        float threshold = max_time * 0.003f;
+        float threshold = max_time * 0.004f;
         float randInt;
         if (time < 0.2 * max_time)
         {
@@ -141,7 +139,12 @@ public class LightController : MonoBehaviour, Iinteractable
     {
         SpotLight2D.intensity = 0;
         GlobaLight2D.intensity = 0.07f;
+        if(time > max_time * 0.2 && time < max_time * 0.40){
         current_flicker_time = Random.Range(15f, 30f);
+        }
+        else{
+            current_flicker_time = Random.Range(0.5f, 1f);
+        }
         //flicker_time += 0.05f;
         
         lightOn.SetActive(false);
