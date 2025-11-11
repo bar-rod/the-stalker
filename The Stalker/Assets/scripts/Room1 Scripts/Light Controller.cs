@@ -83,8 +83,9 @@ public class LightController : MonoBehaviour, Iinteractable
             player_turn_off = true;
             turnLightsOff();
         }
-
-
+    }
+    public void CloseUI(Collider2D collider){
+     return;
     }
     // determines if light will turn off by getting a random int between 0 and the current time and checking if the random number 
     // is less than .1% of the max time. 
@@ -153,9 +154,4 @@ public class LightController : MonoBehaviour, Iinteractable
         isOf = true;
     }
 
-    public void CloseUI(Collider2D collider)
-    {
-        //Do nothing
-        return;
-    }
 }

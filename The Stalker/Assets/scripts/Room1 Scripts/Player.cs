@@ -104,12 +104,16 @@ public class Player : MonoBehaviour
         {
             interactableObject.Interact(_touchedObject);
             if (_touchedObject.gameObject.GetComponent<Item>() != null) return;
+            if(_touchedObject.tag == "Canvas Interactable"){
             _interactableOpened = true;
+            }
         }
         else if (_playerTouchingInteractable == true && _interactableOpened == true)
         {
             interactableObject.CloseUI(_touchedObject);
+            if(_touchedObject.tag == "Canvas Interactable"){
             _interactableOpened = false;
+            }
         }
     }
     private void OnInventory(InputAction.CallbackContext context)

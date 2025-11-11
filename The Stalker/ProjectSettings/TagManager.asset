@@ -10,6 +10,8 @@ TagManager:
   - Clue
   - bed
   - Spawn
+  - Canvas Interactable
+  - Interactable
   layers:
   - Default
   - TransparentFX
