@@ -15,5 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/FINAL room 1.unity
     guid: 4719f358ddc9f4208809dbec01fcf946
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 0d7749e8db1d71f438966e1513f49ee1, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

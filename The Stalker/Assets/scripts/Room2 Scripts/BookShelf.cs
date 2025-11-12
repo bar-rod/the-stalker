@@ -1,12 +1,17 @@
 using System;
+using System.Linq;
+using Unity.VisualScripting;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class Book : MonoBehaviour
 {
     private bool isSolutionBook;
-    private UnityEngine.UI.Toggle isSelected;
+    private UnityEngine.UI.Toggle isSelected; // TODO: Learn prefabs
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,20 +23,22 @@ public class Book : MonoBehaviour
     {
         
     }
-}
+};
 
 public class BookShelf : MonoBehaviour
 {
-    // 2D array.
-    
-
-    Array shelves = Array.CreateInstance(typeof(Array), 3);
+    // load pngs stored at Assets/art assets/room2artassets/books into an array
+    private Array pngs;
+    private Array allBooks;
+    private Array shelves;
+    private const int totalShelves = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //int bookCount = get
-        Array allBooks = Array.CreateInstance(typeof(Book), 5);
+        pngs = Addressables.LoadAssetsAsync<Array>("Assets/art assets/room2artassets/books").WaitForCompletion().ToArrayPooled();
+        allBooks = Array.CreateInstance(typeof(Book), pngs.Length);
+        shelves = Array.CreateInstance(typeof(Book), totalShelves);
     }
 
     // Update is called once per frame
@@ -39,4 +46,4 @@ public class BookShelf : MonoBehaviour
     {
         
     }
-}
+};
