@@ -11,6 +11,7 @@ public class LightController : MonoBehaviour, Iinteractable
 
     [SerializeField] private GameObject lightOff;
     [SerializeField] private GameObject lightOn;
+    [SerializeField] private Animator _animator;
 
     [SerializeField] public Light2D SpotLight2D;
     [SerializeField] public Light2D GlobaLight2D;
@@ -134,6 +135,7 @@ public class LightController : MonoBehaviour, Iinteractable
         
         lightOff.SetActive(false);
         lightOn.SetActive(true);
+        _animator.SetBool("isOn", true);
     }
     //turns the lights off
     private void turnLightsOff()
@@ -150,6 +152,7 @@ public class LightController : MonoBehaviour, Iinteractable
         
         lightOn.SetActive(false);
         lightOff.SetActive(true);
+        _animator.SetBool("isOn", false);
 
         isOf = true;
     }

@@ -153,81 +153,81 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (this.transform.position.y < _bedCollider.transform.position.y)
+        if (this.transform.position.y > _bedCollider.transform.position.y)
         {
-            //_bedCollider.SetActive(false);
-            _sprite.sortingOrder = 6;
+            _bedCollider.SetActive(false);
+            _sprite.sortingOrder = 4;
         }
         else
         {
-            //_bedCollider.SetActive(true);
+            _bedCollider.SetActive(true);
             _sprite.sortingOrder = 5;
         }
 
-        if(waitingToChange)
-        {
-            exitTimer += Time.deltaTime; 
-            Debug.Log(exitTimer);
-            
-            if (exitTimer >= 1f)
-            {
-                Vector2 currentSize = _collider.size;
-                currentY = _collider.offset;
-                Vector2 newHeight = new Vector2(currentY.x, 0.067f);
-                Vector2 newSize = new Vector2(currentSize.x, 9.38f);
-                _collider.size = newSize;
-                _collider.offset = newHeight;
-                exitTimer = 0f;
-            }
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("bed"))
-        {
-            waitingToChange = false;
-
-            Vector2 currentSize = _collider.size;
-            currentY = _collider.offset;
-            Vector2 newHeight = new Vector2(currentY.x, -3.25f);
-            Vector2 newSize = new Vector2(currentSize.x, 2.8f); //2.8
-            _collider.size = newSize;
-            _collider.offset = newHeight;
-
-            
-        }
-        // else
+        // if(waitingToChange)
         // {
-        //     Vector2 currentSize = _collider.size;
-        //     currentY = _collider.offset;
-        //     Vector2 newHeight = new Vector2(currentY.x, 0.067f);
-        //     Vector2 newSize = new Vector2(currentSize.x, 9.38f);
-        //     _collider.size = newSize;
-        //     _collider.offset = newHeight;
+        //     exitTimer += Time.deltaTime; 
+        //     Debug.Log(exitTimer);
+            
+        //     if (exitTimer >= 1f)
+        //     {
+        //         Vector2 currentSize = _collider.size;
+        //         currentY = _collider.offset;
+        //         Vector2 newHeight = new Vector2(currentY.x, 0.067f);
+        //         Vector2 newSize = new Vector2(currentSize.x, 9.38f);
+        //         _collider.size = newSize;
+        //         _collider.offset = newHeight;
+        //         exitTimer = 0f;
+        //     }
         // }
-
     }
+
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.CompareTag("bed"))
+    //     {
+    //         waitingToChange = false;
+
+    //         Vector2 currentSize = _collider.size;
+    //         currentY = _collider.offset;
+    //         Vector2 newHeight = new Vector2(currentY.x, -3.25f);
+    //         Vector2 newSize = new Vector2(currentSize.x, 2.8f); //2.8
+    //         _collider.size = newSize;
+    //         _collider.offset = newHeight;
+
+            
+    //     }
+    //     // else
+    //     // {
+    //     //     Vector2 currentSize = _collider.size;
+    //     //     currentY = _collider.offset;
+    //     //     Vector2 newHeight = new Vector2(currentY.x, 0.067f);
+    //     //     Vector2 newSize = new Vector2(currentSize.x, 9.38f);
+    //     //     _collider.size = newSize;
+    //     //     _collider.offset = newHeight;
+    //     // }
+
+    // }
     
-    void OnCollisionExit2D(Collision2D other)
-    {
-       if (other.gameObject.CompareTag("bed"))
-        {
-            waitingToChange = true;
+    // void OnCollisionExit2D(Collision2D other)
+    // {
+    //    if (other.gameObject.CompareTag("bed"))
+    //     {
+    //         waitingToChange = true;
             
 
-            // if (exitTimer >= 1f)
-            // {
-            //     Vector2 currentSize = _collider.size;
-            //     currentY = _collider.offset;
-            //     Vector2 newHeight = new Vector2(currentY.x, 0.067f);
-            //     Vector2 newSize = new Vector2(currentSize.x, 9.38f);
-            //     _collider.size = newSize;
-            //     _collider.offset = newHeight;
-            //     exitTimer = 0f;
-            // }
-        }
-    }
+    //         // if (exitTimer >= 1f)
+    //         // {
+    //         //     Vector2 currentSize = _collider.size;
+    //         //     currentY = _collider.offset;
+    //         //     Vector2 newHeight = new Vector2(currentY.x, 0.067f);
+    //         //     Vector2 newSize = new Vector2(currentSize.x, 9.38f);
+    //         //     _collider.size = newSize;
+    //         //     _collider.offset = newHeight;
+    //         //     exitTimer = 0f;
+    //         // }
+    //     }
+    // }
 
     
 }
