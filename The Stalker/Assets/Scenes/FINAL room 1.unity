@@ -680,7 +680,6 @@ GameObject:
   - component: {fileID: 164977646}
   - component: {fileID: 164977649}
   - component: {fileID: 164977648}
-  - component: {fileID: 164977647}
   m_Layer: 5
   m_Name: Paper (15)
   m_TagString: Untagged
@@ -704,22 +703,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -188, y: -13}
+  m_AnchoredPosition: {x: -112, y: 163}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &164977647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164977645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &164977648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,7 +1362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 179, y: 103}
+  m_AnchoredPosition: {x: 213, y: -62}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223023040
@@ -1441,7 +1427,6 @@ GameObject:
   - component: {fileID: 276125200}
   - component: {fileID: 276125203}
   - component: {fileID: 276125202}
-  - component: {fileID: 276125201}
   m_Layer: 5
   m_Name: Paper (13)
   m_TagString: Untagged
@@ -1465,22 +1450,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 195, y: 103}
+  m_AnchoredPosition: {x: -152, y: 58}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &276125201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276125199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &276125202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1666,7 +1638,6 @@ GameObject:
   - component: {fileID: 316742494}
   - component: {fileID: 316742497}
   - component: {fileID: 316742496}
-  - component: {fileID: 316742495}
   m_Layer: 5
   m_Name: Paper (14)
   m_TagString: Untagged
@@ -1690,22 +1661,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 207, y: 103}
+  m_AnchoredPosition: {x: -130, y: 128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &316742495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316742493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &316742496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2710,7 +2668,6 @@ GameObject:
   - component: {fileID: 499997121}
   - component: {fileID: 499997124}
   - component: {fileID: 499997123}
-  - component: {fileID: 499997122}
   m_Layer: 5
   m_Name: Paper (12)
   m_TagString: Untagged
@@ -2734,22 +2691,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211, y: 103}
+  m_AnchoredPosition: {x: -143, y: 82}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &499997122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499997120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &499997123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2823,7 +2767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 146, y: 103}
+  m_AnchoredPosition: {x: 199, y: 60}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &507134830
@@ -3142,7 +3086,6 @@ GameObject:
   - component: {fileID: 608550086}
   - component: {fileID: 608550089}
   - component: {fileID: 608550088}
-  - component: {fileID: 608550087}
   m_Layer: 5
   m_Name: Paper (10)
   m_TagString: Untagged
@@ -3166,22 +3109,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 188, y: 103}
+  m_AnchoredPosition: {x: -126, y: 33}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &608550087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608550085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &608550088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3522,7 +3452,6 @@ GameObject:
   - component: {fileID: 686494282}
   - component: {fileID: 686494285}
   - component: {fileID: 686494284}
-  - component: {fileID: 686494283}
   m_Layer: 5
   m_Name: Paper (4)
   m_TagString: Untagged
@@ -3546,22 +3475,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 199, y: 103}
+  m_AnchoredPosition: {x: -147, y: 120}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &686494283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686494281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &686494284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3611,7 +3527,6 @@ GameObject:
   - component: {fileID: 695039768}
   - component: {fileID: 695039771}
   - component: {fileID: 695039770}
-  - component: {fileID: 695039769}
   m_Layer: 5
   m_Name: Paper (1)
   m_TagString: Untagged
@@ -3635,22 +3550,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 228, y: 103}
+  m_AnchoredPosition: {x: -121, y: 163}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &695039769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695039767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &695039770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4142,7 +4044,6 @@ GameObject:
   - component: {fileID: 829231581}
   - component: {fileID: 829231584}
   - component: {fileID: 829231583}
-  - component: {fileID: 829231582}
   m_Layer: 5
   m_Name: Paper (5)
   m_TagString: Untagged
@@ -4166,22 +4067,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139, y: 103}
+  m_AnchoredPosition: {x: -120, y: 145}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &829231582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829231580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &829231583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5310,7 +5198,6 @@ GameObject:
   - component: {fileID: 1043755130}
   - component: {fileID: 1043755133}
   - component: {fileID: 1043755132}
-  - component: {fileID: 1043755131}
   m_Layer: 5
   m_Name: Paper (16)
   m_TagString: Untagged
@@ -5334,22 +5221,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: -101}
+  m_AnchoredPosition: {x: -130, y: 110}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1043755131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043755129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &1043755132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5399,7 +5273,6 @@ GameObject:
   - component: {fileID: 1046766504}
   - component: {fileID: 1046766507}
   - component: {fileID: 1046766506}
-  - component: {fileID: 1046766505}
   m_Layer: 5
   m_Name: Paper (11)
   m_TagString: Untagged
@@ -5423,22 +5296,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 209, y: 103}
+  m_AnchoredPosition: {x: -142, y: 53}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1046766505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046766503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &1046766506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5617,7 +5477,6 @@ GameObject:
   - component: {fileID: 1100505560}
   - component: {fileID: 1100505563}
   - component: {fileID: 1100505562}
-  - component: {fileID: 1100505561}
   m_Layer: 5
   m_Name: Paper (17)
   m_TagString: Untagged
@@ -5641,22 +5500,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -183, y: -120}
+  m_AnchoredPosition: {x: -107, y: 157}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1100505561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100505559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &1100505562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7520,7 +7366,6 @@ GameObject:
   - component: {fileID: 1498959589}
   - component: {fileID: 1498959592}
   - component: {fileID: 1498959591}
-  - component: {fileID: 1498959590}
   m_Layer: 5
   m_Name: Paper (18)
   m_TagString: Untagged
@@ -7544,22 +7389,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -286, y: -126}
+  m_AnchoredPosition: {x: -135, y: 122}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1498959590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498959588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &1498959591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8399,7 +8231,6 @@ GameObject:
   - component: {fileID: 1766726195}
   - component: {fileID: 1766726198}
   - component: {fileID: 1766726197}
-  - component: {fileID: 1766726196}
   m_Layer: 5
   m_Name: Paper (8)
   m_TagString: Untagged
@@ -8423,22 +8254,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 158, y: 103}
+  m_AnchoredPosition: {x: -161, y: 61}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1766726196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766726194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!114 &1766726197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9004,7 +8822,6 @@ GameObject:
   - component: {fileID: 1869379627}
   - component: {fileID: 1869379629}
   - component: {fileID: 1869379628}
-  - component: {fileID: 1869379630}
   m_Layer: 5
   m_Name: Paper
   m_TagString: Untagged
@@ -9028,7 +8845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: 103}
+  m_AnchoredPosition: {x: -133, y: 165}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1869379628
@@ -9069,19 +8886,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869379626}
   m_CullTransparentMesh: 1
---- !u!114 &1869379630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869379626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c0dae2752368408d09255bb2e125c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PaperClueBoard
-  canvas: {fileID: 1087230586}
 --- !u!1 &1884777264
 GameObject:
   m_ObjectHideFlags: 0
@@ -9117,7 +8921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 236, y: 103}
+  m_AnchoredPosition: {x: 318, y: -134}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884777266
@@ -9206,7 +9010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 137, y: 103}
+  m_AnchoredPosition: {x: -12, y: -154}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1957311977
@@ -9755,7 +9559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: 103}
+  m_AnchoredPosition: {x: 148, y: -145}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105547813
