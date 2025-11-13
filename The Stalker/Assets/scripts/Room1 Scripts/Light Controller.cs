@@ -69,7 +69,7 @@ public class LightController : MonoBehaviour, Iinteractable
     public void Interact(Collider2D collider)
     {
         Debug.Log("Called Interact() from LightController");
-        if (isOf == true)
+        if (isOf == true && time < max_time * 0.40 )
         {
             Debug.Log("Light Switch turned on");
             if (!player_turn_off)
@@ -78,7 +78,7 @@ public class LightController : MonoBehaviour, Iinteractable
             }
             turnLightsOn();
         }
-        else if (isOf == false)
+        else if (isOf == false && time < max_time * 0.40)
         {
             Debug.Log("Light Switch turned off");
             player_turn_off = true;
@@ -93,7 +93,7 @@ public class LightController : MonoBehaviour, Iinteractable
     // The chance of the light turing off will increase as time decreases.
     public void randomFlicker(float time, float max_time)
     {
-        float threshold = max_time * 0.004f;
+        float threshold = max_time * 0.001f;
         float randInt;
         if (time < 0.2 * max_time)
         {
