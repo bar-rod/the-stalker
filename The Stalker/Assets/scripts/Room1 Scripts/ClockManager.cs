@@ -5,6 +5,7 @@ public class ClockManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private TrapDoor _trapDoor;
+    [SerializeField] private Collider2D _collider;
 
     [Header("Hand References")]
     public DraggableClockRoot minuteHand;
@@ -48,6 +49,8 @@ public class ClockManager : MonoBehaviour
             _trapDoor.SetMovingTrue();
             
             onBothHandsCorrect?.Invoke();
+
+            _collider.enabled = false;
         }
         else
         {
