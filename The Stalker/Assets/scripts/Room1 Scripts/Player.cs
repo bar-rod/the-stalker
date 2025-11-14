@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject _bedCollider;
     [SerializeField] CapsuleCollider2D _collider;
+    [SerializeField] private Collider2D _collider4;
     Vector2 currentY;
     private bool waitingToChange;
     private float exitTimer = 0f;
@@ -174,12 +175,14 @@ public class Player : MonoBehaviour
         if (this.transform.position.y > _bedCollider.transform.position.y)
         {
             _bedCollider.SetActive(false);
+            _collider4.enabled = true;
             _sprite.sortingOrder = 4;
         }
         else
         {
             _bedCollider.SetActive(true);
-            _sprite.sortingOrder = 5;
+            _collider4.enabled = false;
+            _sprite.sortingOrder = 6;
         }
 
         // if(waitingToChange)
