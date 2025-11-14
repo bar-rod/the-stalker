@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     private Collider2D _touchedObject;
     [SerializeField] private bool _interactableOpened;
     private Iinteractable interactableObject;
+    private ObjectOutline _outline;
 
     private InputActionMap actionMap;
     private InputAction moveAction;
@@ -126,15 +127,28 @@ public class Player : MonoBehaviour
         //Getting the Iinteractable component, because both Item and InteractableUI implements Iinteractable interface
         //and will allow us to use the same method from different scripts depending on what was collided with
         interactableObject = collision.GetComponent<Iinteractable>();
+        _outline = collision.GetComponentInChildren<ObjectOutline>();
+
+        if (_outline)
+        {
+            _outline.SetOutlineActive();
+            Debug.Log("Successfully Get outline");
+        }
+
         Debug.Log($"collided with {collision.name}");
         _touchedObject = collision;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
+        if (_outline)
+        {
+            _outline.SetOutlineInactive();
+        }
         _playerTouchingInteractable = false;
         interactableObject = null;
         _touchedObject = null;
+        
     }
     public void ToggleInventory()
     {
