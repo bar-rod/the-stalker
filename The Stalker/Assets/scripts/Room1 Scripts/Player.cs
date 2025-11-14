@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject inventory;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _sprite;
+    [SerializeField] private AudioSource _walkingSound;
 
     [SerializeField] GameObject _bedCollider;
     [SerializeField] CapsuleCollider2D _collider;
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
     private InputAction moveAction;
     private InputAction interactAction;
     private InputAction inventoryAction;
+    
 
 
     private ChainConstraint chain;
@@ -91,10 +93,12 @@ public class Player : MonoBehaviour
         {
             _animator.SetBool("isWalking", true);
             _sprite.flipX = currentMoveInput[0] > 0f;
+            _walkingSound.Play();
         } 
         else
         {
             _animator.SetBool("isWalking", false);
+            _walkingSound.Stop();
         }
     }
 

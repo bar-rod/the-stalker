@@ -6,6 +6,7 @@ public class PaperClueBoard : MonoBehaviour,
 IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] private Canvas canvas;
+    [SerializeField] private AudioSource _paperSound;
     private RectTransform rectTransform;
 
     private void Awake()
@@ -35,7 +36,7 @@ IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
     
     public void OnPointerDown(PointerEventData eventData)
     {
-       // Debug.Log("OnPointerDown");
+       _paperSound.Play();
     }
 
     // If this breaks, it's probably tag related or you changed a gameobject name
