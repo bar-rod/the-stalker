@@ -13,7 +13,6 @@ TagManager:
   - Canvas Interactable
   - Interactable
   - Outline
-  - foot
   layers:
   - Default
   - TransparentFX
