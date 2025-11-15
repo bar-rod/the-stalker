@@ -174,14 +174,14 @@ public class Player : MonoBehaviour
     {
         if (this.transform.position.y > _bedCollider.transform.position.y)
         {
-            _bedCollider.SetActive(false);
-            _collider4.enabled = true;
+            //_bedCollider.SetActive(false);
+            //_collider4.enabled = true;
             _sprite.sortingOrder = 4;
         }
         else
         {
-            _bedCollider.SetActive(true);
-            _collider4.enabled = false;
+            //_bedCollider.SetActive(true);
+            //_collider4.enabled = false;
             _sprite.sortingOrder = 6;
         }
 
