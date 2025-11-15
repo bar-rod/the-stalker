@@ -23,6 +23,7 @@ public class LightController : MonoBehaviour, Iinteractable
     private float game_over_timer = 20f;
     private bool player_turn_off;
 
+
     void Start()
     {
         max_time = timer.time;
