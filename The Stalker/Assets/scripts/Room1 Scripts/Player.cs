@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     Vector2 currentY;
     private bool waitingToChange;
     private float exitTimer = 0f;
+    private bool hitBedFramFoot = false;
 
 
     private bool clicking = false;
@@ -142,6 +143,11 @@ public class Player : MonoBehaviour
 
         Debug.Log($"collided with {collision.name}");
         _touchedObject = collision;
+
+        if(collision.gameObject.CompareTag("foot"))
+        {
+            hitBedFramFoot = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -153,6 +159,11 @@ public class Player : MonoBehaviour
         _playerTouchingInteractable = false;
         interactableObject = null;
         _touchedObject = null;
+
+        if(collision.gameObject.CompareTag("foot"))
+        {
+            hitBedFramFoot = false;
+        }
         
     }
     public void ToggleInventory()
@@ -169,20 +180,42 @@ public class Player : MonoBehaviour
         }
     }
 
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if(other.gameObject.CompareTag("foot"))
+    //     {
+    //         hitBedFramFoot = true;
+    //     }
+    // }
+
+    // void OnCollisionExit2D(Collision2D other)
+    // {
+    //     if(other.gameObject.CompareTag("foot"))
+    //     {
+    //         hitBedFramFoot = false;
+    //     }
+    // }
+
 
     void Update()
     {
-        if (this.transform.position.y > _bedCollider.transform.position.y)
+        if (this.transform.position.y > _bedCollider.transform.localPosition.y)
         {
-            _bedCollider.SetActive(false);
-            _collider4.enabled = true;
-            _sprite.sortingOrder = 4;
+            //_bedCollider.SetActive(false);
+            //_collider4.enabled = false;
+            if(!hitBedFramFoot)
+            {
+                _sprite.sortingOrder = 4;
+            }
         }
         else
         {
-            _bedCollider.SetActive(true);
-            _collider4.enabled = false;
-            _sprite.sortingOrder = 6;
+            //_bedCollider.SetActive(true);
+            //_collider4.enabled = true;
+            if(!hitBedFramFoot)
+            {
+                _sprite.sortingOrder = 6;
+            }
         }
 
         // if(waitingToChange)
