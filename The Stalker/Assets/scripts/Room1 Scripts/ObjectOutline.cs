@@ -32,20 +32,4 @@ public class ObjectOutline : MonoBehaviour
         }
         _spriteRenderer.enabled = false;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            SetOutlineActive();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            SetOutlineInactive();
-        }
-    }
 }
