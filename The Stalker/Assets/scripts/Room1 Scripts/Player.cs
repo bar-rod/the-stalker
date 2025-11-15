@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     private Iinteractable interactableObject;
     private ObjectOutline _outline;
 
+//
     private InputActionMap actionMap;
     private InputAction moveAction;
     private InputAction interactAction;
@@ -134,12 +135,18 @@ public class Player : MonoBehaviour
         //and will allow us to use the same method from different scripts depending on what was collided with
         interactableObject = collision.GetComponent<Iinteractable>();
         _outline = collision.GetComponentInChildren<ObjectOutline>();
+        //_outline = collision.GetComponentInChildren<ObjectOutline>();
 
         if (_outline)
         {
             _outline.SetOutlineActive();
             Debug.Log("Successfully Get outline");
         }
+        //if (_outline)
+        //{
+            //_outline.SetOutlineActive();
+            //Debug.Log("Successfully Get outline");
+        //}
 
         Debug.Log($"collided with {collision.name}");
         _touchedObject = collision;
@@ -156,6 +163,10 @@ public class Player : MonoBehaviour
         {
             _outline.SetOutlineInactive();
         }
+        //if (_outline)
+        //{
+           // _outline.SetOutlineInactive();
+        //}
         _playerTouchingInteractable = false;
         interactableObject = null;
         _touchedObject = null;
