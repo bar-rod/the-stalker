@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     private bool hasChangedAudio = false; 
     private bool _track1isPlaying;
 
-    private float time = 20f;
+    private float time = 300f;
     public void TurnOffClockCanvas()
     {
         clock.SetActive(false);
@@ -22,49 +23,65 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
         _track1isPlaying = true;
         ChangeAudio(_bgClip);
-
-        // _bgNormal.clip = _bgClip;
-        // _bgNormal.loop = true;
-        // _bgNormal.Play();
     }
 
     private void ChangeAudio(AudioClip newClip)
     {
-        if (!hasChangedAudio)
+        StopAllCoroutines();
+        StartCoroutine(FadeTrack(newClip));
+
+        _track1isPlaying = !_track1isPlaying;
+    }
+
+    //fades between the two audios
+    private IEnumerator FadeTrack(AudioClip newClip)
+    {
+        float timeToFade = 10f;
+        float timeElapsed = 0;
+
+        if (_track1isPlaying)
         {
-            hasChangedAudio = true;
-            if (_track1isPlaying)
-            {
             _secondTrack.clip = newClip;
             _secondTrack.Play();
+
+            while (timeElapsed < timeToFade)
+                {
+                    _secondTrack.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
+                    _firstTrack.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
+                    timeElapsed += Time.deltaTime;
+                    yield return null;
+                }
+
             _firstTrack.Stop();
-            }
-            else
-            {
+        }
+        else
+        {
             _firstTrack.clip = newClip;
             _firstTrack.Play();
+
+            while (timeElapsed < timeToFade)
+                {
+                    _firstTrack.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
+                    _secondTrack.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
+                    timeElapsed += Time.deltaTime;
+                    yield return null;
+                }
+
             _secondTrack.Stop();
-            }
-    
-            _track1isPlaying = !_track1isPlaying;
         }
-        
-
-
-        // _bgNormal.clip = _bgClipFast;
-        // _bgNormal.loop = true;
-        // _bgNormal.Play();
     }
 
     void Update()
     {
-        if(!hasChangedAudio && _time.time <= time * 0.3f)
+        if(_time.time <= time * 0.3f)
         {
-            hasChangedAudio = false;
-            ChangeAudio(_bgClipFast);
+            if (!hasChangedAudio)
+            {
+                hasChangedAudio = true;
+                ChangeAudio(_bgClipFast);
+            }
             
         }
     }
