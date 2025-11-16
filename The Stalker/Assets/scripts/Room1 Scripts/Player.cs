@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private Vector2 filteredInput;
     private bool _playerTouchingInteractable;
     private Collider2D _touchedObject;
-    [SerializeField] private bool _interactableOpened;
+    [SerializeField] public bool _interactableOpened;
     private Iinteractable interactableObject;
     private ObjectOutline _outline;
 
