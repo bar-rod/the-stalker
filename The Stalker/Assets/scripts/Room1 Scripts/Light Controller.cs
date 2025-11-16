@@ -15,6 +15,7 @@ public class LightController : MonoBehaviour, Iinteractable
     [SerializeField] private GameOver gameOver;
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _flickerSound;
+    [SerializeField] private AudioSource _switchSound;
 
     [SerializeField] public Light2D SpotLight2D;
     [SerializeField] public Light2D GlobaLight2D;
@@ -73,6 +74,7 @@ public class LightController : MonoBehaviour, Iinteractable
     //turns light on and off
     public void Interact(Collider2D collider)
     {
+        _switchSound.Play();
         Debug.Log("Called Interact() from LightController");
         if (isOf == true && time < max_time * 0.40 )
         {
