@@ -7,12 +7,14 @@ public class LightController : MonoBehaviour, Iinteractable
     public float time;
     public Timer timer;
     [SerializeField] public float current_flicker_time;
+
     private bool isOf;
 
     [SerializeField] private GameObject lightOff;
     [SerializeField] private GameObject lightOn;
     [SerializeField] private GameOver gameOver;
     [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _flickerSound;
 
     [SerializeField] public Light2D SpotLight2D;
     [SerializeField] public Light2D GlobaLight2D;
@@ -28,6 +30,7 @@ public class LightController : MonoBehaviour, Iinteractable
     void Start()
     {
         max_time = timer.time;
+        _flickerSound.Play();
 
         //timer = GetComponentInParent<Timer>();
     }
@@ -138,6 +141,7 @@ public class LightController : MonoBehaviour, Iinteractable
         lightOff.SetActive(false);
         lightOn.SetActive(true);
         _animator.SetBool("isOn", true);
+        _flickerSound.Play();
     }
     //turns the lights off
     private void turnLightsOff()
@@ -155,6 +159,7 @@ public class LightController : MonoBehaviour, Iinteractable
         lightOn.SetActive(false);
         lightOff.SetActive(true);
         _animator.SetBool("isOn", false);
+        _flickerSound.Stop();
 
         isOf = true;
     }
