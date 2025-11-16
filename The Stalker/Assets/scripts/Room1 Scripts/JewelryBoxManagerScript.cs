@@ -9,6 +9,10 @@ public class JewelryBoxManagerScript : MonoBehaviour
     public Transform locationPool;
 
     [SerializeField] private GameObject _pocketWatch;
+    [SerializeField] private Sprite _openBoxSprite;
+
+    private SpriteRenderer _spriterenderer;
+    private GameObject box_instance;
 
     void Start()
     {
@@ -42,6 +46,17 @@ public class JewelryBoxManagerScript : MonoBehaviour
         int randomIndex = Random.Range(0, childCount);
         Transform spawnPoint = locationPool.GetChild(randomIndex);
 
-        Instantiate(jewelryBoxPrefab, spawnPoint.position, spawnPoint.rotation);
+        box_instance = Instantiate(jewelryBoxPrefab, spawnPoint.position, spawnPoint.rotation);
+        _pocketWatch.transform.position = spawnPoint.position;
+        _pocketWatch.transform.rotation = spawnPoint.rotation;
+    }
+
+    void FixedUpdate()
+    {
+        if (!_pocketWatch.activeInHierarchy)
+        {
+            _spriterenderer = box_instance.GetComponent<SpriteRenderer>();
+            _spriterenderer.sprite = _openBoxSprite;
+        }
     }
 }
