@@ -9,6 +9,7 @@ public class Item : MonoBehaviour, Iinteractable
     public string description;
     public int id;
     public bool initiallyActive;
+    
    
     void Start()
     {
