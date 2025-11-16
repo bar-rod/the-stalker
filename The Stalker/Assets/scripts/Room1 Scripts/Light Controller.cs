@@ -11,6 +11,7 @@ public class LightController : MonoBehaviour, Iinteractable
 
     [SerializeField] private GameObject lightOff;
     [SerializeField] private GameObject lightOn;
+    [SerializeField] private GameOver gameOver;
     [SerializeField] private Animator _animator;
 
     [SerializeField] public Light2D SpotLight2D;
@@ -61,7 +62,7 @@ public class LightController : MonoBehaviour, Iinteractable
         //if player has been in the dark for more than 20 seconds than its game over
         if (game_over_timer <= 0)
         {
-            gameObject.GetComponentInParent<GameOver>().ActivateGameOver();
+            gameOver.ActivateGameOver();
 
         }
         cooldown -= Time.deltaTime;
