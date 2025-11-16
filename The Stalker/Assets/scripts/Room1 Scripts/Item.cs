@@ -9,18 +9,23 @@ public class Item : MonoBehaviour, Iinteractable
     public string description;
     public int id;
     public bool initiallyActive;
-    
+
+    private AudioSource _collectSound;
+
    
     void Start()
     {
         if (initiallyActive) gameObject.SetActive(true);
         GetComponent<SpriteRenderer>().sprite = itemSprite;
+
+        _collectSound = GetComponent<AudioSource>();
     }
 
     //equivalence of pick up basically
     public void Interact(Collider2D other)
     {
         Debug.Log("Called Interact() from Item");
+        _collectSound.Play();
         gameObject.SetActive(false);
         Inventory inventory = FindFirstObjectByType<Inventory>();
         if (inventory != null)
