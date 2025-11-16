@@ -8,6 +8,8 @@ public class JewelryBoxManagerScript : MonoBehaviour
     [Tooltip("Assign the Location Pool (empty GameObject named 'Locations').")]
     public Transform locationPool;
 
+    [SerializeField] private GameObject _pocketWatch;
+
     void Start()
     {
         if (jewelryBoxPrefab == null)
