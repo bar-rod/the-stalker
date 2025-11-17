@@ -13,6 +13,7 @@ TagManager:
   - Canvas Interactable
   - Interactable
   - Outline
+  - book
   layers:
   - Default
   - TransparentFX

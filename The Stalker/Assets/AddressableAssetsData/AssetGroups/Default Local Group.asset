@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Default Local Group
   m_GUID: bc9e5ece1cfa34f47875f0b1f0fe4543
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 0cb7a72f7cca8e04f9cdb9d4a00f1095
+    m_Address: Assets/art assets/room2artassets/Pulled Bookshelf.PNG
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9d0d9884ee192ed4cb6bab8ec865984f, type: 2}
   m_SchemaSet:

@@ -1,49 +1,44 @@
 using System;
-using System.Linq;
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class Book : MonoBehaviour
-{
-    private bool isSolutionBook;
-    private UnityEngine.UI.Toggle isSelected; // TODO: Learn prefabs
+// If this throws errors, something is null
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-};
-
+// Makes toggle invisible when not clicked, and visible when clicked
 public class BookShelf : MonoBehaviour
 {
-    // load pngs stored at Assets/art assets/room2artassets/books into an array
-    private Array pngs;
-    private Array allBooks;
-    private Array shelves;
-    private const int totalShelves = 3;
+    public CanvasGroup canvasGroup;
+    public UnityEngine.UI.Toggle toggle;
+    [SerializeField] public Boolean isSolutionBook = false;    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pngs = Addressables.LoadAssetsAsync<Array>("Assets/art assets/room2artassets/books").WaitForCompletion().ToArrayPooled();
-        allBooks = Array.CreateInstance(typeof(Book), pngs.Length);
-        shelves = Array.CreateInstance(typeof(Book), totalShelves);
+        // assign canvasGroup and toggle if not assigned in inspector
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
+        
+        if (toggle == null)
+            toggle = GetComponent<UnityEngine.UI.Toggle>();
+
+        canvasGroup.alpha = 0f;
+
+        toggle.onValueChanged.AddListener(OnToggleValueChanged);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    // This highlights the book
+    private void OnToggleValueChanged(bool isOn)
+    {
+        canvasGroup.alpha = isOn ? 0.02f : 0f;
     }
 };

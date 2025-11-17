@@ -19,6 +19,11 @@ public class CarpetController : MonoBehaviour
         _creakingSound.Stop();
     }
 
+    public void SetSolved()
+    {
+               puzzleUnlocked = true;
+    }
+
     void FixedUpdate()
     {
         if (puzzleUnlocked)
