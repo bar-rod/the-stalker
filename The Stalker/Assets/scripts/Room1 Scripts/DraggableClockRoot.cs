@@ -21,6 +21,8 @@ public class DraggableClockRoot : MonoBehaviour, IPointerDownHandler, IDragHandl
     bool dragging;
     float grabAngleOffsetDegree;
 
+    [SerializeField] private AudioSource _tuningSound;
+
     void Awake()
     {
         handRoot = (RectTransform)transform;
@@ -56,6 +58,7 @@ public class DraggableClockRoot : MonoBehaviour, IPointerDownHandler, IDragHandl
             float handAngleFromTop = handRoot.localEulerAngles.z;
             grabAngleOffsetDegree = Mathf.DeltaAngle(pointerAngleFromTop, handAngleFromTop);
         }
+        _tuningSound.Play();
     }
 
     // While dragging, rotate the hand to follow the pointer
@@ -68,6 +71,7 @@ public class DraggableClockRoot : MonoBehaviour, IPointerDownHandler, IDragHandl
             float newHandAngle = pointerAngleFromTop + grabAngleOffsetDegree;
             handRoot.localRotation = Quaternion.Euler(0f, 0f, newHandAngle);
         }
+        
     }
 
     // End drag, snap to nearest minute, then fire event for ClockManager to check
@@ -84,6 +88,7 @@ public class DraggableClockRoot : MonoBehaviour, IPointerDownHandler, IDragHandl
             SetZRotationFromClockwise(snappedAngle);
         }
 
+        _tuningSound.Stop();
         // Fire event so ClockManager can check if both hands are correct
         onCorrectTime?.Invoke();
     }

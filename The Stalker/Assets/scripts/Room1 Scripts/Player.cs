@@ -13,9 +13,11 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject inventory;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _sprite;
+    [SerializeField] private AudioSource _walkingSound;
 
     [SerializeField] GameObject _bedCollider;
     [SerializeField] CapsuleCollider2D _collider;
+    [SerializeField] private Collider2D _collider4;
     Vector2 currentY;
     private bool waitingToChange;
     private float exitTimer = 0f;
@@ -28,13 +30,15 @@ public class Player : MonoBehaviour
     private Vector2 filteredInput;
     private bool _playerTouchingInteractable;
     private Collider2D _touchedObject;
-    [SerializeField] private bool _interactableOpened;
+    [SerializeField] public bool _interactableOpened;
     private Iinteractable interactableObject;
+    private ObjectOutline _outline;
 
     private InputActionMap actionMap;
     private InputAction moveAction;
     private InputAction interactAction;
     private InputAction inventoryAction;
+    
 
 
     private ChainConstraint chain;
@@ -90,10 +94,12 @@ public class Player : MonoBehaviour
         {
             _animator.SetBool("isWalking", true);
             _sprite.flipX = currentMoveInput[0] > 0f;
+            _walkingSound.Play();
         } 
         else
         {
             _animator.SetBool("isWalking", false);
+            _walkingSound.Stop();
         }
     }
 
@@ -126,15 +132,28 @@ public class Player : MonoBehaviour
         //Getting the Iinteractable component, because both Item and InteractableUI implements Iinteractable interface
         //and will allow us to use the same method from different scripts depending on what was collided with
         interactableObject = collision.GetComponent<Iinteractable>();
+        _outline = collision.GetComponentInChildren<ObjectOutline>();
+
+        if (_outline)
+        {
+            _outline.SetOutlineActive();
+            Debug.Log("Successfully Get outline");
+        }
+
         Debug.Log($"collided with {collision.name}");
         _touchedObject = collision;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
+        if (_outline)
+        {
+            _outline.SetOutlineInactive();
+        }
         _playerTouchingInteractable = false;
         interactableObject = null;
         _touchedObject = null;
+        
     }
     public void ToggleInventory()
     {
@@ -155,13 +174,15 @@ public class Player : MonoBehaviour
     {
         if (this.transform.position.y > _bedCollider.transform.position.y)
         {
-            _bedCollider.SetActive(false);
+            //_bedCollider.SetActive(false);
+            //_collider4.enabled = true;
             _sprite.sortingOrder = 4;
         }
         else
         {
-            _bedCollider.SetActive(true);
-            _sprite.sortingOrder = 5;
+            //_bedCollider.SetActive(true);
+            //_collider4.enabled = false;
+            _sprite.sortingOrder = 6;
         }
 
         // if(waitingToChange)

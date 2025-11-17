@@ -7,11 +7,15 @@ public class LightController : MonoBehaviour, Iinteractable
     public float time;
     public Timer timer;
     [SerializeField] public float current_flicker_time;
+
     private bool isOf;
 
     [SerializeField] private GameObject lightOff;
     [SerializeField] private GameObject lightOn;
+    [SerializeField] private GameOver gameOver;
     [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _flickerSound;
+    [SerializeField] private AudioSource _switchSound;
 
     [SerializeField] public Light2D SpotLight2D;
     [SerializeField] public Light2D GlobaLight2D;
@@ -23,9 +27,11 @@ public class LightController : MonoBehaviour, Iinteractable
     private float game_over_timer = 20f;
     private bool player_turn_off;
 
+
     void Start()
     {
         max_time = timer.time;
+        _flickerSound.Play();
 
         //timer = GetComponentInParent<Timer>();
     }
@@ -60,7 +66,7 @@ public class LightController : MonoBehaviour, Iinteractable
         //if player has been in the dark for more than 20 seconds than its game over
         if (game_over_timer <= 0)
         {
-            gameObject.GetComponentInParent<GameOver>().ActivateGameOver();
+            gameOver.ActivateGameOver();
 
         }
         cooldown -= Time.deltaTime;
@@ -68,6 +74,7 @@ public class LightController : MonoBehaviour, Iinteractable
     //turns light on and off
     public void Interact(Collider2D collider)
     {
+        _switchSound.Play();
         Debug.Log("Called Interact() from LightController");
         if (isOf == true && time < max_time * 0.40 )
         {
@@ -136,6 +143,7 @@ public class LightController : MonoBehaviour, Iinteractable
         lightOff.SetActive(false);
         lightOn.SetActive(true);
         _animator.SetBool("isOn", true);
+        _flickerSound.Play();
     }
     //turns the lights off
     private void turnLightsOff()
@@ -153,6 +161,7 @@ public class LightController : MonoBehaviour, Iinteractable
         lightOn.SetActive(false);
         lightOff.SetActive(true);
         _animator.SetBool("isOn", false);
+        _flickerSound.Stop();
 
         isOf = true;
     }
