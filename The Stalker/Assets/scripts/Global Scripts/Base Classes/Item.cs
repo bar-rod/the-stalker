@@ -11,7 +11,8 @@ public abstract class Item : MonoBehaviour
      */
 
     public string itemName; // the name displayed in the inventory
-    public Sprite itemSprite; // the icon displayed on the ground/in the inventory
+    public Sprite itemSprite; // the icon displayed
+    public Sprite itemSpriteInv; //the icon displayed in the inventory
     public string description; // the description displayed when hovered in the inventory
     public int id; // the ID of the item (needs to match puzzleInteractable where the item can be used. Use -1 if item is NOT used on a puzzleInteractable)
     public bool initiallyActive; // 'true' if the item should be active on scene load. 'false' if it should be hidden.

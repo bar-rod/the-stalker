@@ -45,7 +45,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (inventory.GetInventory().Count > SlotID)
         {
             item = inventory.GetInventory()[SlotID];
-            icon.sprite = item.itemSprite;
+            icon.sprite = item.itemSpriteInv;
             icon.enabled = true;
             text.text = item.name;
             hasItem = true;
