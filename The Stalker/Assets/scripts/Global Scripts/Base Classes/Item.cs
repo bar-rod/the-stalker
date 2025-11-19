@@ -9,7 +9,7 @@ public abstract class Item : MonoBehaviour
      *  Abstract base class for all items
      *  That is, anything the player can pick up and use later
      */
-
+    [SerializeField] public bool RemoveOnUse = true;
     public string itemName; // the name displayed in the inventory
     public Sprite itemSprite; // the icon displayed
     public Sprite itemSpriteInv; //the icon displayed in the inventory
@@ -62,5 +62,5 @@ public abstract class Item : MonoBehaviour
     // this is left ABSTRACT which means there is NO default behavior
     // you NEED to override it in your implementation
     // DO NOT remove the item from the inventory in this function; the inventory manager already handles it.
-    public abstract void UseItem();
+    public abstract bool UseItem();
 }
