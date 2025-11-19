@@ -8,4 +8,8 @@ public class ResetButton: MonoBehaviour
         Debug.Log("Restart");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name );
     }
+    public void Quit(){
+
+        Application.Quit();
+    }
 }

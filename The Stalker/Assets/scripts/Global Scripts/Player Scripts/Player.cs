@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     private InputAction moveAction;
     private InputAction interactAction;
     private InputAction inventoryAction;
-    
+    private float walkSpeed;
 
 
     private ChainConstraint chain;
@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
         moveAction = actionMap.FindAction("Move");
         interactAction = actionMap.FindAction("Interact");
         inventoryAction = actionMap.FindAction("Inventory");
+        walkSpeed=charSpeed;
     }
 
     private void OnEnable()
@@ -83,6 +84,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         Vector2 proposedVelocity = new Vector2(currentMoveInput.x * charSpeed, currentMoveInput.y * charSpeed);
         rb.linearVelocity = chain.FilterMovement(proposedVelocity) * charSpeed; // when chain is not enabled, FIlterMovement returns proposedVelocity with no modifications
     }
@@ -92,7 +94,7 @@ public class Player : MonoBehaviour
         currentMoveInput = ctx.ReadValue<Vector2>().normalized;
 
         //animation!! 
-        if (currentMoveInput != new Vector2(0,0))
+        if (currentMoveInput != new Vector2(0,0) && !_interactableOpened)
         {
             _animator.SetBool("isWalking", true);
             _sprite.flipX = currentMoveInput[0] > 0f;
@@ -164,6 +166,12 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        if(_interactableOpened){
+            charSpeed=0;
+        }
+        else{
+            charSpeed =walkSpeed;
+        }
         Scene currentScene = SceneManager.GetActiveScene();
         
         if(currentScene.name == "FINAL Room 1")
