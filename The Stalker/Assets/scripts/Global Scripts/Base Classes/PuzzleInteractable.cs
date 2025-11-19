@@ -4,17 +4,10 @@ using UnityEngine.Rendering;
 public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
 {
 
-    /*
-     *  This script might be super unhelpful tbh. I think we would need to create a subclass for each item, 
-     *  which seems like a lot of work. I just don't know the best way to create a function that can have
-     *  a bunch of different results without overriding a bunch of functions. Lmk if you can think of a way
-     *  and I'll implement it, but for now, this works, it just seems inefficient.
-     *  
-     *  ^^ SCRATCH THAT WE'RE USING INHERITANCE BABY YAHOO
-     *  
-     *  NOTE: THIS CLASS IS ABSTRACT, SO IT NEEDS TO BE SUBCLASSED TO WORK PROPERLY
-     *        LET ME (JACKSON) KNOW IF YOU NEED TO KNOW HOW TO OVERRIDE THE UseItem() FUNCTION
-     *        I ALSO MADE A TESTINTERACTABLE.cs THAT WORKS AS A TEMPLATE TO FOLLOW
+    /* 
+     * Abstract base class for any object that 
+     * 1. the player needs to interact with and 
+     * 2. needs an item to "solve"
      */
 
 
@@ -28,16 +21,25 @@ public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
         inventory = FindFirstObjectByType<InventoryManager>();
     }
 
+    // runs when the player presses 'e' the first time
+    // override this in your implementation
     public virtual void Interact(Collider2D other)
     {
-        //
+        Debug.Log("Interacted with " + this.gameObject);
     }
 
+
+    // runs when the player presses 'e' again to close the canvas popup
+    // shouldn't need to be overriden, but you can if you want
     public virtual void CloseUI(Collider2D other)
     {
-        //inventory.ItemUsedOnPuzzle = null; // IF SOMETHING LOOKS BROKEN ITS PROBABLY THIS
-        Debug.Log("ItemUsedOnPuzzle is null");
         player.ToggleInventory();
     }
-    public abstract void UseItem(Item item); // this gets overriden
+
+    // runs when the player clicks an item in their inventory
+    // this is left ABSTRACT which means there is NO default behavior
+    // you NEED to override it in your implementation
+
+    // in most cases, you will probably call item.UseItem()
+    public abstract void UseItem(Item item);
 }
