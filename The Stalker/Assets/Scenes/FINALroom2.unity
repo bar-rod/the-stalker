@@ -728,7 +728,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 4
-  emptySlotSprite: {fileID: -1357179908, guid: 25a0b97fbfedc7c44ad3db031922a78f, type: 3}
+  inventory: {fileID: 0}
+  icon: {fileID: 0}
+  text: {fileID: 0}
+  hasItem: 0
 --- !u!114 &305751954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,6 +1350,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   clock: {fileID: 0}
+  _bgClip: {fileID: 0}
+  _bgClipFast: {fileID: 0}
+  _firstTrack: {fileID: 0}
+  _secondTrack: {fileID: 0}
+  _lightControl: {fileID: 0}
+  _time: {fileID: 0}
 --- !u!4 &521847162
 Transform:
   m_ObjectHideFlags: 0
@@ -1489,7 +1498,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 3
-  emptySlotSprite: {fileID: -1357179908, guid: 25a0b97fbfedc7c44ad3db031922a78f, type: 3}
+  inventory: {fileID: 0}
+  icon: {fileID: 0}
+  text: {fileID: 0}
+  hasItem: 0
 --- !u!114 &617226630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,9 +2642,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   inputActions: {fileID: -944628639613478452, guid: f051a05a7a2a64fba83c75dfd3cbef54, type: 3}
   charSpeed: 2
-  inventory: {fileID: 872607387}
+  inventoryManager: {fileID: 0}
   _animator: {fileID: 1103569821}
   _sprite: {fileID: 1103569826}
+  _walkingSound: {fileID: 0}
   _bedCollider: {fileID: 0}
   _collider: {fileID: 1103569820}
   _interactableOpened: 0
@@ -2884,7 +2897,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 5
-  emptySlotSprite: {fileID: -1357179908, guid: 25a0b97fbfedc7c44ad3db031922a78f, type: 3}
+  inventory: {fileID: 0}
+  icon: {fileID: 0}
+  text: {fileID: 0}
+  hasItem: 0
 --- !u!114 &1321829268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2975,7 +2991,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 2
-  emptySlotSprite: {fileID: -1357179908, guid: 25a0b97fbfedc7c44ad3db031922a78f, type: 3}
+  inventory: {fileID: 0}
+  icon: {fileID: 0}
+  text: {fileID: 0}
+  hasItem: 0
 --- !u!114 &1392200209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3066,7 +3085,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 0
-  emptySlotSprite: {fileID: -1357179908, guid: 25a0b97fbfedc7c44ad3db031922a78f, type: 3}
+  inventory: {fileID: 0}
+  icon: {fileID: 0}
+  text: {fileID: 0}
+  hasItem: 0
 --- !u!114 &1467546139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3440,7 +3462,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 1
-  emptySlotSprite: {fileID: -1357179908, guid: 25a0b97fbfedc7c44ad3db031922a78f, type: 3}
+  inventory: {fileID: 0}
+  icon: {fileID: 0}
+  text: {fileID: 0}
+  hasItem: 0
 --- !u!114 &1849836775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3726,7 +3751,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1805077980578269838, guid: b5267d5e12edb436487594591cab5292, type: 3}
+  m_Sprite: {fileID: -2917183715842102082, guid: 2df3c644fca15450fa981e014fcedaf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3746,8 +3771,8 @@ Transform:
   m_GameObject: {fileID: 2012238395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1427, y: -0.62, z: 0}
-  m_LocalScale: {x: 2.6212, y: 2.6212, z: 2.6212}
+  m_LocalPosition: {x: -0.048, y: 0.0231, z: 0}
+  m_LocalScale: {x: 0.46597573, y: 0.4682445, z: 0.46301246}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

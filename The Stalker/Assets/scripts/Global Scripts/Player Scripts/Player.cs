@@ -4,6 +4,7 @@ using System.Security.Claims;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject _bedCollider;
     [SerializeField] CapsuleCollider2D _collider;
-    [SerializeField] private Collider2D _collider4;
+    //[SerializeField] private Collider2D _collider4;
+    
     Vector2 currentY;
     private bool waitingToChange;
     private float exitTimer = 0f;
@@ -162,17 +164,22 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if (this.transform.position.y > _bedCollider.transform.position.y)
+        Scene currentScene = SceneManager.GetActiveScene();
+        
+        if(currentScene.name == "FINAL Room 1")
         {
-            //_bedCollider.SetActive(false);
-            //_collider4.enabled = true;
-            _sprite.sortingOrder = 4;
-        }
-        else
-        {
-            //_bedCollider.SetActive(true);
-            //_collider4.enabled = false;
-            _sprite.sortingOrder = 6;
+            if (this.transform.position.y > _bedCollider.transform.position.y)
+            {
+                //_bedCollider.SetActive(false);
+                //_collider4.enabled = true;
+                _sprite.sortingOrder = 4;
+            }
+            else
+            {
+                //_bedCollider.SetActive(true);
+                //_collider4.enabled = false;
+                _sprite.sortingOrder = 6;
+            }
         }
 
         // if(waitingToChange)
