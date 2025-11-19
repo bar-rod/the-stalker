@@ -22,7 +22,7 @@ public abstract class Item : MonoBehaviour
     protected virtual void Start()
     {
         if (initiallyActive) gameObject.SetActive(true);
-        GetComponent<SpriteRenderer>().sprite = itemSprite;
+        //GetComponent<SpriteRenderer>().sprite = itemSprite;
 
         _collectSound = GetComponent<AudioSource>();
     }
