@@ -170,6 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &29850053
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -281,6 +284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &46493329
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -468,6 +474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &49101280
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -783,6 +792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &76037077
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1230,6 +1242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &163992923
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1341,6 +1356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &171036291
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1711,6 +1729,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &277646709
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2737,6 +2758,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 1
 --- !u!225 &476807956
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2848,6 +2872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &493507624
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2959,6 +2986,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &495893778
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3377,6 +3407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &545315206
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4897,6 +4930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &831690875
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5268,6 +5304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &924800972
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5607,6 +5646,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1000041305
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5837,6 +5879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1055142445
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6023,6 +6068,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1084880279
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6765,6 +6813,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1136447405
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6951,6 +7002,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1154064043
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7062,6 +7116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1180014099
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8022,6 +8079,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1422432871
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8603,6 +8663,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1556024171
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8714,6 +8777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1561466391
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9215,6 +9281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1646096374
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9402,6 +9471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1732450772
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9513,6 +9585,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1747150246
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -10064,6 +10139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &1850721886
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11462,6 +11540,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611416bb1571cbc4489a2d0ca094bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelf
+  canvasGroup: {fileID: 0}
+  toggle: {fileID: 0}
+  isSolutionBook: 0
 --- !u!225 &2143149363
 CanvasGroup:
   m_ObjectHideFlags: 0
