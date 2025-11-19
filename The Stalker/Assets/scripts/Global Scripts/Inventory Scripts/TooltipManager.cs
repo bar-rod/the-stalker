@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class TooltipManager : MonoBehaviour
 {
     public static TooltipManager _instance;
-
     public TextMeshProUGUI textComponent;
 
     private void Awake()

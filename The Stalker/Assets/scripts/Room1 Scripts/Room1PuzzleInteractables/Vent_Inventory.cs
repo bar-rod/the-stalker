@@ -31,7 +31,7 @@ public class Vent_Inventory : PuzzleInteractable
             player._interactableOpened = true;
         }
         
-        inventory.OpenForPuzzle(UseItem);
+       //inventory.OpenForPuzzle(UseItem);
     }
 
     public override void CloseUI(Collider2D other)
@@ -39,12 +39,13 @@ public class Vent_Inventory : PuzzleInteractable
         if(theCanvas.activeSelf == true){
             theCanvas.SetActive(false);
             player._interactableOpened = false;
-        }else{
+        }
+        else
+        {
              player.ToggleInventory();
         }
 
     }
-
     // helper functions are ok, just make them private if possible
 }
 

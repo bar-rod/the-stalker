@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Timer _time;
     private bool hasChangedAudio = false; 
     private bool _track1isPlaying;
+
+    public static Action<Item> ItemPickedUp;
 
     private float time = 300f;
     public void TurnOffClockCanvas()

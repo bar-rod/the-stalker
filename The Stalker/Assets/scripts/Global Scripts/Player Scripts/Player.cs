@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] InputActionAsset inputActions;
     [SerializeField] float charSpeed;
-    [SerializeField] GameObject inventory;
+    [SerializeField] InventoryManager inventoryManager;
     [SerializeField] Animator _animator;
     [SerializeField] SpriteRenderer _sprite;
     [SerializeField] private AudioSource _walkingSound;
@@ -155,21 +155,11 @@ public class Player : MonoBehaviour
         _touchedObject = null;
         
     }
+    
     public void ToggleInventory()
     {
-        if (_interactableOpened)
-        {
-            inventory.SetActive(false);
-            _interactableOpened = false;
-        }
-        else
-        {
-            inventory.SetActive(true);
-            _interactableOpened = true;
-        }
+        inventoryManager.ToggleInventory();
     }
-
-
     void Update()
     {
         if (this.transform.position.y > _bedCollider.transform.position.y)

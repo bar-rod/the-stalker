@@ -19,20 +19,18 @@ public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
 
 
     protected bool isSolved = false;
-    protected Inventory inventory;
+    protected InventoryManager inventory;
     [SerializeField] protected Player player;
     [SerializeField] protected int itemIDNeeded;
 
     protected virtual void Start()
     {
-        inventory = FindFirstObjectByType<Inventory>();
+        inventory = FindFirstObjectByType<InventoryManager>();
     }
 
     public virtual void Interact(Collider2D other)
     {
-        Debug.Log("Called Interact() from PuzzleInteractable");
-        if (isSolved) return;
-        inventory.OpenForPuzzle(UseItem);
+        //
     }
 
     public virtual void CloseUI(Collider2D other)
