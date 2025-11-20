@@ -47,7 +47,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             item = inventory.GetInventory()[SlotID];
             icon.sprite = item.itemSpriteInv;
             icon.enabled = true;
-            text.text = item.name;
+            text.text = item.itemName;
             hasItem = true;
         }
         else
