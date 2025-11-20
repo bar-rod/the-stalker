@@ -67,9 +67,10 @@ public class InventoryManager : MonoBehaviour
     public void UseItem(Item item)
     {
         bool useditem = item.UseItem();
-        if(useditem){
+        if (useditem) {
             RemoveItem(item);
         }
+        ToggleInventory();
     }
     public List<Item> GetInventory()
     {

@@ -23,7 +23,7 @@ public class Item : MonoBehaviour, Iinteractable
     protected virtual void Start()
     {
         if (initiallyActive) gameObject.SetActive(true);
-        //GetComponent<SpriteRenderer>().sprite = itemSprite;
+        GetComponent<SpriteRenderer>().sprite = itemSprite;
 
         _collectSound = GetComponent<AudioSource>();
     }
@@ -62,6 +62,9 @@ public class Item : MonoBehaviour, Iinteractable
     // this is left ABSTRACT which means there is NO default behavior
     // you NEED to override it in your implementation
     // DO NOT remove the item from the inventory in this function; the inventory manager already handles it.
+
+    // return true to remove the item from the inventory after use
+    // return false if it should stay in the inventory
     public virtual bool UseItem()
     {
         //TEMPORARY CODE
