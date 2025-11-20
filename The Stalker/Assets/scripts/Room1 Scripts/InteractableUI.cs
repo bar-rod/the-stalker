@@ -32,7 +32,15 @@ public class InteractableUI : MonoBehaviour, Iinteractable
         if (interactable.name == other.name)
         {
             interactable.theCanvas.SetActive(true);
+            //to make it so that player saw the clue board before collected the pocket watch
+            if (other.name == "ClueBoard")
+            {
+                LocatorDialogue.Instance.DialogueScript.SawClueBoard = true;
+            }
+            
         }
+
+
     }
 
     public void CloseUI(Collider2D other)

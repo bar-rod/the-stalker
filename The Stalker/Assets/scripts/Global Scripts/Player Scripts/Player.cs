@@ -146,6 +146,7 @@ public class Player : MonoBehaviour
 
         Debug.Log($"collided with {collision.name}");
         _touchedObject = collision;
+
     }
 
     void OnTriggerExit2D(Collider2D collision)

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 using UnityEngine.Playables;
 
 public class Dialogue : MonoBehaviour
@@ -14,18 +15,24 @@ public class Dialogue : MonoBehaviour
     private PlayableDirector director;
 
     //needs to be set up with the inventory
+
+
+    //to reference a variable in another script
+    //LocatorDialogue.Instance.DialogueScript.VARIABLE/FUNCTIONNAME
+    //LocatorDialogue.Instance.DialogueScript.ShowElisaText("I saw the Clueboard");
+    
+    public bool CollectedPocketWatch {get; set;}
+    public bool SawClueBoard {get; set;}
+
+
     /*
-    public bool collectedPocketWatch
-    {
-        public get;
-        public set;
-    }
-    public bool sawClueBoard
-    {
-        public get;
-        public set;
-    }
+    For pocket watch, Interactable UI checks if player opened the clueboard and sets SawClueBoard to true;
+    WHen player collects pocket watch, if item is pocket watch, then it calls in ShowElisaText 
+        if sawclueboard is true ShowElisaText("I saw this before...)
+        else ShowElisaText("What is this")
     */
+    
+    
 
     //private AudioSource introAudio;
 
@@ -60,9 +67,13 @@ public class Dialogue : MonoBehaviour
     {
         i = 0;
         dialoguebox.SetActive(true);
+        elisa_dialoguebox.SetActive(false);
         director = GetComponent<PlayableDirector>();
         //introAudio = GetComponent<AudioSource>();
         director.Play();
+
+        CollectedPocketWatch = false;
+        SawClueBoard = false;
 
         //through this way, there seems to be a delay :(
         //introAudio.Play();
@@ -79,11 +90,42 @@ public class Dialogue : MonoBehaviour
         {
             dialoguebox.SetActive(false);
         }
+
+        if (SawClueBoard)
+        {
+            //Debug.Log("I saw the Clueboard");
+        }
     }
 
     public void NextLine()
     {
         //Debug.Log("Next line pls");
         i++;
+    }
+
+
+    //keeps the dialogue box open for a few seconds and then removes it
+    IEnumerator KeepBoxVisible()
+    {
+        yield return new WaitForSeconds(5);
+        elisa_dialoguebox.SetActive(false);
+    }
+    public void ShowElisaText(string dialogue)
+    {
+        //if there's going to be audio/voice over, replace with audioclip length 
+        // (probably need to put it in the inspector of the other item)
+
+        //sets the text to the corresponding text
+        elisa_text.text = dialogue;
+
+        //need to add a set audio source and play if needed
+
+        //makes dialogue box with text appear
+        elisa_dialoguebox.SetActive(true);
+
+        //keeps it open for a while
+        StartCoroutine(KeepBoxVisible());
+        
+
     }
 }
