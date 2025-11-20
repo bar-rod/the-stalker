@@ -54,6 +54,7 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Item item)
     {
         inventoryList.Add(item);
+        ToggleInventory();
     }
     public void RemoveItem(Item item)
     {
