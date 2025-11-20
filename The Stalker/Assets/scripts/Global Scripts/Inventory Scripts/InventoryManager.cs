@@ -7,7 +7,21 @@ public class InventoryManager : MonoBehaviour
     private bool inventoryOpen;
     [SerializeField] private List<Item> inventoryList = new List<Item>();
     [SerializeField] private Canvas inventoryUI;
+    public static InventoryManager Instance;
 
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
     void Start()
     {
         inventoryOpen = false;
