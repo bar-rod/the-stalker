@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,6 +17,7 @@ public class PrototypeMovement : MonoBehaviour
     private bool _interactableOpened = false;
     private Rigidbody2D _rb;
     private Collider2D _touchedObject;
+    private List<Iinteractable> _interactables = new  List<Iinteractable>();
 
     private void Awake()
     {
@@ -52,12 +54,44 @@ public class PrototypeMovement : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Interacting");
+
+        if (_interactables.Count == 0) return;
+        
+        _interactables[0].Interact();
     }
 
     private void Update()
     {
         _rb.linearVelocity = movementInput * speed;
+    }
+    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Getting the Iinteractable component, because both Item and InteractableUI implements Iinteractable interface
+        //and will allow us to use the same method from different scripts depending on what was collided with
+        interactableObject = collision.GetComponent<Iinteractable>();
+        if (interactableObject == null) return;
+        if (!_interactables.Contains(interactableObject))
+        {
+            _interactables.Add(interactableObject);
+            Debug.Log($"Interactable: {collision.name} added to list");
+        }
+
+        //Debug.Log($"collided with {collision.name}");
+        //_touchedObject = collision;
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        interactableObject = collision.GetComponent<Iinteractable>();
+        if(interactableObject == null) return;
+
+        Debug.Log($"Interactable: {collision.name} removed from list");
+        _interactables.Remove(interactableObject);
+        
+        //interactableObject = null;
+        // _touchedObject = null;
+        
     }
     
 }

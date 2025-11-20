@@ -586,6 +586,7 @@ MonoBehaviour:
   onCorrectTime:
     m_PersistentCalls:
       m_Calls: []
+  _tuningSound: {fileID: 0}
 --- !u!114 &511358234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClockManager
   gameManager: {fileID: 0}
   _trapDoor: {fileID: 0}
+  _collider: {fileID: 0}
   minuteHand: {fileID: 511358233}
   hourHand: {fileID: 1477689412}
   targetMinute: 20
@@ -1023,8 +1025,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13ca887a40ffc64990f4d2232236422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
+  RemoveOnUse: 1
   itemName: item1
   itemSprite: {fileID: -415777169, guid: 25a0b97fbfedc7c44ad3db031922a78f, type: 3}
+  itemSpriteInv: {fileID: 0}
   description: idk
   id: 2
   initiallyActive: 1
@@ -1208,6 +1212,7 @@ MonoBehaviour:
   speed: 0.5
   key: {fileID: 0}
   _door: {fileID: 0}
+  _openDoorSound: {fileID: 0}
   target: {fileID: 1985416468}
 --- !u!1 &746550080
 GameObject:
@@ -1745,6 +1750,7 @@ MonoBehaviour:
   onCorrectTime:
     m_PersistentCalls:
       m_Calls: []
+  _tuningSound: {fileID: 0}
 --- !u!114 &1477689413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2149,7 +2155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1727600224
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -93,6 +94,10 @@ public class DraggableClockRoot : MonoBehaviour, IPointerDownHandler, IDragHandl
         onCorrectTime?.Invoke();
     }
 
+    public void OnPointerEnter(PointerEventData e)
+    {
+        Debug.Log("OnPointerEnter");
+    }
     // Convert a screen point to the clock face local point
     bool ScreenToLocalOnFace(Vector2 screen, out Vector2 local)
     {
@@ -103,11 +108,6 @@ public class DraggableClockRoot : MonoBehaviour, IPointerDownHandler, IDragHandl
     // Read the hand angle clockwise from 12 o'clock in degrees
     float GetClockwiseAngleFromUp()
     {
-        if (handRoot == null)
-        {
-            Debug.Log("fix me - anushka");
-            return 0f;
-        }
         float zCounterClockwiseFromUp = handRoot.localEulerAngles.z;
         return Mathf.Repeat(-zCounterClockwiseFromUp, 360f);
     }

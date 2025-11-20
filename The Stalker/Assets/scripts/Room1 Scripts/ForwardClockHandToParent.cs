@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ForwardClockHandToParent : MonoBehaviour,
-    IPointerDownHandler, IDragHandler, IPointerUpHandler
+    IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler
 {
     // The object that actually rotates which is the root of the hand
     [SerializeField] private GameObject clockRoot;
@@ -30,5 +30,10 @@ public class ForwardClockHandToParent : MonoBehaviour,
     public void OnPointerUp(PointerEventData e)
     {
         if (clockRoot) ExecuteEvents.Execute(clockRoot, e, ExecuteEvents.pointerUpHandler);
+    }
+
+    public void OnPointerEnter(PointerEventData e)
+    {
+        if (clockRoot) ExecuteEvents.Execute(clockRoot, e, ExecuteEvents.pointerEnterHandler);
     }
 }

@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private Vector2 currentMoveInput;
     private Vector2 filteredInput;
     private Collider2D _touchedObject;
-    [SerializeField] public bool _interactableOpened;
+    public bool _interactableOpened;
     private Iinteractable interactableObject;
     private ObjectOutline _outline;
 
