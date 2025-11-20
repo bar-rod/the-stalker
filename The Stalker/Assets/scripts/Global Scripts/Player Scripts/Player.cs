@@ -164,7 +164,7 @@ public class Player : MonoBehaviour
 
         Scene currentScene = SceneManager.GetActiveScene();
 
-        if (currentScene.name == "FINAL Room 1")
+        if (currentScene.name == "FINAL room 1")
         {
             if (this.transform.position.y > _bedCollider.transform.position.y)
             {
