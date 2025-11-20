@@ -172,7 +172,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                _sprite.sortingOrder = 6;
+                _sprite.sortingOrder = 7;
             }
         }
 
