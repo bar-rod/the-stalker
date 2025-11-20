@@ -72,7 +72,7 @@ public class LightController : MonoBehaviour, Iinteractable
         cooldown -= Time.deltaTime;
     }
     //turns light on and off
-    public void Interact(Collider2D collider)
+    public void Interact()
     {
         _switchSound.Play();
         Debug.Log("Called Interact() from LightController");
@@ -92,7 +92,7 @@ public class LightController : MonoBehaviour, Iinteractable
             turnLightsOff();
         }
     }
-    public void CloseUI(Collider2D collider){
+    public void CloseUI(){
      return;
     }
     // determines if light will turn off by getting a random int between 0 and the current time and checking if the random number 

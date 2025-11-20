@@ -17,7 +17,7 @@ public class OpenDrawer : MonoBehaviour
     {
         if(cabinet.GetComponent<Keypad>().drawerOpened == true){
             Drawer.SetActive(true);
-            gameObject.GetComponent<InteractableUI>().CloseUI(gameObject.GetComponent<Collider2D>());
+            gameObject.GetComponent<InteractableUI>().CloseUI();
             player._interactableOpened=false;
             gameObject.GetComponent<InteractableUI>().enabled =false;
             gameObject.GetComponent<Collider2D>().enabled=false;

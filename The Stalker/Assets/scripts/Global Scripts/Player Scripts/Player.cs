@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
-using System.Security.Claims;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -23,14 +23,10 @@ public class Player : MonoBehaviour
     Vector2 currentY;
     private bool waitingToChange;
     private float exitTimer = 0f;
-
-
-    private bool clicking = false;
-    private bool dragging = false;
+    
     private Rigidbody2D rb;
     private Vector2 currentMoveInput;
     private Vector2 filteredInput;
-    private bool _playerTouchingInteractable;
     private Collider2D _touchedObject;
     [SerializeField] public bool _interactableOpened;
     private Iinteractable interactableObject;
@@ -41,10 +37,12 @@ public class Player : MonoBehaviour
     private InputAction interactAction;
     private InputAction inventoryAction;
     private float walkSpeed;
+    
 
 
     private ChainConstraint chain;
-
+    private List<Iinteractable> _interactables = new  List<Iinteractable>();
+    private Iinteractable currentInteractable;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -110,21 +108,10 @@ public class Player : MonoBehaviour
     //triggers when e is pressed and is currently within the range of an interactable object's colliders
     private void OnInteract(InputAction.CallbackContext ctx)
     {
-        if (_playerTouchingInteractable == true && _interactableOpened == false)
-        {
-            interactableObject.Interact(_touchedObject);
-            if (_touchedObject.gameObject.GetComponent<Item>() != null) return;
-            if(_touchedObject.tag == "Canvas Interactable"){
-            _interactableOpened = true;
-            }
-        }
-        else if (_playerTouchingInteractable == true && _interactableOpened == true)
-        {
-            interactableObject.CloseUI(_touchedObject);
-            if(_touchedObject.tag == "Canvas Interactable"){
-            _interactableOpened = false;
-            }
-        }
+
+        if (_interactables.Count == 0) return;
+        
+        _interactables[0].Interact();
     }
     private void OnInventory(InputAction.CallbackContext context)
     {
@@ -132,31 +119,30 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        _playerTouchingInteractable = true;
         //Getting the Iinteractable component, because both Item and InteractableUI implements Iinteractable interface
         //and will allow us to use the same method from different scripts depending on what was collided with
         interactableObject = collision.GetComponent<Iinteractable>();
-        _outline = collision.GetComponentInChildren<ObjectOutline>();
-
-        if (_outline)
+        if (interactableObject == null) return;
+        if (!_interactables.Contains(interactableObject))
         {
-            _outline.SetOutlineActive();
-            Debug.Log("Successfully Get outline");
+            _interactables.Add(interactableObject);
+            Debug.Log($"Interactable: {collision.name} added to list");
         }
 
-        Debug.Log($"collided with {collision.name}");
-        _touchedObject = collision;
+        //Debug.Log($"collided with {collision.name}");
+        //_touchedObject = collision;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (_outline)
-        {
-            _outline.SetOutlineInactive();
-        }
-        _playerTouchingInteractable = false;
-        interactableObject = null;
-        _touchedObject = null;
+        interactableObject = collision.GetComponent<Iinteractable>();
+        if(interactableObject == null) return;
+
+        Debug.Log($"Interactable: {collision.name} removed from list");
+        _interactables.Remove(interactableObject);
+        
+        //interactableObject = null;
+       // _touchedObject = null;
         
     }
     
@@ -164,96 +150,31 @@ public class Player : MonoBehaviour
     {
         inventoryManager.ToggleInventory();
     }
+
     void Update()
     {
-        if(_interactableOpened){
-            charSpeed=0;
+        if (_interactableOpened)
+        {
+            charSpeed = 0;
         }
-        else{
-            charSpeed =walkSpeed;
+        else
+        {
+            charSpeed = walkSpeed;
         }
+
         Scene currentScene = SceneManager.GetActiveScene();
-        
-        if(currentScene.name == "FINAL Room 1")
+
+        if (currentScene.name == "FINAL Room 1")
         {
             if (this.transform.position.y > _bedCollider.transform.position.y)
             {
-                //_bedCollider.SetActive(false);
-                //_collider4.enabled = true;
                 _sprite.sortingOrder = 4;
             }
             else
             {
-                //_bedCollider.SetActive(true);
-                //_collider4.enabled = false;
                 _sprite.sortingOrder = 6;
             }
         }
 
-        // if(waitingToChange)
-        // {
-        //     exitTimer += Time.deltaTime; 
-        //     Debug.Log(exitTimer);
-            
-        //     if (exitTimer >= 1f)
-        //     {
-        //         Vector2 currentSize = _collider.size;
-        //         currentY = _collider.offset;
-        //         Vector2 newHeight = new Vector2(currentY.x, 0.067f);
-        //         Vector2 newSize = new Vector2(currentSize.x, 9.38f);
-        //         _collider.size = newSize;
-        //         _collider.offset = newHeight;
-        //         exitTimer = 0f;
-        //     }
-        // }
     }
-
-    // void OnCollisionEnter2D(Collision2D other)
-    // {
-    //     if (other.gameObject.CompareTag("bed"))
-    //     {
-    //         waitingToChange = false;
-
-    //         Vector2 currentSize = _collider.size;
-    //         currentY = _collider.offset;
-    //         Vector2 newHeight = new Vector2(currentY.x, -3.25f);
-    //         Vector2 newSize = new Vector2(currentSize.x, 2.8f); //2.8
-    //         _collider.size = newSize;
-    //         _collider.offset = newHeight;
-
-            
-    //     }
-    //     // else
-    //     // {
-    //     //     Vector2 currentSize = _collider.size;
-    //     //     currentY = _collider.offset;
-    //     //     Vector2 newHeight = new Vector2(currentY.x, 0.067f);
-    //     //     Vector2 newSize = new Vector2(currentSize.x, 9.38f);
-    //     //     _collider.size = newSize;
-    //     //     _collider.offset = newHeight;
-    //     // }
-
-    // }
-    
-    // void OnCollisionExit2D(Collision2D other)
-    // {
-    //    if (other.gameObject.CompareTag("bed"))
-    //     {
-    //         waitingToChange = true;
-            
-
-    //         // if (exitTimer >= 1f)
-    //         // {
-    //         //     Vector2 currentSize = _collider.size;
-    //         //     currentY = _collider.offset;
-    //         //     Vector2 newHeight = new Vector2(currentY.x, 0.067f);
-    //         //     Vector2 newSize = new Vector2(currentSize.x, 9.38f);
-    //         //     _collider.size = newSize;
-    //         //     _collider.offset = newHeight;
-    //         //     exitTimer = 0f;
-    //         // }
-    //     }
-    // }
-
-    
 }

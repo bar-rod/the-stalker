@@ -23,7 +23,7 @@ public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
 
     // runs when the player presses 'e' the first time
     // override this in your implementation
-    public virtual void Interact(Collider2D other)
+    public virtual void Interact()
     {
         Debug.Log("Interacted with " + this.gameObject);
     }
@@ -31,7 +31,7 @@ public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
 
     // runs when the player presses 'e' again to close the canvas popup
     // shouldn't need to be overriden, but you can if you want
-    public virtual void CloseUI(Collider2D other)
+    public virtual void CloseUI()
     {
         player.ToggleInventory();
     }

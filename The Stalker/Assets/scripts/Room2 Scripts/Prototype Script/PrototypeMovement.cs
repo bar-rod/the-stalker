@@ -53,39 +53,11 @@ public class PrototypeMovement : MonoBehaviour
     private void OnInteract(InputAction.CallbackContext ctx)
     {
         Debug.Log("Interacting");
-        if (_playerTouchingInteractable == true && _interactableOpened == false)
-        {
-            interactableObject.Interact(_touchedObject);
-            if (_touchedObject.gameObject.GetComponent<Item>() != null) return;
-            _interactableOpened = true;
-        }
-        else if (_playerTouchingInteractable == true && _interactableOpened == true)
-        {
-            interactableObject.CloseUI(_touchedObject);
-            _interactableOpened = false;
-        }
     }
 
     private void Update()
     {
         _rb.linearVelocity = movementInput * speed;
     }
-
-//
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        _playerTouchingInteractable = true;
-        //Getting the Iinteractable component, because both Item and InteractableUI implements Iinteractable interface
-        //and will allow us to use the same method from different scripts depending on what was collided with
-        interactableObject = collision.GetComponent<Iinteractable>();
-        Debug.Log($"collided with {collision.name}");
-        _touchedObject = collision;
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        _playerTouchingInteractable = false;
-        interactableObject = null;
-        _touchedObject = null;
-    }
+    
 }

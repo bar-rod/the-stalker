@@ -21,7 +21,7 @@ public class TESTINTERACTABLE : PuzzleInteractable
         // CloseUI can go here, at the end, to force the player out of the interactable
         // alternatively, you can place it at the bottom of the if statement (last line before the else)
         // to only close the UI if the correct item is used
-        CloseUI(null);
+        CloseUI();
     }
 
     // helper functions are ok, just make them private if possible/needed

@@ -2,7 +2,7 @@ using System.Data;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public abstract class Item : MonoBehaviour
+public class Item : MonoBehaviour, Iinteractable
 {
 
     /*
@@ -29,7 +29,7 @@ public abstract class Item : MonoBehaviour
     }
 
     // Interact just calls the Pickup() function. It should not be overriden in most cases
-    public virtual void Interact(Collider2D other)
+    public virtual void Interact()
     {
         Pickup();
     }
@@ -62,5 +62,10 @@ public abstract class Item : MonoBehaviour
     // this is left ABSTRACT which means there is NO default behavior
     // you NEED to override it in your implementation
     // DO NOT remove the item from the inventory in this function; the inventory manager already handles it.
-    public abstract bool UseItem();
+    public virtual bool UseItem()
+    {
+        //TEMPORARY CODE
+        Debug.Log("Use Item");
+        return true;
+    }
 }

@@ -24,7 +24,7 @@ public class Vent_Inventory : PuzzleInteractable
             }
         //base.CloseUI(null);
     }
-    public override void Interact(Collider2D other)
+    public override void Interact()
     {
         Debug.Log("Called Interact() from PuzzleInteractable");
         if (isSolved) {
@@ -39,7 +39,7 @@ public class Vent_Inventory : PuzzleInteractable
        //inventory.OpenForPuzzle(UseItem);
     }
 
-    public override void CloseUI(Collider2D other)
+    public override void CloseUI()
     {
         if(theCanvas.activeSelf == true){
             theCanvas.SetActive(false);

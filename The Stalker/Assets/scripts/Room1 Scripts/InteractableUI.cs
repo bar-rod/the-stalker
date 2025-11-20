@@ -1,16 +1,17 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class InteractableUI : MonoBehaviour, Iinteractable
 {   
     [Serializable] public struct CanvasUI{
         public string name;
+        [Header("Actually doesn't have to be Canvas")]
         public GameObject theCanvas;
     };
     public CanvasUI interactable;
-
+    private bool bCanvasActive;
     IEnumerator Init()
     {
         yield return null;
@@ -19,33 +20,31 @@ public class InteractableUI : MonoBehaviour, Iinteractable
     private void Start()
     {
         StartCoroutine(Init());
+        bCanvasActive = false;
+        interactable.theCanvas.SetActive(bCanvasActive);
+    }
+
+    public void Interact()
+    {
+        if (bCanvasActive)
+        {
+            CloseUI();
+            bCanvasActive = false;
+        }
+        else
+        {
+            bCanvasActive = true;
+            OpenUI();
+        }
+}
+
+    public void CloseUI()
+    {
         interactable.theCanvas.SetActive(false);
     }
-    public void Interact(Collider2D other)
-    {
-        Debug.Log("Called Interact() from InteractableUI");
-        if (other == null)
-        {
-            Debug.Log("Null collider");
-            return;
-        }
-        if (interactable.name == other.name)
-        {
-            interactable.theCanvas.SetActive(true);
-        }
-    }
 
-    public void CloseUI(Collider2D other)
+    public void OpenUI()
     {
-        if (other == null)
-        {
-            Debug.Log("Null collider");
-            return;
-        }
-
-        if (interactable.name == other.name)
-        {
-            interactable.theCanvas.SetActive(false);
-        }
+        interactable.theCanvas.SetActive(true);
     }
 }
