@@ -5,11 +5,30 @@ using UnityEngine.Playables;
 public class Dialogue : MonoBehaviour
 {
     public string[] lines;
+    public string[] elisa_lines;
     private int i;
     [SerializeField] private TMP_Text subtite_text; 
+    [SerializeField] private TMP_Text elisa_text; 
     [SerializeField] private GameObject dialoguebox;
+    [SerializeField] private GameObject elisa_dialoguebox;
     private PlayableDirector director;
+
+    //needs to be set up with the inventory
+    /*
+    public bool collectedPocketWatch
+    {
+        public get;
+        public set;
+    }
+    public bool sawClueBoard
+    {
+        public get;
+        public set;
+    }
+    */
+
     //private AudioSource introAudio;
+
     /*
     For room 1
     Good morning, Elisa. 
