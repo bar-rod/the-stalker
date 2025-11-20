@@ -24,7 +24,7 @@ IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
         if (this.name == "EscapePhoto")
         {
             //Debug.Log("clicked on photo");
-            LocatorDialogue.Instance.DialogueScript.ShowElisaText("That picture…why does he have that?");
+            LocatorDialogue.Instance.DialogueScript.ShowElisaText("That picture… Why does he have that?");
         }
     }
         

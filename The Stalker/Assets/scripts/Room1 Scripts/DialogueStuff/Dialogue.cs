@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public class Dialogue : MonoBehaviour
 {
     public string[] lines;
-    public string[] elisa_lines;
+    //public string[] elisa_lines;
     private int i;
     [SerializeField] private TMP_Text subtite_text; 
     [SerializeField] private TMP_Text elisa_text; 
@@ -27,9 +27,27 @@ public class Dialogue : MonoBehaviour
 
     /*
     For pocket watch, Interactable UI checks if player opened the clueboard and sets SawClueBoard to true;
+        //to make it so that player saw the clue board before collected the pocket watch
+            if (other.name == "ClueBoard")
+            {
+                LocatorDialogue.Instance.DialogueScript.SawClueBoard = true;
+            }
     WHen player collects pocket watch, if item is pocket watch, then it calls in ShowElisaText 
         if sawclueboard is true ShowElisaText("I saw this before...)
         else ShowElisaText("What is this")
+
+
+    in DeskPapers script:
+        //to have elisa say smth
+        if (this.name == "Calendar")
+        {
+            LocatorDialogue.Instance.DialogueScript.ShowElisaText("Oh…that’s my birthday.");
+        }
+        else if (this.name == "ResignationLetter")
+        {
+            LocatorDialogue.Instance.DialogueScript.ShowElisaText("A resignation letter?");
+        }
+    
     */
     
     
