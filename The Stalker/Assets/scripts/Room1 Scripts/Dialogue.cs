@@ -1,13 +1,17 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Playables;
 
 public class Dialogue : MonoBehaviour
 {
     public string[] lines;
     private int i;
     [SerializeField] private TMP_Text subtite_text; 
-    [SerializeField] private 
+    [SerializeField] private GameObject dialoguebox;
+    private PlayableDirector director;
+    //private AudioSource introAudio;
     /*
+    For room 1
     Good morning, Elisa. 
     Did you sleep well? 
     Nonono, don’t struggle.
@@ -36,6 +40,13 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         i = 0;
+        dialoguebox.SetActive(true);
+        director = GetComponent<PlayableDirector>();
+        //introAudio = GetComponent<AudioSource>();
+        director.Play();
+
+        //through this way, there seems to be a delay :(
+        //introAudio.Play();
     }
 
     // Update is called once per frame
@@ -47,13 +58,13 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            
+            dialoguebox.SetActive(false);
         }
     }
 
     public void NextLine()
     {
-        Debug.Log("Next line pls");
+        //Debug.Log("Next line pls");
         i++;
     }
 }

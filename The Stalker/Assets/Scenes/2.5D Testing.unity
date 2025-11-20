@@ -243,6 +243,10 @@ GameObject:
   - component: {fileID: 387620379}
   - component: {fileID: 387620378}
   - component: {fileID: 387620377}
+  - component: {fileID: 387620383}
+  - component: {fileID: 387620385}
+  - component: {fileID: 387620386}
+  - component: {fileID: 387620384}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -333,61 +337,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &455671738
-GameObject:
+--- !u!114 &387620383
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 455671739}
-  - component: {fileID: 455671745}
-  - component: {fileID: 455671744}
-  - component: {fileID: 455671743}
-  - component: {fileID: 455671742}
-  - component: {fileID: 455671741}
-  - component: {fileID: 455671740}
-  m_Layer: 5
-  m_Name: Box
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &455671739
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455671738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1387195809}
-  m_Father: {fileID: 387620380}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.10700001, y: 0.1}
-  m_AnchorMax: {x: 0.901, y: 0.263}
-  m_AnchoredPosition: {x: -4, y: -3}
-  m_SizeDelta: {x: -2, y: 2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &455671740
+  m_GameObject: {fileID: 387620376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d26e0e77c3ba254d92084e1154eb972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  lines:
+  - Good morning, Elisa.
+  - Did you sleep well?
+  - "No no no. Don\u2019t struggle."
+  - "You\u2019ll hurt yourself\u2026 "
+  - "There, that\u2019s better. "
+  - Do you like it?
+  - "It\u2019s all for you. "
+  - Those other escape rooms were getting too easy.
+  - I knew you needed a challenge.
+  - "That\u2019s why you\u2019re chained up."
+  - "You\u2019d just walk out otherwise, and that\u2019s no fun."
+  - "Don\u2019t worry."
+  - "There\u2019s a key to free yourself in there somewhere."
+  - All you have to do is find it.
+  - And one more thing.
+  - 'If you take too long to get out, '
+  - 'I have to kill you. '
+  - "I really don\u2019t want to resort to something so messy,"
+  - "but if you aren\u2019t the girl I think you are\u2026 "
+  - 'No. '
+  - I know who you are, Elisa.
+  - "You\u2019ll be fine. "
+  - Bye, for now.
+  - "I\u2019ll be watching."
+  subtite_text: {fileID: 1387195810}
+  dialoguebox: {fileID: 455671738}
+--- !u!82 &387620384
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455671738}
+  m_GameObject: {fileID: 387620376}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a9ffc25a5c640024b8c96a5f166e8c43, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -472,13 +473,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &455671741
+--- !u!320 &387620385
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387620376}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: e7c7130baea6be34fa9b7f893f80d512, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 4401263163816199415, guid: e7c7130baea6be34fa9b7f893f80d512, type: 2}
+    value: {fileID: 387620386}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &387620386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455671738}
+  m_GameObject: {fileID: 387620376}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
@@ -486,14 +506,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
   m_Events:
     m_Signals:
-    - {fileID: 0}
     - {fileID: 11400000, guid: b82653231b6c930418446c4f553469c8, type: 2}
     m_Events:
     - m_PersistentCalls:
-        m_Calls: []
-    - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 455671743}
+        - m_Target: {fileID: 387620383}
           m_TargetAssemblyTypeName: Dialogue, Assembly-CSharp
           m_MethodName: NextLine
           m_Mode: 1
@@ -505,63 +522,44 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!320 &455671742
-PlayableDirector:
+--- !u!1 &455671738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455671739}
+  - component: {fileID: 455671745}
+  - component: {fileID: 455671744}
+  m_Layer: 5
+  m_Name: Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &455671739
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455671738}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: e7c7130baea6be34fa9b7f893f80d512, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 4401263163816199415, guid: e7c7130baea6be34fa9b7f893f80d512, type: 2}
-    value: {fileID: 455671741}
-  m_ExposedReferences:
-    m_References: []
---- !u!114 &455671743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455671738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d26e0e77c3ba254d92084e1154eb972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  lines:
-  - Good morning, Elisa.
-  - Did you sleep well?
-  - "No no no. Don\u2019t struggle."
-  - "You\u2019ll hurt yourself\u2026 "
-  - "There, that\u2019s better. "
-  - Do you like it?
-  - "It\u2019s all for you. "
-  - Those other escape rooms were getting too easy.
-  - I knew you needed a challenge.
-  - "That\u2019s why you\u2019re chained up."
-  - "You\u2019d just walk out otherwise, and that\u2019s no fun."
-  - "Don\u2019t worry."
-  - "There\u2019s a key to free yourself in there somewhere."
-  - All you have to do is find it.
-  - And one more thing.
-  - 'If you take too long to get out, '
-  - 'I have to kill you. '
-  - "I really don\u2019t want to resort to something so messy,"
-  - "but if you aren\u2019t the girl I think you are\u2026 "
-  - 'No. '
-  - I know who you are, Elisa.
-  - "You\u2019ll be fine. "
-  - Bye, for now.
-  - "I\u2019ll be watching."
-  subtite_text: {fileID: 1387195810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1387195809}
+  m_Father: {fileID: 387620380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.10700001, y: 0.1}
+  m_AnchorMax: {x: 0.901, y: 0.263}
+  m_AnchoredPosition: {x: -4, y: -3}
+  m_SizeDelta: {x: -2, y: 2}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455671744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,8 +1107,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 22.63
+  m_fontSizeBase: 22.63
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
