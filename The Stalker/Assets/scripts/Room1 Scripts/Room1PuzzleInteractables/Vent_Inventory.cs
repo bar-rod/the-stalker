@@ -4,16 +4,16 @@ public class Vent_Inventory : PuzzleInteractable
 {
      [SerializeField] private GameObject theCanvas;
      [SerializeField] public bool in_vent; 
+     private bool bCanvasActive = false;
     public override void UseItem(Item item)
     {
          if (itemIDNeeded == item.id)
             {
                 // this is where behavior would go for solving the puzzle
                 Debug.Log(item.name + (" is the correct item"));
-                player.ToggleInventory();
+                //inventory.ToggleInventory();
 
                 theCanvas.SetActive(true);
-                player._interactableOpened = true;
                 isSolved = true;
 
             }
@@ -27,15 +27,19 @@ public class Vent_Inventory : PuzzleInteractable
     public override void Interact()
     {
         Debug.Log("Called Interact() from PuzzleInteractable");
-        if (isSolved) {
+        if (isSolved&&bCanvasActive==false) {
             theCanvas.SetActive(true);
-            player._interactableOpened = true;
+            bCanvasActive=true;
         }
-        else{
-            player.ToggleInventory();
+        else if(in_vent==false&&bCanvasActive==false){
+            inventory.ToggleInventory();
             in_vent=true;
+            bCanvasActive=true;
         }
-        
+        else if(bCanvasActive==true){
+            CloseUI();
+            bCanvasActive=false;
+        }
        //inventory.OpenForPuzzle(UseItem);
     }
 
@@ -43,7 +47,7 @@ public class Vent_Inventory : PuzzleInteractable
     {
         if(theCanvas.activeSelf == true){
             theCanvas.SetActive(false);
-            player._interactableOpened = false;
+
         }
         else
         {
