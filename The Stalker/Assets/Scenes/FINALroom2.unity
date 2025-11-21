@@ -4527,7 +4527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 2
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 1616878075}
   text: {fileID: 1326003189}
   hasItem: 0
@@ -5867,7 +5867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 7
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 1690485501}
   text: {fileID: 1780839804}
   hasItem: 0
@@ -6643,7 +6643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 6
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 1869239698}
   text: {fileID: 782594980}
   hasItem: 0
@@ -7064,7 +7064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 9
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 1072249279}
   text: {fileID: 1591679768}
   hasItem: 0
@@ -9268,7 +9268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 0
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 1538958458}
   text: {fileID: 1562540085}
   hasItem: 0
@@ -12296,7 +12296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 8
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 1344187495}
   text: {fileID: 1992235741}
   hasItem: 0
@@ -15724,7 +15724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 4
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 250279086}
   text: {fileID: 364201748}
   hasItem: 0
@@ -17391,7 +17391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 1
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 193027551}
   text: {fileID: 219242999}
   hasItem: 0
@@ -19715,7 +19715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 3
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 154231983}
   text: {fileID: 906182480}
   hasItem: 0
@@ -23521,7 +23521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSlot
   SlotID: 5
-  inventory: {fileID: 0}
+  inventory: {fileID: 297399395}
   icon: {fileID: 479008455}
   text: {fileID: 430988951}
   hasItem: 0
