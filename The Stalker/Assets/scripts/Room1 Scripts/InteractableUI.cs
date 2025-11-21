@@ -48,5 +48,10 @@ public class InteractableUI : MonoBehaviour, Iinteractable
     public void OpenUI()
     {
         interactable.theCanvas.SetActive(true);
+
+        if (interactable.theCanvas.name == "CanvasClueBoard")
+        {
+            LocatorDialogue.Instance.DialogueScript.SawClueBoard = true;
+        }
     }
 }

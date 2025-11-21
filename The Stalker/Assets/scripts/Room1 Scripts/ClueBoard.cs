@@ -20,6 +20,10 @@ IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
         //Debug.Log("onDrag");
         //When an item gets dragged, it moves along with the mouse to the scale of the canvas screen
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (this.name == "EscapeImage")
+        {
+            LocatorDialogue.Instance.DialogueScript.ShowElisaText("That picture… Why does he have that?");
+        }
     }
         
     public void OnBeginDrag(PointerEventData eventData)
