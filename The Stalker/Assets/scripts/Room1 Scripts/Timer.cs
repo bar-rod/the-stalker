@@ -39,6 +39,7 @@ public class Timer : MonoBehaviour{
                 time = 0;
                 runnin = false;
                 gameOver.SetActive(true);
+                LocatorDialogue.Instance.DialogueScript.PlayStalkerGameOverAudio();
             }
         }
     }

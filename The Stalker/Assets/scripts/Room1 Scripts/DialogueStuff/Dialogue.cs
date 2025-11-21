@@ -198,6 +198,13 @@ public class Dialogue : MonoBehaviour
         director.Play();
     }
 
+    public void PlayStalkerGameOverAudio()
+    {
+        //gonna borrow elisa's audio source :P
+        elisaAudio.clip = gameoverStalkerAudioClip;
+        elisaAudio.Play();
+    }
+
     public void SkipStalkerDialogue()
     {
         i = lines.Length + 1;
