@@ -5,6 +5,10 @@ public class Vent_Inventory : PuzzleInteractable
      [SerializeField] private GameObject theCanvas;
      [SerializeField] public bool in_vent; 
      private bool bCanvasActive = false;
+     void Update(){
+    
+
+     }
     public override void UseItem(Item item)
     {
          if (itemIDNeeded == item.id)
@@ -27,6 +31,7 @@ public class Vent_Inventory : PuzzleInteractable
     public override bool Interact()
     {
         Debug.Log("Called Interact() from PuzzleInteractable");
+        
         if (isSolved&&bCanvasActive==false) {
             theCanvas.SetActive(true);
             bCanvasActive=true;
