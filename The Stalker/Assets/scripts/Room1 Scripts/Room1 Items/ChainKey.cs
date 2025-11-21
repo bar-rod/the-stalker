@@ -10,6 +10,7 @@ public class ChainKey : Item
         Debug.Log("using chain key");
 
         chainConstraint.BreakChain();
+        LocatorDialogue.Instance.DialogueScript.PlayStalkerEndLines();
         chainConnector.enabled = false;
 
         return true; // item is consumed on use

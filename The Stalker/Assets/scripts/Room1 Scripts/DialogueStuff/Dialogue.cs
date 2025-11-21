@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour
     public string[] beginStalkerLines;
     public string[] endStalkerLines;
     public AudioClip[] elisaAudioClips;
+    public AudioClip gameoverStalkerAudioClip; 
     private int i;
     [SerializeField] private TMP_Text subtite_text; 
     [SerializeField] private TMP_Text elisa_text; 
@@ -32,9 +33,7 @@ public class Dialogue : MonoBehaviour
     //LocatorDialogue.Instance.DialogueScript.VARIABLE/FUNCTIONNAME
     //LocatorDialogue.Instance.DialogueScript.ShowElisaText("I saw the Clueboard");
     
-    public bool CollectedPocketWatch {get; set;}
     public bool SawClueBoard {get; set;}
-    public bool UnlockedKey {get; set;}
 
 
     /*
@@ -100,7 +99,8 @@ public class Dialogue : MonoBehaviour
     That wasn’t so hard, was it? 
     I knew you wouldn’t disappoint me. 
     We aren’t quite done yet, 
-    but because you’ve been so good I think I’ll give you a hint for the next room. 
+    but because you’ve been so good, 
+    I think I’ll give you a hint for the next room. 
     You’re going to pull three books from the shelf, got that? 
     Three books. 
     Of course, it’s up to you to figure out the right ones. 
@@ -119,14 +119,16 @@ public class Dialogue : MonoBehaviour
         director = GetComponent<PlayableDirector>();
         elisaAudio = GetComponent<AudioSource>();
 
+
+        director.playableAsset = openStalker;
+        lines = beginStalkerLines;
         //move if needed
         director.Play();
 
-        lines = beginStalkerLines;
 
-        CollectedPocketWatch = false;
+        
+
         SawClueBoard = false;
-        UnlockedKey = false;
 
         //through this way, there seems to be a delay :(
         //introAudio.Play();
@@ -186,13 +188,14 @@ public class Dialogue : MonoBehaviour
 
     }
 
-    public void ChangeTimeline()
+    public void PlayStalkerEndLines()
     {
-        if (UnlockedKey)
-        {
-            director.playableAsset = endStalker; 
-            //play here? 
-        }
+        director.playableAsset = endStalker; 
+        director.time = 0;
+        lines = endStalkerLines;
+        i = 0;
+        dialoguebox.SetActive(true);
+        director.Play();
     }
 
     public void SkipStalkerDialogue()
