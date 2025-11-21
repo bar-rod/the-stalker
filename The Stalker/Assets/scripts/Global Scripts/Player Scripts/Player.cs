@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
         interactAction = actionMap.FindAction("Interact");
         inventoryAction = actionMap.FindAction("Inventory");
         walkSpeed=charSpeed;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
