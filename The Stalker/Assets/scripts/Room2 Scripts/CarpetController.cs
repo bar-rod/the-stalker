@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CarpetController : MonoBehaviour
@@ -27,5 +28,10 @@ public class CarpetController : MonoBehaviour
            transform.position = Vector2.MoveTowards(transform.position, _targetPosition.transform.position, speed * Time.deltaTime);
         }
     }
-    
+
+    public void SetSolved()
+    {
+        puzzleUnlocked = true;
+    }
+
 }

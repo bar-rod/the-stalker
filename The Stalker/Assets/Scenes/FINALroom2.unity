@@ -14224,11 +14224,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: -8945482008432768220, guid: de4b83f166b74421784c4f66be4366c2, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -16426,11 +16426,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currentVolume: 0
-  sampleDataLength: 512
+  sampleDataLength: 1024
   volume: 0
-  repeatSoundIncreaseRate: 0.05
-  lowVolumeThreshold: 0.1
-  decayRate: 0.01
+  repeatSoundIncreaseRate: 0.3
+  lowVolumeThreshold: 0.5
+  decayRate: 0.1
   gameOver: {fileID: 0}
 --- !u!1 &1607742976
 GameObject:

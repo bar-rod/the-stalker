@@ -37,6 +37,8 @@ public class soundBar : MonoBehaviour
         if(volume < 0.01f)
             currentVolume -= decayRate * Time.deltaTime;
 
+        volume *= 10f; 
+
         // Set current volume to latest volume if below threshold
         if (currentVolume <= volume * lowVolumeThreshold)
             currentVolume = volume;
