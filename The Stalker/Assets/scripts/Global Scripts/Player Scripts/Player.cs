@@ -154,7 +154,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (_bUIOpened)
+        if (_bUIOpened || LocatorDialogue.Instance.DialogueScript.StalkerAudioPlaying)
         {
             charSpeed = 0;
         }
