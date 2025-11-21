@@ -40,6 +40,14 @@ public class DeskPapers : MonoBehaviour, IPointerUpHandler, IDragHandler, IPoint
 
         image.color = Color.white;
         details.SetActive(true);
+        if (this.name == "Calendar")
+        {
+            LocatorDialogue2.Instance.Dialogue2Script.ShowElisaText("Oh…that’s my birthday.", 0);
+        }
+        else if (this.name == "ResignationLetter")
+        {
+            LocatorDialogue2.Instance.Dialogue2Script.ShowElisaText("A resignation letter?", 1);
+        }
         
         Debug.Log("Mouse click let go");
     }
@@ -55,6 +63,7 @@ public class DeskPapers : MonoBehaviour, IPointerUpHandler, IDragHandler, IPoint
         details.SetActive(true);
         image.enabled = false;
         image.raycastTarget = false;
+    
     }
     
     public void CloseClue()
