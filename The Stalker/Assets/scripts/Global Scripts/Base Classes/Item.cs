@@ -29,9 +29,10 @@ public class Item : MonoBehaviour, Iinteractable
     }
 
     // Interact just calls the Pickup() function. It should not be overriden in most cases
-    public virtual void Interact()
+    public virtual bool Interact()
     {
         Pickup();
+        return false;
     }
 
     // Sets the item to be active in the scene. Useful if solving something else causes an item to appear

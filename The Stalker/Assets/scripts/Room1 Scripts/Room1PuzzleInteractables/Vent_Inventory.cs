@@ -24,23 +24,28 @@ public class Vent_Inventory : PuzzleInteractable
             }
         //base.CloseUI(null);
     }
-    public override void Interact()
+    public override bool Interact()
     {
         Debug.Log("Called Interact() from PuzzleInteractable");
         if (isSolved&&bCanvasActive==false) {
             theCanvas.SetActive(true);
             bCanvasActive=true;
+            return true;
         }
         else if(in_vent==false&&bCanvasActive==false){
             inventory.ToggleInventory();
             in_vent=true;
             bCanvasActive=true;
+            return true;
         }
         else if(bCanvasActive==true){
             CloseUI();
             bCanvasActive=false;
+            return false;
         }
-       //inventory.OpenForPuzzle(UseItem);
+
+        return false;
+        //inventory.OpenForPuzzle(UseItem);
     }
 
     public override void CloseUI()

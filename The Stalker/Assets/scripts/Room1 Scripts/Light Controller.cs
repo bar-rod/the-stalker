@@ -72,7 +72,7 @@ public class LightController : MonoBehaviour, Iinteractable
         cooldown -= Time.deltaTime;
     }
     //turns light on and off
-    public void Interact()
+    public bool Interact()
     {
         _switchSound.Play();
         Debug.Log("Called Interact() from LightController");
@@ -91,6 +91,8 @@ public class LightController : MonoBehaviour, Iinteractable
             player_turn_off = true;
             turnLightsOff();
         }
+
+        return false;
     }
     public void CloseUI(){
      return;
@@ -117,6 +119,7 @@ public class LightController : MonoBehaviour, Iinteractable
             turnLightsOff();
 
         }
+        
 
     }
 

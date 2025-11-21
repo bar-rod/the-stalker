@@ -23,9 +23,10 @@ public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
 
     // runs when the player presses 'e' the first time
     // override this in your implementation
-    public virtual void Interact()
+    public virtual bool Interact()
     {
         Debug.Log("Interacted with " + this.gameObject);
+        return true;
     }
 
 

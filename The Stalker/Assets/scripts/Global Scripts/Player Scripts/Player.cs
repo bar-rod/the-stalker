@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     private ChainConstraint chain;
     private List<Iinteractable> _interactables = new  List<Iinteractable>();
     private Iinteractable currentInteractable;
+    private bool _bUIOpened = false;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -111,7 +112,7 @@ public class Player : MonoBehaviour
 
         if (_interactables.Count == 0) return;
         
-        _interactables[0].Interact();
+        _bUIOpened = _interactables[0].Interact();
     }
     private void OnInventory(InputAction.CallbackContext context)
     {
@@ -153,7 +154,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (_interactableOpened)
+        if (_bUIOpened)
         {
             charSpeed = 0;
         }

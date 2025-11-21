@@ -24,17 +24,19 @@ public class InteractableUI : MonoBehaviour, Iinteractable
         interactable.theCanvas.SetActive(bCanvasActive);
     }
 
-    public void Interact()
+    public bool Interact()
     {
         if (bCanvasActive)
         {
             CloseUI();
             bCanvasActive = false;
+            return false;
         }
         else
         {
             bCanvasActive = true;
             OpenUI();
+            return true;
         }
 }
 
