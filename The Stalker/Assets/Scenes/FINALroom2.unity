@@ -270,7 +270,7 @@ MonoBehaviour:
   description: Can Unscrew Screws
   id: 3
   initiallyActive: 0
-  Vent: {fileID: 0}
+  Vent: {fileID: 1548669296}
 --- !u!61 &3377107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1283,7 +1283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &114866248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7754,7 +7754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &875232674
 RectTransform:
   m_ObjectHideFlags: 0
