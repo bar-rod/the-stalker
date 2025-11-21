@@ -17118,7 +17118,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.644674, y: 0.94534844}
+  m_Offset: {x: -0.642872, y: 0.3641858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17128,7 +17128,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.0627124, y: 4.6818824}
+  m_Size: {x: 5.5862694, y: 5.844208}
   m_EdgeRadius: 0
 --- !u!114 &1542193152
 MonoBehaviour:
@@ -17380,7 +17380,6 @@ GameObject:
   - component: {fileID: 1548669298}
   - component: {fileID: 1548669297}
   - component: {fileID: 1548669296}
-  - component: {fileID: 1548669295}
   m_Layer: 0
   m_Name: Vent
   m_TagString: Canvas Interactable
@@ -17388,21 +17387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1548669295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548669294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36eaf7d61bb059e43ac295e893aef954, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableUI
-  interactable:
-    name: Vent
-    theCanvas: {fileID: 1410845924}
 --- !u!114 &1548669296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20965,7 +20949,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.4758596, y: 2.0889988}
+  m_Offset: {x: -2.4758596, y: 3.0902176}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -20975,7 +20959,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 13.893969, y: 10.785888}
+  m_Size: {x: 13.893969, y: 8.783451}
   m_EdgeRadius: 0
 --- !u!114 &1834215044
 MonoBehaviour:
