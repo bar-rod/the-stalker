@@ -8,6 +8,7 @@ public class BookShelfManager : MonoBehaviour
     private HashSet<GameObject> solution;
     private HashSet<GameObject> selected;
     [SerializeField] private Sprite completed;
+    [SerializeField] private Player player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -46,6 +47,7 @@ public class BookShelfManager : MonoBehaviour
 
                 // set new sprite to book case
                 GameObject.Find("BookShelf").GetComponent<SpriteRenderer>().sprite = completed;
+                player.SetUiOpenFalse();
 
                 // set bool to true for trap door
                 GameObject.Find("Carpet").GetComponent<CarpetController>().SetSolved();

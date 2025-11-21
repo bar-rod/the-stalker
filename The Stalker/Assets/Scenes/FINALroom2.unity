@@ -1717,6 +1717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookShelfManager
   completed: {fileID: 5325910149317681760, guid: b8eb2e7038c80394ba733b47dd6da085, type: 3}
+  player: {fileID: 1242973538}
 --- !u!1 &128633127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7653,7 +7654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &702984783
 MonoBehaviour:
   m_ObjectHideFlags: 0
