@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
 {
     public string[] beginStalkerLines;
     public string[] endStalkerLines;
+    public AudioClip[] elisaAudioClips;
     private int i;
     [SerializeField] private TMP_Text subtite_text; 
     [SerializeField] private TMP_Text elisa_text; 
@@ -158,26 +159,29 @@ public class Dialogue : MonoBehaviour
 
 
     //keeps the dialogue box open for a few seconds and then removes it
-    IEnumerator KeepBoxVisible()
+    IEnumerator KeepBoxVisible(float sec)
     {
-        yield return new WaitForSeconds(5);
+        
+        yield return new WaitForSeconds(sec);
         elisa_dialoguebox.SetActive(false);
     }
-    public void ShowElisaText(string dialogue)
+    public void ShowElisaText(string dialogue, int audioIndex)
     {
         //if there's going to be audio/voice over, replace with audioclip length 
-        // (probably need to put it in the inspector of the other item)
+        //Audioclip = elisaAudioClips[audioIndex]
 
+        //sets the audio to the corresponding audio
+        elisaAudio.clip = elisaAudioClips[audioIndex];
+        elisaAudio.Play();
         //sets the text to the corresponding text
         elisa_text.text = dialogue;
 
-        //need to add a set audio source and play if needed
-
+        //play elisa audio line
+        
         //makes dialogue box with text appear
         elisa_dialoguebox.SetActive(true);
-
-        //keeps it open for a while
-        StartCoroutine(KeepBoxVisible());
+        //keeps textbox open for a while
+        StartCoroutine(KeepBoxVisible(elisaAudio.clip.length));
         
 
     }
