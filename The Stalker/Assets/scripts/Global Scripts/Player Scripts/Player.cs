@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         currentMoveInput = ctx.ReadValue<Vector2>().normalized;
 
         //animation!! 
-        if (currentMoveInput != new Vector2(0,0) && !_interactableOpened)
+        if (currentMoveInput != new Vector2(0,0) && !_bUIOpened)
         {
             _animator.SetBool("isWalking", true);
             _sprite.flipX = currentMoveInput[0] > 0f;
