@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class GameOver: MonoBehaviour
 {
-    [SerializeField] private GameObject _gameOverText;
+    [SerializeField] private GameObject _gameOver;
 
 
     public void ActivateGameOver ()
     {
-        _gameOverText.SetActive(true);
+        _gameOver.SetActive(true);
     }
 
 }

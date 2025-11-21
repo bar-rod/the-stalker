@@ -149,7 +149,7 @@ public class LightController : MonoBehaviour, Iinteractable
         _flickerSound.Play();
     }
     //turns the lights off
-    private void turnLightsOff()
+    public void turnLightsOff()
     {
         SpotLight2D.intensity = 0;
         GlobaLight2D.intensity = 0.07f;
