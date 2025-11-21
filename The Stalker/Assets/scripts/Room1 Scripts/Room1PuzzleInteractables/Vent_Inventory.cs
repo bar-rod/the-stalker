@@ -57,11 +57,11 @@ public class Vent_Inventory : PuzzleInteractable
     {
         if(theCanvas.activeSelf == true){
             theCanvas.SetActive(false);
-
+            in_vent=false;
         }
         else
         {
-             player.ToggleInventory();
+             inventory.ToggleInventory();
              in_vent=false;
         }
 

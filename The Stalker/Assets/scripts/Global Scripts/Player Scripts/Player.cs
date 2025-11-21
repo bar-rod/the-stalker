@@ -150,7 +150,9 @@ public class Player : MonoBehaviour
     
     public void ToggleInventory()
     {
-        inventoryManager.ToggleInventory();
+        if(!_bUIOpened){
+            inventoryManager.ToggleInventory();
+        }
     }
 
     void Update()
