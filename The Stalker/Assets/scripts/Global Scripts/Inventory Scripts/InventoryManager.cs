@@ -9,8 +9,12 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Canvas inventoryUI;
     public static InventoryManager Instance;
 
+     
+    
     void Awake()
     {
+        
+       
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -20,10 +24,15 @@ public class InventoryManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
         DontDestroyOnLoad(this.gameObject);
+        
+        inventoryUI=GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
+        
     }
     void Start()
     {
+
         inventoryOpen = false;
         inventoryUI.gameObject.SetActive(false);
     }
