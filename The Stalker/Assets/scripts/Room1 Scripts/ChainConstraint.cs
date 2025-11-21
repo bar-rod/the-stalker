@@ -23,6 +23,7 @@ public class ChainConstraint : MonoBehaviour
     {
         isChained = false;
         enabled = false;
+        anchor.GetComponent<AudioSource>().Play();
     }
 
     // called by player movement
