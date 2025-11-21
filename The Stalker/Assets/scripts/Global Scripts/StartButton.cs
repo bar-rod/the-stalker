@@ -6,6 +6,11 @@ public class StartButton : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private Button button;
+    [SerializeField] private GameObject start;
+    [SerializeField] private GameObject reply;
+    [SerializeField] private GameObject replyHigh;
+
+    public bool off = false;
     
     void Start()
     {
@@ -14,7 +19,11 @@ public class StartButton : MonoBehaviour
     public void OpenScene()
     {
         Debug.Log("Reached");
-        SceneManager.LoadScene(1); 
+        off = true;
+        start.SetActive(false);
+        reply.SetActive(false);
+        replyHigh.SetActive(false);
+        //SceneManager.LoadScene(1); 
     }
 
     
