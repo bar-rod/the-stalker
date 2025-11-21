@@ -11,10 +11,18 @@ public class StartManager : MonoBehaviour
     [SerializeField] private StartButton reply1;
     [SerializeField] private StartButton replyHigh2;
     [SerializeField] private List<GameObject> frames = new List<GameObject>();
+    [SerializeField] private AudioSource _audioS;
+    [SerializeField] private AudioClip clip;
 
     private float timer = 0f;
     private bool highlight = true;
     private int i = 0;
+
+    void Start()
+    {
+        _audioS.clip = clip;
+        _audioS.Play();
+    }
     void Update()
     {
         timer += Time.deltaTime;
