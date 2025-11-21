@@ -14117,7 +14117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1242973533
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21736,7 +21736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f65aaf5a9bd4584ba72f4c3fd6c218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Desk
-  player: {fileID: 1242973532}
   _sprite: {fileID: 1242973539}
   desk: {fileID: 499835611}
 --- !u!1 &1850721883
