@@ -54,6 +54,17 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Item item)
     {
         inventoryList.Add(item);
+        if (item.name == "PocketWatch")
+        {
+            if (LocatorDialogue.Instance.DialogueScript.SawClueBoard)
+            {
+                LocatorDialogue.Instance.DialogueScript.ShowElisaText("A pocket watch? I remember seeing that somewhere…");
+            } 
+            else
+            {
+                LocatorDialogue.Instance.DialogueScript.ShowElisaText("A pocket watch? I wonder what it does…");
+            }
+        }
         ToggleInventory();
     }
     public void RemoveItem(Item item)
