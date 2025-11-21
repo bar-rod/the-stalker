@@ -2,17 +2,27 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class Dialogue : MonoBehaviour
 {
-    public string[] lines;
-    //public string[] elisa_lines;
+    public string[] beginStalkerLines;
+    public string[] endStalkerLines;
     private int i;
     [SerializeField] private TMP_Text subtite_text; 
     [SerializeField] private TMP_Text elisa_text; 
     [SerializeField] private GameObject dialoguebox;
     [SerializeField] private GameObject elisa_dialoguebox;
-    private PlayableDirector director;
+
+    [SerializeField] private TimelineAsset openStalker;
+    [SerializeField] private TimelineAsset endStalker;
+    
+
+    private PlayableDirector director; // for stalker audio
+    private AudioSource elisaAudio;
+
+    private string[] lines;
+
 
     //needs to be set up with the inventory
 
@@ -23,6 +33,7 @@ public class Dialogue : MonoBehaviour
     
     public bool CollectedPocketWatch {get; set;}
     public bool SawClueBoard {get; set;}
+    public bool UnlockedKey {get; set;}
 
 
     /*
@@ -32,12 +43,14 @@ public class Dialogue : MonoBehaviour
             {
                 LocatorDialogue.Instance.DialogueScript.SawClueBoard = true;
             }
-    WHen player collects pocket watch, if item is pocket watch, then it calls in ShowElisaText 
+    When player collects pocket watch, if item is pocket watch, then it calls in ShowElisaText 
         if sawclueboard is true ShowElisaText("I saw this before...)
         else ShowElisaText("What is this")
 
-
-    in DeskPapers script:
+    //For the future, if its likely that other rooms will have other audios,
+    // not ideal to have all lines together etc, so i should plan to make a inheritiance
+    in DeskPapers script: // might likely need to make a separate script per room!
+    //but that is mainly for the stalker lines that gets all built up 
         //to have elisa say smth
         if (this.name == "Calendar")
         {
@@ -52,10 +65,9 @@ public class Dialogue : MonoBehaviour
     
     
 
-    //private AudioSource introAudio;
+    
 
-    /*
-    For room 1
+    /* Beginning lines
     Good morning, Elisa. 
     Did you sleep well? 
     Nonono, don’t struggle.
@@ -79,19 +91,41 @@ public class Dialogue : MonoBehaviour
     I know who you are, Elisa. 
     You’ll be fine. 
     Bye for now, 
-    I’ll be watching. 
+    I’ll be watching.
+
+    Ending lines for room 1
+
+    Wonderful job Elisa. 
+    That wasn’t so hard, was it? 
+    I knew you wouldn’t disappoint me. 
+    We aren’t quite done yet, 
+    but because you’ve been so good I think I’ll give you a hint for the next room. 
+    You’re going to pull three books from the shelf, got that? 
+    Three books. 
+    Of course, it’s up to you to figure out the right ones. 
+    Good luck. 
+
+
+
     */
+
+
     void Start()
     {
         i = 0;
         dialoguebox.SetActive(true);
         elisa_dialoguebox.SetActive(false);
         director = GetComponent<PlayableDirector>();
-        //introAudio = GetComponent<AudioSource>();
+        elisaAudio = GetComponent<AudioSource>();
+
+        //move if needed
         director.Play();
+
+        lines = beginStalkerLines;
 
         CollectedPocketWatch = false;
         SawClueBoard = false;
+        UnlockedKey = false;
 
         //through this way, there seems to be a delay :(
         //introAudio.Play();
@@ -103,16 +137,17 @@ public class Dialogue : MonoBehaviour
         if (i < lines.Length)
         {
             subtite_text.text = lines[i];
+            //player can't move
         }
         else
         {
             dialoguebox.SetActive(false);
+            director.Stop();
+            //play can move again
         }
 
-        if (SawClueBoard)
-        {
-            //Debug.Log("I saw the Clueboard");
-        }
+        //if player clicked skip, then just make i greater than length
+
     }
 
     public void NextLine()
@@ -145,5 +180,19 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(KeepBoxVisible());
         
 
+    }
+
+    public void ChangeTimeline()
+    {
+        if (UnlockedKey)
+        {
+            director.playableAsset = endStalker; 
+            //play here? 
+        }
+    }
+
+    public void SkipStalkerDialogue()
+    {
+        i = lines.Length + 1;
     }
 }
