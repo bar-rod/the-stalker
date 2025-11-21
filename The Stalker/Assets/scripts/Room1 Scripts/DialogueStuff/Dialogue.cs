@@ -34,6 +34,7 @@ public class Dialogue : MonoBehaviour
     //LocatorDialogue.Instance.DialogueScript.ShowElisaText("I saw the Clueboard");
     
     public bool SawClueBoard {get; set;}
+    public bool StalkerAudioPlaying {get; private set;}
 
 
     /*
@@ -129,6 +130,7 @@ public class Dialogue : MonoBehaviour
         
 
         SawClueBoard = false;
+        StalkerAudioPlaying = true;
 
         //through this way, there seems to be a delay :(
         //introAudio.Play();
@@ -140,12 +142,14 @@ public class Dialogue : MonoBehaviour
         if (i < lines.Length)
         {
             subtite_text.text = lines[i];
+            StalkerAudioPlaying = true;
             //player can't move
         }
         else
         {
             dialoguebox.SetActive(false);
             director.Stop();
+            StalkerAudioPlaying = false;
             //play can move again
         }
 
