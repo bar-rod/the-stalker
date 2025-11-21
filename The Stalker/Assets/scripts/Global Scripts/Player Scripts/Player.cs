@@ -178,4 +178,14 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    public void SetUIOpenTrue()
+    {
+        _bUIOpened = true;
+    }
+    
+    public void SetUiOpenFalse()
+    {
+        _bUIOpened = false;
+    }
 }
