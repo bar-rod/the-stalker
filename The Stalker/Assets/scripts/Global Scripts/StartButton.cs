@@ -14,6 +14,8 @@ public class StartButton : MonoBehaviour
     public void OpenScene()
     {
         Debug.Log("Reached");
-        SceneManager.LoadScene(2); 
+        SceneManager.LoadScene(1); 
     }
+
+    
 }
