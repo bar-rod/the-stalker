@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     private ChainConstraint chain;
     private List<Iinteractable> _interactables = new  List<Iinteractable>();
     private Iinteractable currentInteractable;
-    private bool _bUIOpened = false;
+    public bool _bUIOpened = false;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
