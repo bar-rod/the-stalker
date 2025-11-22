@@ -10,7 +10,7 @@ public class Desk : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
     }
     void Update()
     {
