@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Default Local Group
   m_GUID: bc9e5ece1cfa34f47875f0b1f0fe4543
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: c26d1172612534e1abe5cda13991ba18
+    m_Address: Assets/Scenes/FINALroom2.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9d0d9884ee192ed4cb6bab8ec865984f, type: 2}
   m_SchemaSet:
