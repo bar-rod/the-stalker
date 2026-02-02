@@ -60,7 +60,7 @@ public class BookShelfManager : MonoBehaviour
                 books.Solved();
 
                 // placeholder transition (TO BE REPLACED WHEN TRAPDOOR IS FUNCTIONAL)
-                SceneManager.LoadScene("FINALroom3", LoadSceneMode.Additive);
+                SceneManager.LoadScene("FINALroom3");
 
 
 
