@@ -8,8 +8,8 @@ public class Books : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private GameObject bookshelf;
     [SerializeField] private GameObject spoon;
-    [SerializeField] private GameObject light;
-    [SerializeField] private GameObject collider;
+    [SerializeField] private GameObject spotlight;
+    [SerializeField] private GameObject doorcollider;
 
 
     public void Solved()
@@ -19,7 +19,7 @@ public class Books : MonoBehaviour
         bookshelf.SetActive(false);
         _door.PlayerSolved();
         spoon.SetActive(false);
-        light.SetActive(true);
-        collider.SetActive(true);
+        spotlight.SetActive(true);
+        doorcollider.SetActive(true);
     }
 }

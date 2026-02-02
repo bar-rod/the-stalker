@@ -5273,8 +5273,8 @@ MonoBehaviour:
   player: {fileID: 1242973538}
   bookshelf: {fileID: 456029979}
   spoon: {fileID: 216995396}
-  light: {fileID: 1616929804}
-  collider: {fileID: 165707886}
+  spotlight: {fileID: 1616929804}
+  doorcollider: {fileID: 825123220}
 --- !u!1 &476807953
 GameObject:
   m_ObjectHideFlags: 0

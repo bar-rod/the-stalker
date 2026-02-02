@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BookShelfManager : MonoBehaviour
@@ -60,7 +59,7 @@ public class BookShelfManager : MonoBehaviour
                 books.Solved();
 
                 // placeholder transition (TO BE REPLACED WHEN TRAPDOOR IS FUNCTIONAL)
-                SceneManager.LoadScene("FINALroom3");
+                //SceneManager.LoadScene("FINALroom3");
 
 
 
