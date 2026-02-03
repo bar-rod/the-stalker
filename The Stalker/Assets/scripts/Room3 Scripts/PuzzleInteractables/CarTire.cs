@@ -1,76 +1,135 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CarTire : PuzzleInteractable
 {
-    [SerializeField] private GameObject _tireCanvas;
-    [SerializeField] private GameObject _trunkCanvas;
+    [Header("UI")]
+    [SerializeField] private Canvas puzzleCanvas;
+    [SerializeField] private Image tireImage;
+    [SerializeField] private Button[] boltButtons;
 
-    private int _tireState = 0;
-    /*
-     *  0 -> tire not yet placed
-     *  1 -> tire placed, no bolts placed
-     *  2 -> bolts placed, but not screwed
-     *  3 -> bolts screwed (done)
-     */
+    [Header("Item IDs")]
+    [SerializeField] private int TIRE_ID;
+    [SerializeField] private int BOLTS_ID;
+    [SerializeField] private int WRENCH_ID;
 
-    // item id needed on parent script is the same as the tire id    
-    
+    private TireState currentState = TireState.Idle;
+    private Item activeItem;
 
-    
+    private int boltsPlaced = 0;
+    private int[] boltTightenCount;
+    protected override void Start()
+    {
+        base.Start();
+
+        puzzleCanvas.gameObject.SetActive(false);
+        tireImage.enabled = false;
+
+        boltTightenCount = new int[boltButtons.Length];
+    }
     public override bool Interact()
     {
-        if (_tireState == 0)
-        {
-            Debug.Log("Tire is missing");
-            player.ToggleInventory();
-        }
-        else if (_tireState >= 1) 
-        {
-            OpenTireCanvas();
-        }
-        return true;
+        if (isSolved) return false;
+
+        puzzleCanvas.gameObject.SetActive(true);
+        player.SetUIOpenTrue();
+        inventory.ToggleInventory();
+
+        currentState = TireState.PlacingTire;
+        return true; 
+    }
+
+    private void ClosePuzzle()
+    {
+        puzzleCanvas.gameObject.SetActive(false);
+        player.SetUiOpenFalse();
     }
 
     public override void UseItem(Item item)
     {
-        if (_tireState == 0) TryPlaceTire(item);
-        else if (_tireState == 1) Debug.Log("I need something to attach the tire");
-        else if (_tireState == 2) Debug.Log("I need something to tighten these");
-        CloseUI();
+        activeItem = item;
+
+        switch (currentState)
+        {
+            case TireState.PlacingTire:
+                if (item.id == TIRE_ID)
+                    Debug.Log("Tire selected");
+                break;
+
+            case TireState.PlacingBolts:
+                if (item.id == BOLTS_ID)
+                    Debug.Log("Bolts selected");
+                break;
+
+            case TireState.TighteningBolts:
+                if (item.id == WRENCH_ID)
+                    Debug.Log("Wrench selected");
+                break;
+        }
     }
 
-    private void TryPlaceTire(Item item)
+    public void OnTireClicked()
     {
-        if (item.id != itemIDNeeded)
+        if (currentState != TireState.PlacingTire) return;
+        if (activeItem == null || activeItem.id != TIRE_ID) return;
+
+        tireImage.enabled = true;
+        inventory.RemoveItem(activeItem);
+        activeItem = null;
+
+        currentState = TireState.PlacingBolts;
+        inventory.ToggleInventory();
+    }
+
+    public void OnBoltPlaced(Button bolt)
+    {
+        if (currentState != TireState.PlacingBolts) return;
+        if (activeItem == null || activeItem.id != BOLTS_ID) return;
+
+        bolt.interactable = false;
+        boltsPlaced++;
+
+        if (boltsPlaced >= boltButtons.Length)
         {
-            Debug.Log("wrong item");
-            return;
+            inventory.RemoveItem(activeItem);
+            activeItem = null;
+            currentState = TireState.TighteningBolts;
+        }
+    }
+
+    public void OnBoltTightened(int boltIndex)
+    {
+        if (currentState != TireState.TighteningBolts) return;
+        if (activeItem == null || activeItem.id != WRENCH_ID) return;
+
+        boltTightenCount[boltIndex]++;
+
+        if (boltTightenCount[boltIndex] >= 3)
+        {
+            boltButtons[boltIndex].interactable = false;
         }
 
-        Debug.Log("tire placed");
-        _tireState = 1;
-
-        OpenTireCanvas();
+        if (AllBoltsTight())
+        {
+            inventory.RemoveItem(activeItem);
+            CompletePuzzle();
+        }
     }
 
-    private void OpenTireCanvas()
+    private bool AllBoltsTight()
     {
-        _tireCanvas.SetActive(true);
-
-        // update the tire canvas
+        foreach (int count in boltTightenCount)
+        {
+            if (count < 3) return false;
+        }
+        return true;
     }
 
-    public void AllBoltsPlaced()
+    private void CompletePuzzle()
     {
-        _tireState = 2;
-    }
-
-    public void AllBoltsTightened()
-    {
-        _tireState = 3;
         isSolved = true;
+        currentState = TireState.Solved;
 
-        _tireCanvas.SetActive(false);
-        _trunkCanvas.SetActive(true);
+        ClosePuzzle();
+        Debug.Log("Tire puzzle solved!");
     }
 }
