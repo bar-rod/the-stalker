@@ -5271,7 +5271,7 @@ MonoBehaviour:
   _door: {fileID: 1314208290}
   _sprite: {fileID: 456029982}
   player: {fileID: 1242973538}
-  bookshelf: {fileID: 456029979}
+  bookshelf: {fileID: 114866247}
   spoon: {fileID: 216995396}
   spotlight: {fileID: 1616929804}
   doorcollider: {fileID: 825123220}
@@ -14451,7 +14451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotDoor
   _animator: {fileID: 1314208289}
-  collider: {fileID: 825123220}
 --- !u!61 &1314208291
 BoxCollider2D:
   m_ObjectHideFlags: 0
