@@ -25,7 +25,7 @@ public class Item : MonoBehaviour, Iinteractable
         if (initiallyActive) gameObject.SetActive(true);
         GetComponent<SpriteRenderer>().sprite = itemSprite;
 
-        _collectSound = GetComponent<AudioSource>();
+        // _collectSound = GetComponent<AudioSource>();
     }
 
     // Interact just calls the Pickup() function. It should not be overriden in most cases
@@ -52,7 +52,7 @@ public class Item : MonoBehaviour, Iinteractable
     // This is NOT virtual, so do not repeat implementation if you override this function
     public void Pickup()
     {
-        _collectSound.Play();
+        if (_collectSound != null) _collectSound.Play();
 
         gameObject.SetActive(false);
 

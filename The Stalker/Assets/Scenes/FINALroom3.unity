@@ -698,9 +698,9 @@ MonoBehaviour:
   - {fileID: 533894807}
   - {fileID: 1901068685}
   - {fileID: 990106454}
-  TIRE_ID: 0
-  BOLTS_ID: 0
-  WRENCH_ID: 0
+  TIRE_ID: 5
+  BOLTS_ID: 6
+  WRENCH_ID: 7
 --- !u!58 &142987455
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2387,7 +2387,7 @@ MonoBehaviour:
   itemSprite: {fileID: 1712432301216384921, guid: 63ff17ee917a56c40b21101b3aa5d863, type: 3}
   itemSpriteInv: {fileID: 1712432301216384921, guid: 63ff17ee917a56c40b21101b3aa5d863, type: 3}
   description: 
-  id: 0
+  id: 6
   initiallyActive: 0
 --- !u!4 &464051354
 Transform:
@@ -2398,7 +2398,7 @@ Transform:
   m_GameObject: {fileID: 464051351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.24, y: 1.0699999, z: 0}
+  m_LocalPosition: {x: -1.43, y: -4.23, z: 0}
   m_LocalScale: {x: 0.48146, y: 0.48146, z: 0.48146}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3257,10 +3257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
   inventoryOpen: 0
-  inventoryList:
-  - {fileID: 464051353}
-  - {fileID: 2116533456}
-  - {fileID: 980253264}
+  inventoryList: []
   inventoryUI: {fileID: 1025600079}
   inventoryCopy: []
   animator: {fileID: 1025600076}
@@ -4075,7 +4072,7 @@ MonoBehaviour:
   itemSprite: {fileID: 436679944869855444, guid: eb59f175ca5d9194aa68c480708dd440, type: 3}
   itemSpriteInv: {fileID: 436679944869855444, guid: eb59f175ca5d9194aa68c480708dd440, type: 3}
   description: 
-  id: 0
+  id: 7
   initiallyActive: 0
 --- !u!4 &980253265
 Transform:
@@ -4086,7 +4083,7 @@ Transform:
   m_GameObject: {fileID: 980253262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.19, y: 1.02, z: 0}
+  m_LocalPosition: {x: 0.69, y: -4.15, z: 0}
   m_LocalScale: {x: 0.31057, y: 0.31057, z: 0.31057}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5311,7 +5308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1249445368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8153,7 +8150,7 @@ MonoBehaviour:
   itemSprite: {fileID: -2413806693520163455, guid: 0e74374e0eab4a3438cba713ba2ff9f9, type: 3}
   itemSpriteInv: {fileID: -2413806693520163455, guid: 0e74374e0eab4a3438cba713ba2ff9f9, type: 3}
   description: 
-  id: 0
+  id: 5
   initiallyActive: 0
 --- !u!4 &2116533457
 Transform:
@@ -8164,7 +8161,7 @@ Transform:
   m_GameObject: {fileID: 2116533454}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.82, y: 1.34, z: 0}
+  m_LocalPosition: {x: 3.27, y: -4.18, z: 0}
   m_LocalScale: {x: 0.11023, y: 0.11023, z: 0.11023}
   m_ConstrainProportionsScale: 0
   m_Children: []

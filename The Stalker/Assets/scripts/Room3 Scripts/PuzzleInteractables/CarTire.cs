@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CarTire : PuzzleInteractable
 {
+    const int numOfBolts = 5;
+
     [Header("UI")]
     [SerializeField] private Canvas puzzleCanvas;
     [SerializeField] private Image tireImage;
@@ -69,10 +71,10 @@ public class CarTire : PuzzleInteractable
 
     public void OnTireClicked()
     {
-        Debug.Log(currentState);
+        Debug.Log(activeItem.id);
         if (currentState != TireState.PlacingTire) return;
         if (activeItem == null || activeItem.id != TIRE_ID) return;
-
+        Debug.Log(currentState);
         tireImage.enabled = true;
         inventory.RemoveItem(activeItem);
         activeItem = null;
@@ -83,13 +85,14 @@ public class CarTire : PuzzleInteractable
 
     public void OnBoltPlaced(Button bolt)
     {
+        Debug.Log(activeItem.id);
         if (currentState != TireState.PlacingBolts) return;
         if (activeItem == null || activeItem.id != BOLTS_ID) return;
-
+        Debug.Log(currentState);
         bolt.interactable = false;
         boltsPlaced++;
 
-        if (boltsPlaced >= boltButtons.Length)
+        if (boltsPlaced >= numOfBolts)
         {
             inventory.RemoveItem(activeItem);
             activeItem = null;
