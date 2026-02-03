@@ -69,6 +69,7 @@ public class CarTire : PuzzleInteractable
 
     public void OnTireClicked()
     {
+        Debug.Log(currentState);
         if (currentState != TireState.PlacingTire) return;
         if (activeItem == null || activeItem.id != TIRE_ID) return;
 
