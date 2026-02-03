@@ -30,13 +30,22 @@ public class CarTire : PuzzleInteractable
     }
     public override bool Interact()
     {
+        if (puzzleCanvas.gameObject.activeSelf)
+        {
+            ClosePuzzle();
+            return false;
+        }
         if (isSolved) return false;
 
         puzzleCanvas.gameObject.SetActive(true);
+        ActivePuzzle = this;
         player.SetUIOpenTrue();
+        player.AllowInventoryWhileUIOpen(true);
         inventory.ToggleInventory();
-
-        currentState = TireState.PlacingTire;
+        if (currentState == TireState.Idle)
+        {
+            currentState = TireState.PlacingTire;
+        }
         return true; 
     }
 
@@ -44,6 +53,8 @@ public class CarTire : PuzzleInteractable
     {
         puzzleCanvas.gameObject.SetActive(false);
         player.SetUiOpenFalse();
+        player.AllowInventoryWhileUIOpen(false);
+        ActivePuzzle = null;
     }
 
     public override void UseItem(Item item)
@@ -85,10 +96,8 @@ public class CarTire : PuzzleInteractable
 
     public void OnBoltPlaced(Button bolt)
     {
-        Debug.Log(activeItem.id);
         if (currentState != TireState.PlacingBolts) return;
         if (activeItem == null || activeItem.id != BOLTS_ID) return;
-        Debug.Log(currentState);
         bolt.interactable = false;
         boltsPlaced++;
 
@@ -97,6 +106,12 @@ public class CarTire : PuzzleInteractable
             inventory.RemoveItem(activeItem);
             activeItem = null;
             currentState = TireState.TighteningBolts;
+            if (inventory.GetInventoryOpen()) inventory.ToggleInventory();
+
+            for (int i = 0; i < numOfBolts; i++)
+            {
+                boltButtons[i].interactable = true;
+            }
         }
     }
 

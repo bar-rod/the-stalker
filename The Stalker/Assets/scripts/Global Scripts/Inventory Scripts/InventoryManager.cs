@@ -87,13 +87,17 @@ public class InventoryManager : MonoBehaviour
     }
     public void UseItem(Item item)
     {
+        if (PuzzleInteractable.ActivePuzzle != null)
+        {
+            PuzzleInteractable.ActivePuzzle.UseItem(item);
+            return;
+        }
+
         bool useditem = item.UseItem();
-        if (useditem) {
+        if (useditem)
+        {
             RemoveItem(item);
         }
-        ToggleInventory();
-        
-       
     }
     public bool GetInventoryOpen(){
      return inventoryOpen;   

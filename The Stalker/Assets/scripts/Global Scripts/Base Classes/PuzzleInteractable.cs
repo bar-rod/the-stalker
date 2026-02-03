@@ -16,6 +16,7 @@ public abstract class PuzzleInteractable : MonoBehaviour, Iinteractable
     [SerializeField] protected Player player;
     [SerializeField] protected int itemIDNeeded;
 
+    public static PuzzleInteractable ActivePuzzle;
     protected virtual void Start()
     {
         inventory = FindFirstObjectByType<InventoryManager>();

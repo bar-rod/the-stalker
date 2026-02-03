@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     private List<Iinteractable> _interactables = new  List<Iinteractable>();
     private Iinteractable currentInteractable;
     [SerializeField] private bool _bUIOpened = false;
+    [SerializeField] private bool allowInventoryWhileUIOpen = false;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -155,9 +156,14 @@ public class Player : MonoBehaviour
     
     public void ToggleInventory()
     {
-        if(!_bUIOpened){
+        if (!_bUIOpened || allowInventoryWhileUIOpen)
+        {
             inventoryManager.ToggleInventory();
         }
+    }
+    public void AllowInventoryWhileUIOpen(bool allow)
+    {
+        allowInventoryWhileUIOpen = allow;
     }
 
     void Update()
