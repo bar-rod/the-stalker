@@ -3,26 +3,26 @@ using UnityEngine;
 public class TireCanvasController : MonoBehaviour
 {
     private CarTire carTire;
-    private CarTire.TireState state;
+    private int state;
 
     private int totalBolts = 5;
     private int boltsPlaced = 0;
     private int[] boltTightenCounts;
 
 
-    public void Initialize(CarTire tire, CarTire.TireState currentState)
+    public void Initialize(CarTire tire, int currState)
     {
         carTire = tire;
-        state = currentState;
+        state = currState;
 
         boltTightenCounts = new int[totalBolts];
     }
 
     public void OnTireClicked()
     {
-        if (state != CarTire.TireState.TireMissing) return;
+        if (state != 0) return;
 
-        state = CarTire.TireState.TirePlaced;
+        state = 1;
     }
     
     public void OnBoltHoleClicked(int index, bool playerHasBolts)
@@ -33,7 +33,7 @@ public class TireCanvasController : MonoBehaviour
 
         if (boltsPlaced >= totalBolts)
         {
-            state = CarTire.TireState.BoltsPlaced;
+            state = 2;
             carTire.AllBoltsPlaced();
         }
     }

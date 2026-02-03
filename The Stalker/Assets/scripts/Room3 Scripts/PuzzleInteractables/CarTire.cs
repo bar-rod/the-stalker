@@ -4,52 +4,38 @@ public class CarTire : PuzzleInteractable
 {
     [SerializeField] private GameObject _tireCanvas;
     [SerializeField] private GameObject _trunkCanvas;
-    
-    private TireState _currentState = TireState.TireMissing;
+
+    private int _tireState = 0;
+    /*
+     *  0 -> tire not yet placed
+     *  1 -> tire placed, no bolts placed
+     *  2 -> bolts placed, but not screwed
+     *  3 -> bolts screwed (done)
+     */
 
     // item id needed on parent script is the same as the tire id    
-    public enum TireState // state machine
-    {
-        TireMissing, // tire not installed
-        TirePlaced, // tire installed, but no bolts
-        BoltsPlaced, // bolts placed, but not tightened
-        BoltsTightened // bolts tightened - puzzle solved
-    }
+    
 
     
     public override bool Interact()
     {
-        switch (_currentState)
+        if (_tireState == 0)
         {
-            case TireState.TireMissing:
-                Debug.Log("Tire is missing");
-                player.ToggleInventory();
-                break;
-
-            case TireState.TirePlaced:
-                case TireState.BoltsPlaced:
-                OpenTireCanvas();
-                break;
+            Debug.Log("Tire is missing");
+            player.ToggleInventory();
         }
-
+        else if (_tireState >= 1) 
+        {
+            OpenTireCanvas();
+        }
         return true;
     }
 
     public override void UseItem(Item item)
     {
-        switch (_currentState)
-        {
-            case TireState.TireMissing:
-                TryPlaceTire(item);
-                break;
-            case TireState.TirePlaced:
-                Debug.Log("I need something to attach the tire");
-                break;
-            case TireState.BoltsPlaced:
-                Debug.Log("I need something to tighten these");
-                break;
-        }
-
+        if (_tireState == 0) TryPlaceTire(item);
+        else if (_tireState == 1) Debug.Log("I need something to attach the tire");
+        else if (_tireState == 2) Debug.Log("I need something to tighten these");
         CloseUI();
     }
 
@@ -62,7 +48,7 @@ public class CarTire : PuzzleInteractable
         }
 
         Debug.Log("tire placed");
-        _currentState = TireState.TirePlaced;
+        _tireState = 1;
 
         OpenTireCanvas();
     }
@@ -76,12 +62,12 @@ public class CarTire : PuzzleInteractable
 
     public void AllBoltsPlaced()
     {
-        _currentState = TireState.BoltsPlaced;
+        _tireState = 2;
     }
 
     public void AllBoltsTightened()
     {
-        _currentState = TireState.BoltsTightened;
+        _tireState = 3;
         isSolved = true;
 
         _tireCanvas.SetActive(false);
