@@ -6,4 +6,10 @@ public class Tire : Item
     {
         return RemoveOnUse;
     }
+
+    public void CollectTire()
+    {
+        InventoryManager.Instance.AddItem(this);
+        gameObject.SetActive(false);
+    }
 }
