@@ -1,4 +1,9 @@
 using UnityEngine;
+/*
+ * If eliza has the key and clicks on the toolbox
+ * it will open and reveal a screwdriver which
+ * can be added to inventory
+ */
 
 public class ToolBox : MonoBehaviour
 {
@@ -11,6 +16,12 @@ public class ToolBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    void onClick()
+    {
+        // check for key
         
     }
 }
