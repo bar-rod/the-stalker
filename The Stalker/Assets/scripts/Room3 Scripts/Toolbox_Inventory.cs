@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class Vent_Inventory : PuzzleInteractable
+// This is just a copy paste of vent inventory basically
+
+public class Toolbox_Inventory : PuzzleInteractable
 {
      [SerializeField] private GameObject theCanvas;
      [SerializeField] public bool in_vent; 
@@ -35,11 +37,12 @@ public class Vent_Inventory : PuzzleInteractable
         }
         else if(in_vent==false&&bCanvasActive==false){
 
+            /* We have to add the relevant dialogue here
             if (!LocatorDialogue2.Instance.Dialogue2Script.ElisaAudioPlaying)
             {
                 LocatorDialogue2.Instance.Dialogue2Script.ShowElisaText("What can I use to open the vent?", 2);
             }
-            
+            */
 
             if(inventory.GetInventoryOpen()==false){
             inventory.ToggleInventory();
