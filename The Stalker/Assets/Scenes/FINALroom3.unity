@@ -1079,7 +1079,6 @@ GameObject:
   m_Component:
   - component: {fileID: 169097910}
   - component: {fileID: 169097909}
-  - component: {fileID: 169097913}
   - component: {fileID: 169097914}
   - component: {fileID: 169097915}
   m_Layer: 0
@@ -1162,25 +1161,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &169097913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169097908}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eddbf46c1bd9c648bfcfe24ad894e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  RemoveOnUse: 0
-  itemName: 
-  itemSprite: {fileID: 1969885242317970958, guid: 4a5ebd0b0f25dc440b60cb6d44d44f34, type: 3}
-  itemSpriteInv: {fileID: 1969885242317970958, guid: 4a5ebd0b0f25dc440b60cb6d44d44f34, type: 3}
-  description: 
-  id: 8
-  initiallyActive: 0
 --- !u!60 &169097914
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1336,7 +1316,7 @@ MonoBehaviour:
   description: A key to something
   id: 8
   initiallyActive: 0
-  Vent: {fileID: 2085261631}
+  Vent: {fileID: 2085261632}
 --- !u!1 &189700159
 GameObject:
   m_ObjectHideFlags: 0
@@ -8870,7 +8850,7 @@ GameObject:
   - component: {fileID: 2085261629}
   - component: {fileID: 2085261628}
   - component: {fileID: 2085261630}
-  - component: {fileID: 2085261631}
+  - component: {fileID: 2085261632}
   m_Layer: 0
   m_Name: toolbox
   m_TagString: Untagged
@@ -8997,7 +8977,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.19, y: 3.04}
   m_EdgeRadius: 0
---- !u!114 &2085261631
+--- !u!114 &2085261632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9006,12 +8986,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2085261626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9be9eda5d61c5418ae02a1c6d05b68, type: 3}
+  m_Script: {fileID: 11500000, guid: ba8ac2ff575201d43a3ab665f2962855, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Vent_Inventory
+  m_EditorClassIdentifier: Assembly-CSharp::Toolbox_Inventory
   player: {fileID: 443226361}
   itemIDNeeded: 8
-  theCanvas: {fileID: 160334674}
+  theCanvas: {fileID: 1660147347}
   in_vent: 0
 --- !u!1 &2086951291
 GameObject:

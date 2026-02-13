@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 3377104}
   - component: {fileID: 3377108}
   - component: {fileID: 3377107}
-  - component: {fileID: 3377106}
+  - component: {fileID: 3377110}
   - component: {fileID: 3377105}
   - component: {fileID: 3377109}
   m_Layer: 0
@@ -252,26 +252,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3377106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3377103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b40ab01dff4d3a4e9b6ba766adc341d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Screwdriver
-  RemoveOnUse: 1
-  itemName: ScrewDriver
-  itemSprite: {fileID: -4932829688476447093, guid: 91f8b3c85607449319cb840af41bd9bf, type: 3}
-  itemSpriteInv: {fileID: 7322742609695052342, guid: 5f2f84a28932749e9aafd7a958087b5b, type: 3}
-  description: Can Unscrew Screws
-  id: 3
-  initiallyActive: 0
-  Vent: {fileID: 1548669296}
 --- !u!61 &3377107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -390,6 +370,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectOutline
   outlineSprite: {fileID: -7134417794604995580, guid: f3c20c426d4dea84ab9bc6b4bbae8f5f, type: 3}
   originalSprite: {fileID: -4932829688476447093, guid: 91f8b3c85607449319cb840af41bd9bf, type: 3}
+--- !u!114 &3377110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3377103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde064237546103418b1936e15b3de19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Screwdriver
+  RemoveOnUse: 1
+  itemName: ScrewDriver
+  itemSprite: {fileID: -4932829688476447093, guid: 91f8b3c85607449319cb840af41bd9bf, type: 3}
+  itemSpriteInv: {fileID: 7322742609695052342, guid: 35831b704837a4eb986398b2aa54b756, type: 3}
+  description: Can Unscrew Screws
+  id: 3
+  initiallyActive: 0
+  Vent: {fileID: 1548669296}
 --- !u!1 &29850050
 GameObject:
   m_ObjectHideFlags: 0
@@ -13757,6 +13757,7 @@ MonoBehaviour:
   _interactableOpened: 0
   gameOver: 0
   _bUIOpened: 0
+  allowInventoryWhileUIOpen: 0
 --- !u!212 &1242973539
 SpriteRenderer:
   m_ObjectHideFlags: 0
