@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 // This is just a copy paste of vent inventory basically
 
@@ -6,7 +7,11 @@ public class Toolbox_Inventory : PuzzleInteractable
 {
      [SerializeField] private GameObject theCanvas;
      [SerializeField] public bool in_vent; 
-     private bool bCanvasActive = false;
+
+     // new sprite
+     [SerializeField] public GameObject newSprite;
+
+    private bool bCanvasActive = false;
     public override void UseItem(Item item)
     {
          if (itemIDNeeded == item.id)
@@ -17,8 +22,18 @@ public class Toolbox_Inventory : PuzzleInteractable
 
                 theCanvas.SetActive(true);
                 isSolved = true;
+                // update sprite
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
+            if (newSprite != null && spriteRenderer != null)
+            {
+                spriteRenderer.sprite = newSprite.GetComponent<SpriteRenderer>().sprite;
             }
+
+            else
+                Debug.LogWarning("New sprite or SpriteRenderer is missing for " + gameObject.name);
+
+        }
             else
             {
                 // this is where you would have a hint message pop up to guide the player to the correct item (or a different fail condition)
