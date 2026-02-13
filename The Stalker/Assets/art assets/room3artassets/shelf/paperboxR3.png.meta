@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1fca48d9792970d43875903ef42fa423
+guid: 83a2b1be23c40164685b18fb2e0a3c17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -778138264949513188
-    second: toolboxassetCLOSED_0
+      213: -2826016123185007924
+    second: paperboxR3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toolboxassetCLOSED_0
+      name: paperboxR3_0
       rect:
         serializedVersion: 2
-        x: 100
-        y: 15
-        width: 319
-        height: 304
+        x: 23
+        y: 18
+        width: 254
+        height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c14ab8bee5f7335f0800000000000000
-      internalID: -778138264949513188
+      spriteID: cc2f7001f49f7c8d0800000000000000
+      internalID: -2826016123185007924
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toolboxassetCLOSED_0: -778138264949513188
+      paperboxR3_0: -2826016123185007924
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

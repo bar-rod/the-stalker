@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e0c0ca8ac7731dc4e91748d5dae6ac08
+guid: 2d14e48fe19684d6182745ac114597d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4439158800588982699
-    second: pctowerR3_0
+      213: -1165705154544467111
+    second: pulleyasset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pctowerR3_0
+      name: pulleyasset_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 22
-        width: 230
-        height: 237
+        x: 8
+        y: 27
+        width: 129
+        height: 873
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 556385d2790f462c0800000000000000
-      internalID: -4439158800588982699
+      spriteID: 953098e865592dfe0800000000000000
+      internalID: -1165705154544467111
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pctowerR3_0: -4439158800588982699
+      pulleyasset_0: -1165705154544467111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
