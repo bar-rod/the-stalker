@@ -7,4 +7,11 @@ public class Bolts : Item
     {
         return RemoveOnUse;
     }
+
+    public void CollectBolts()
+    {
+        InventoryManager.Instance.AddItem(this);
+        InventoryManager.Instance.ToggleInventory();
+        gameObject.SetActive(false);
+    }
 }
