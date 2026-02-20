@@ -962,8 +962,8 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 7.251511, y: 1.1782637}
-  - {x: -2.3550797, y: -5.0053916}
-  - {x: -7.515673, y: -1.9850794}
+  - {x: -2.416197, y: -4.394217}
+  - {x: -7.515673, y: -1.6183743}
   - {x: 2.7098868, y: 4.2953553}
   - {x: 7.0800548, y: 1.2554439}
   m_AdjacentStartPoint: {x: 0, y: 0}
@@ -2603,7 +2603,7 @@ Transform:
   m_GameObject: {fileID: 443226351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.378, y: -1.8341, z: 0}
+  m_LocalPosition: {x: -0.05, y: -2.6, z: 0}
   m_LocalScale: {x: 0.46327373, y: 0.4921271, z: 0.060319602}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8002,7 +8002,7 @@ Transform:
   m_GameObject: {fileID: 1720528011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -22.43, z: 0}
+  m_LocalPosition: {x: 0, y: -22.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9912,7 +9912,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -778138264949513188, guid: 1fca48d9792970d43875903ef42fa423, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
