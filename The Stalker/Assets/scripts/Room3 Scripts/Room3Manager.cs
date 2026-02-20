@@ -11,7 +11,7 @@ public class Room3Manager : MonoBehaviour
         if(exit.correct)
         {
             openedCabinet.SetActive(false);
-            interact.Interact();
+            //interact.Interact();
         }
     }
 }
