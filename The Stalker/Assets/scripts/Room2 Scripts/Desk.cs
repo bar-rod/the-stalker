@@ -12,7 +12,7 @@ public class Desk : MonoBehaviour
     {
         if (desk.transform.position.y < player.transform.position.y)
         {
-            _sprite.sortingOrder = 4;
+            _sprite.sortingOrder = 2;
         }
         else
         {
