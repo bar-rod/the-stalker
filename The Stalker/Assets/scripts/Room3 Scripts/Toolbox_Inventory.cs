@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class Toolbox_Inventory : PuzzleInteractable
 {
-     [SerializeField] private GameObject theCanvas;
-     [SerializeField] public bool in_vent; 
+    [SerializeField] private GameObject screwDriver;
+    [SerializeField] private GameObject theCanvas;
+    [SerializeField] public bool in_vent; 
+
 
      // new sprite
      [SerializeField] public GameObject newSprite;
@@ -20,10 +22,12 @@ public class Toolbox_Inventory : PuzzleInteractable
                 Debug.Log(item.name + (" is the correct item"));
                 //inventory.ToggleInventory();
 
-                theCanvas.SetActive(true);
+                theCanvas.SetActive(false);
+                screwDriver.SetActive(true);
                 isSolved = true;
-                // update sprite
-                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                this.GetComponent<BoxCollider2D>().enabled = false; // disable collider so it can't be interacted with again        
+                                                                    // update sprite
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
             if (newSprite != null && spriteRenderer != null)
             {
@@ -45,8 +49,9 @@ public class Toolbox_Inventory : PuzzleInteractable
     {
         Debug.Log("Called Interact() from PuzzleInteractable");
         
-        if (isSolved&&bCanvasActive==false) {
-            theCanvas.SetActive(true);
+        if (isSolved&&bCanvasActive==false) 
+        {
+            theCanvas.SetActive(false);
             bCanvasActive=true;
             return true;
         }
