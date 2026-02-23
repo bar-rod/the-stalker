@@ -1,12 +1,5 @@
-// 1. On click opens inventory
-// 2. Clicking on the appropriate item in the inventory will solve the puzzle and open the pc
-// 3. PC sprite change to open pc sprite
-
-// So basically I had to copy from puzzleinteractable and vent inv for this because puzzleinteractable wasn't designed for clicks
-// OR because I'm just not skilled enough to make it work with clicks
-// Later we should split this into a interactable abstract base class but I'm on a deadline here sooooo
-
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class personalComputer : MonoBehaviour
@@ -15,11 +8,19 @@ public class personalComputer : MonoBehaviour
     protected InventoryManager inventory;
     [SerializeField] Player player;
     [SerializeField] int itemIDRequired;
-    [SerializeField] Sprite newSprite;
+    [SerializeField] Sprite newSprite; 
+
+    private Image uiImage;
 
     void Start()
     {
         inventory = FindFirstObjectByType<InventoryManager>();
+
+        uiImage = GetComponent<Image>();
+        if (uiImage == null)
+        {
+            Debug.LogWarning("personalComputer: No Image component found on the GameObject. Cannot change UI sprite.");
+        }
     }
 
     // this replaces the interact method of puzzleInteractable
@@ -34,28 +35,37 @@ public class personalComputer : MonoBehaviour
             inventory.ToggleInventory();
         }
     }
-
-    // TODO: Make this get called when player clicks on items in open inv but how??
     public void useItem(Item item)
     {
         if (item == null)
             return;
 
-        if(item.id == itemIDRequired)
+        if (item.id == itemIDRequired)
         {
+            Debug.Log(item.name + (" is the correct item"));
             isSolved = true;
             solve();
         }
+
+        else
+            Debug.Log(item.name + (" is not the correct item"));
     }
 
     // If we split this into an abstract class, put this as an overridden function.
     public void solve()
     {
-        // change the sprite for this game object
-        SpriteRenderer s = gameObject.GetComponent<SpriteRenderer>();
-        if (s != null)
+        if (uiImage == null)
         {
-            s.sprite = newSprite;
+            Debug.Log("personalComputer.solve: uiImage is null, cannot set sprite.");
+            return;
         }
+
+        if (newSprite == null)
+        {
+            Debug.Log("personalComputer.solve: newSprite (source Image) is null, cannot set sprite.");
+            return;
+        }
+
+        uiImage.sprite = newSprite;
     }
 }

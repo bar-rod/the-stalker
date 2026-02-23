@@ -9746,6 +9746,8 @@ MonoBehaviour:
   description: A screw driver you found inside of a toolbox.
   id: 9
   initiallyActive: 0
+  computerCanvas: {fileID: 1614546888}
+  computer: {fileID: 1497158377}
 --- !u!212 &1921445469
 SpriteRenderer:
   serializedVersion: 2
