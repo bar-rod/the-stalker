@@ -14,5 +14,10 @@ public class KeyToolBox : Item
             return false;
         }
     }
+
+    public void onClick()
+    {
+        Pickup();
+    }
 }
 

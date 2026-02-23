@@ -24,7 +24,7 @@ public class personalComputer : MonoBehaviour
 
     // this replaces the interact method of puzzleInteractable
     // you make a button component then connect this method to it
-    void onClick()
+    public void onClick()
     {
         if (isSolved)
             return;
@@ -35,7 +35,7 @@ public class personalComputer : MonoBehaviour
         }
     }
 
-    // TODO: Make this get called when player clicks on items in open inv
+    // TODO: Make this get called when player clicks on items in open inv but how??
     public void useItem(Item item)
     {
         if (item == null)

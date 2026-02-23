@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class key : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class key : Item, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image keyImage;
     [SerializeField] private Sprite keyOg;
