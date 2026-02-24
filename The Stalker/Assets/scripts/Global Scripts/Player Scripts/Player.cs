@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        if (_bUIOpened) return;
         Vector2 proposedVelocity = currentMoveInput * walkSpeed;
         rb.linearVelocity = chain.FilterMovement(proposedVelocity) * walkSpeed;
         // Vector2 proposedVelocity = new Vector2(currentMoveInput.x * walkSpeed, currentMoveInput.y * walkSpeed);
