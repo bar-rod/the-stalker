@@ -69,12 +69,18 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Item item)
     {
         inventoryList.Add(item);
+
+        // ===========================================
+        // im really not a fan of this :/
+        // at some point, refactor this code into the PocketWatch item script
         if (item.name == "PocketWatch")
         {
             LocatorDialogue.Instance.DialogueScript.SawClueBoard = true;
             LocatorDialogue.Instance.DialogueScript.ShowElisaText("Would this increase my time?", 6);
         }
-        ToggleInventory();
+        // ===========================================
+
+        if (!GetInventoryOpen()) ToggleInventory();
     }
     public void RemoveItem(Item item)
     {

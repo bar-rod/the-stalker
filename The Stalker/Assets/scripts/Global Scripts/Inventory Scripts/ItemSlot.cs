@@ -15,9 +15,9 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public bool hasItem;
     
 
-    private void Awake()
+    private void Update()
     {
-        
+        UpdateSlot();
     }
     private void OnEnable()
     {
@@ -55,6 +55,5 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             icon.enabled = false;
             hasItem = false;
         }
-        highlight.gameObject.SetActive(false);
     }
 }
