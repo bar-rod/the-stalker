@@ -8,6 +8,7 @@ public class ChainKey : MonoBehaviour, Iinteractable // Doesn't inherit from Ite
     [SerializeField] private LightController _light;
     [SerializeField] private Timer time;
     [SerializeField] private GameObject healthBar;
+    [SerializeField] private GameObject exitDoorLight;
     public bool Interact() 
     {
         // Debug.Log("using chain key");
@@ -18,6 +19,8 @@ public class ChainKey : MonoBehaviour, Iinteractable // Doesn't inherit from Ite
 
         _light.turnLightsOff();
         _light.enabled = false;
+
+        exitDoorLight.SetActive(true);
 
         time.enabled = false;
         healthBar.SetActive(false);
