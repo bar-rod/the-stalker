@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 38392ae507a574c70b4055c853960e0d
+guid: 7b04e1a25c6a2451ba106c5774f6921b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2905095999544566209
-    second: Reply Glow_0
+      213: -9104633518780348920
+    second: Selected Reply_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reply Glow_0
+      name: Selected Reply_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 124
-        height: 50
+        width: 107
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c123437b69f05820800000000000000
-      internalID: 2905095999544566209
+      spriteID: 8068bf69d08d5a180800000000000000
+      internalID: -9104633518780348920
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Reply Glow_0: 2905095999544566209
+      Selected Reply_0: -9104633518780348920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

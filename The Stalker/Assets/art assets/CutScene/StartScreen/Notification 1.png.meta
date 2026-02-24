@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fcf78ab06f168490ab8ada893d4f6d35
+guid: df7ddee2be4da4e299c7b6fb25d1fe68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -384786617675817818
-    second: unselected button_0
+      213: -8950761800129885504
+    second: Notification 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: unselected button_0
+      name: Notification 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 138
-        height: 39
+        width: 428
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6acdb132c96f8aaf0800000000000000
-      internalID: -384786617675817818
+      spriteID: 0ca4f12e09188c380800000000000000
+      internalID: -8950761800129885504
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      unselected button_0: -384786617675817818
+      Notification 1_0: -8950761800129885504
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9976fa12259d2494884fc1a2557bedca
+guid: 4ca7115c825ec4c8f83b1df748855912
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1542951806914141035
-    second: Highlighted button_0
+      213: 8427522875439036679
+    second: Unselected Reply_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Highlighted button_0
+      name: Unselected Reply_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 178
-        height: 115
+        width: 107
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6b1aa45e7aa96510800000000000000
-      internalID: 1542951806914141035
+      spriteID: 709b50f776394f470800000000000000
+      internalID: 8427522875439036679
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Highlighted button_0: 1542951806914141035
+      Unselected Reply_0: 8427522875439036679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
