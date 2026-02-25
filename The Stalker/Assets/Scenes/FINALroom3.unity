@@ -1483,6 +1483,7 @@ Transform:
   m_Children:
   - {fileID: 630483972}
   - {fileID: 1627044343}
+  - {fileID: 1035305282}
   - {fileID: 807632186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4302,6 +4303,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CarTire
   player: {fileID: 443226361}
   itemIDNeeded: 0
+  carSprite: {fileID: 142987456}
+  _carSprite: {fileID: 7089240456694032799, guid: c72a4e8626733436f999520746e9217d, type: 3}
+  outline: {fileID: 630483975}
   puzzleCanvas: {fileID: 1249445370}
   tireImage: {fileID: 1184714725}
   boltButtons:
@@ -5754,7 +5758,7 @@ Transform:
   m_GameObject: {fileID: 980253262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: -3.99, z: 0}
+  m_LocalPosition: {x: 6.25, y: -4.05, z: 0}
   m_LocalScale: {x: 0.31057, y: 0.31057, z: 0.31057}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6263,6 +6267,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1035305281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1035305282}
+  m_Layer: 0
+  m_Name: carTrunk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1035305282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035305281}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 142987457}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1060636717
 GameObject:
   m_ObjectHideFlags: 0
@@ -9591,7 +9626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0625de54f66f14c409d1ee775390f0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrontDoor
-  player: {fileID: 0}
+  player: {fileID: 443226361}
   itemIDNeeded: 0
   puzzleCanvas: {fileID: 63925432}
 --- !u!1 &1660147347

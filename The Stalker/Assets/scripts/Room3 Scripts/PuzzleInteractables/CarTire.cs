@@ -3,6 +3,9 @@ using UnityEngine.UI;
 public class CarTire : PuzzleInteractable
 {
     const int numOfBolts = 5;
+    [SerializeField] private SpriteRenderer carSprite;
+    [SerializeField] private Sprite _carSprite;
+    [SerializeField] private MonoBehaviour outline;
 
     [Header("UI")]
     [SerializeField] private Canvas puzzleCanvas;
@@ -147,6 +150,9 @@ public class CarTire : PuzzleInteractable
     {
         isSolved = true;
         currentState = TireState.Solved;
+
+        carSprite.sprite = _carSprite;
+        outline.enabled = false;
 
         ClosePuzzle();
         Debug.Log("Tire puzzle solved!");

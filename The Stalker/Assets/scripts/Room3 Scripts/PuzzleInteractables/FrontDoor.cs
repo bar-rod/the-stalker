@@ -15,14 +15,14 @@ public class FrontDoor : PuzzleInteractable
 
     public override bool Interact()
     {
-        if (isSolved)
-            return false;
+        if (isSolved) return false;
 
         // If canvas closed → open it
         if (!isOpen)
         {
             puzzleCanvas.gameObject.SetActive(true);
             isOpen = true;
+            return true;
         }
         // If canvas open → close it
         else
@@ -30,9 +30,8 @@ public class FrontDoor : PuzzleInteractable
             puzzleCanvas.gameObject.SetActive(false);
             isOpen = false;
             CloseUI();
+            return false;
         }
-
-        return true;
     }
 
     public override void UseItem(Item item)
