@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Start Menu.unity
     guid: c35cad3d3901d4b7c8e81864087cb9bc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cutscene.unity
     guid: 39d4c07b4c0504081823648e8edf0b88
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FINAL room 1.unity
     guid: 4719f358ddc9f4208809dbec01fcf946
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FINALroom2.unity
     guid: c26d1172612534e1abe5cda13991ba18
   - enabled: 1
