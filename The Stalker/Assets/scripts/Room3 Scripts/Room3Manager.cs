@@ -18,5 +18,7 @@ public class Room3Manager : MonoBehaviour
             bg.GetComponent<SpriteRenderer>().sprite = newBg;
             door.SetMovingTrue();
         }
+
+
     }
 }
