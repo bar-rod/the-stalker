@@ -5,7 +5,8 @@ public class CarTire : PuzzleInteractable
     const int numOfBolts = 5;
     [SerializeField] private SpriteRenderer carSprite;
     [SerializeField] private Sprite _carSprite;
-    [SerializeField] private MonoBehaviour outline;
+    [SerializeField] private Collider2D tireCollider;
+    [SerializeField] private GameObject carTrunk;
 
     [Header("UI")]
     [SerializeField] private Canvas puzzleCanvas;
@@ -25,6 +26,8 @@ public class CarTire : PuzzleInteractable
     protected override void Start()
     {
         base.Start();
+
+        carTrunk.SetActive(false);
 
         puzzleCanvas.gameObject.SetActive(false);
         tireImage.enabled = false;
@@ -151,8 +154,13 @@ public class CarTire : PuzzleInteractable
         isSolved = true;
         currentState = TireState.Solved;
 
+        // this part is not quite working
+        // even though the collider is disabled, the outline script still updates the sprite
+        // not sure how to fix
+        tireCollider.enabled = false;
         carSprite.sprite = _carSprite;
-        outline.enabled = false;
+
+        carTrunk.SetActive(true);
 
         ClosePuzzle();
         Debug.Log("Tire puzzle solved!");
