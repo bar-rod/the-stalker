@@ -12,7 +12,6 @@ public class Toolbox_Inventory : PuzzleInteractable
     [SerializeField] public bool in_vent; 
     [SerializeField] private KeyToolBox key;
     [SerializeField] private ObjectOutline outline;
-    //[SerializeField] private InventoryManager storage;
     
     //related to Elisa's dialogue
     public bool hint = false;
@@ -43,8 +42,10 @@ public class Toolbox_Inventory : PuzzleInteractable
                 theCanvas.SetActive(false);
                 screwDriver.SetActive(true);
                 isSolved = true;
-                this.GetComponent<EdgeCollider2D>().enabled = false; // disable collider so it can't be interacted with again        
-                                                                    // update sprite
+                this.GetComponent<BoxCollider2D>().enabled = false; // disable collider so it can't be interacted with again
+                // get the script
+            
+            // update sprite
             SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
             if (newSprite != null && spriteRenderer != null)
@@ -57,12 +58,12 @@ public class Toolbox_Inventory : PuzzleInteractable
                 Debug.LogWarning("New sprite or SpriteRenderer is missing for " + gameObject.name);
 
         }
-            else
-            {
-                // this is where you would have a hint message pop up to guide the player to the correct item (or a different fail condition)
-                Debug.Log(item.name + " is the incorrect item");
-                hint = true;
-            }
+        else
+        {
+            // this is where you would have a hint message pop up to guide the player to the correct item (or a different fail condition)
+            Debug.Log(item.name + " is the incorrect item");
+            hint = true;
+        }
         //base.CloseUI(null);
     }
     public override bool Interact()
@@ -72,6 +73,7 @@ public class Toolbox_Inventory : PuzzleInteractable
         {
             hint = true;
         }
+
         if(inventory.inventoryList.Contains(key))
         {
             hintWKey = true;
