@@ -5,6 +5,6 @@ public class StartRoom1 : MonoBehaviour
 {
     void Start()
     {
-        SceneManager.LoadScene("FINAL room 1");
+        SceneManager.LoadScene("LevelSelect");
     }
 }
