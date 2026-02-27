@@ -18,7 +18,7 @@ public class Toolbox_Inventory : PuzzleInteractable
 
 
     // new sprite
-    [SerializeField] public GameObject newSprite;
+    [SerializeField] public Sprite newSprite;
 
     private bool bCanvasActive = false;
     public override void UseItem(Item item)
@@ -38,7 +38,7 @@ public class Toolbox_Inventory : PuzzleInteractable
 
             if (newSprite != null && spriteRenderer != null)
             {
-                spriteRenderer.sprite = newSprite.GetComponent<SpriteRenderer>().sprite;
+                spriteRenderer.sprite = newSprite;
                 toolBoxOpen = true;
             }
 
