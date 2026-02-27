@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// This is just a copy paste of vent inventory basically
+// Issue: pressing e on toolbox disables movement.
+// Issue2: sometimes the scredriver is not interactable.
+// Issue3: the sprite resets to its old one
 
 public class Toolbox_Inventory : PuzzleInteractable
 {
@@ -15,8 +17,8 @@ public class Toolbox_Inventory : PuzzleInteractable
     public bool toolBoxOpen = false;
 
 
-     // new sprite
-     [SerializeField] public GameObject newSprite;
+    // new sprite
+    [SerializeField] public GameObject newSprite;
 
     private bool bCanvasActive = false;
     public override void UseItem(Item item)
@@ -25,12 +27,12 @@ public class Toolbox_Inventory : PuzzleInteractable
             {
                 // this is where behavior would go for solving the puzzle
                 Debug.Log(item.name + (" is the correct item"));
-                //inventory.ToggleInventory();
+                //inventory.ToggleInventory(); why is this here?
 
                 theCanvas.SetActive(false);
                 screwDriver.SetActive(true);
                 isSolved = true;
-                this.GetComponent<BoxCollider2D>().enabled = false; // disable collider so it can't be interacted with again        
+                this.GetComponent<EdgeCollider2D>().enabled = false; // disable collider so it can't be interacted with again        
                                                                     // update sprite
             SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -55,7 +57,7 @@ public class Toolbox_Inventory : PuzzleInteractable
     public override bool Interact()
     {
         //plays hint for the player
-        if(inventory.inventoryList.Count==0)
+        if(inventory.inventoryList.Count==0)   
         {
             hint = true;
         }
@@ -69,8 +71,8 @@ public class Toolbox_Inventory : PuzzleInteractable
         if (isSolved&&bCanvasActive==false) 
         {
             theCanvas.SetActive(false);
-            bCanvasActive=true;
-            return true;
+            bCanvasActive=false;
+            return false;
         }
         else if(in_vent==false&&bCanvasActive==false){
 
@@ -85,8 +87,8 @@ public class Toolbox_Inventory : PuzzleInteractable
             inventory.ToggleInventory();
             }
             in_vent=true;
-            bCanvasActive=true;
-            return true;
+            bCanvasActive=false;
+            return false;
         }
         else if(bCanvasActive==true){
             CloseUI();
