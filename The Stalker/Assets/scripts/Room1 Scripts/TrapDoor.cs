@@ -6,6 +6,7 @@ public class TrapDoor : MonoBehaviour
     private bool trapDoorMoving = false; //for audio
     [SerializeField] private float speed;
     [SerializeField] private GameObject key;
+    [SerializeField] private int order = 2;
 
     [SerializeField] private SpriteRenderer _door;
     [SerializeField] private AudioSource _openDoorSound;
@@ -50,7 +51,7 @@ public class TrapDoor : MonoBehaviour
     public void SetMovingTrue()
     {
         trapDoorSliding = true;
-        _door.sortingOrder = 2;
+        _door.sortingOrder = order;
         key.SetActive(true);
     }
 }

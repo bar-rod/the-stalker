@@ -6,7 +6,7 @@ public class Room3Manager : MonoBehaviour
     [SerializeField] ExitDoor exit;
     [SerializeField] PuzzleInteractable interact;
     [SerializeField] GameObject bg;
-    [SerializeField] Sprite newBg;
+    [SerializeField] GameObject openDoor;
     [SerializeField] TrapDoor door;
 
     void Update()
@@ -15,7 +15,7 @@ public class Room3Manager : MonoBehaviour
         {
             openedCabinet.SetActive(false);
             //interact.Interact();
-            bg.GetComponent<SpriteRenderer>().sprite = newBg;
+            openDoor.SetActive(true);
             door.SetMovingTrue();
         }
 
