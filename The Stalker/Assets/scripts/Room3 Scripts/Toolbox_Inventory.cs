@@ -8,8 +8,11 @@ public class Toolbox_Inventory : PuzzleInteractable
     [SerializeField] private GameObject screwDriver;
     [SerializeField] private GameObject theCanvas;
     [SerializeField] public bool in_vent; 
+    [SerializeField] private KeyToolBox key;
     //[SerializeField] private InventoryManager storage;
     public bool hint = false;
+    public bool hintWKey = false;
+    public bool toolBoxOpen = false;
 
 
      // new sprite
@@ -34,6 +37,7 @@ public class Toolbox_Inventory : PuzzleInteractable
             if (newSprite != null && spriteRenderer != null)
             {
                 spriteRenderer.sprite = newSprite.GetComponent<SpriteRenderer>().sprite;
+                toolBoxOpen = true;
             }
 
             else
@@ -54,6 +58,10 @@ public class Toolbox_Inventory : PuzzleInteractable
         if(inventory.inventoryList.Count==0)
         {
             hint = true;
+        }
+        if(inventory.inventoryList.Contains(key))
+        {
+            hintWKey = true;
         }
 
         Debug.Log("Called Interact() from PuzzleInteractable");
