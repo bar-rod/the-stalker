@@ -8,6 +8,8 @@ public class Toolbox_Inventory : PuzzleInteractable
     [SerializeField] private GameObject screwDriver;
     [SerializeField] private GameObject theCanvas;
     [SerializeField] public bool in_vent; 
+    //[SerializeField] private InventoryManager storage;
+    public bool hint = false;
 
 
      // new sprite
@@ -16,7 +18,7 @@ public class Toolbox_Inventory : PuzzleInteractable
     private bool bCanvasActive = false;
     public override void UseItem(Item item)
     {
-         if (itemIDNeeded == item.id)
+        if (itemIDNeeded == item.id)
             {
                 // this is where behavior would go for solving the puzzle
                 Debug.Log(item.name + (" is the correct item"));
@@ -42,11 +44,18 @@ public class Toolbox_Inventory : PuzzleInteractable
             {
                 // this is where you would have a hint message pop up to guide the player to the correct item (or a different fail condition)
                 Debug.Log(item.name + " is the incorrect item");
+                hint = true;
             }
         //base.CloseUI(null);
     }
     public override bool Interact()
     {
+        //plays hint for the player
+        if(inventory.inventoryList.Count==0)
+        {
+            hint = true;
+        }
+
         Debug.Log("Called Interact() from PuzzleInteractable");
         
         if (isSolved&&bCanvasActive==false) 

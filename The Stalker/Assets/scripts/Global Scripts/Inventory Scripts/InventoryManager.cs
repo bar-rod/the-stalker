@@ -8,7 +8,7 @@ using System.Linq;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private bool inventoryOpen;
-    [SerializeField] private List<Item> inventoryList = new List<Item>();
+    [SerializeField] public List<Item> inventoryList = new List<Item>();
     [SerializeField] private Canvas inventoryUI;
     public static InventoryManager Instance;
 
