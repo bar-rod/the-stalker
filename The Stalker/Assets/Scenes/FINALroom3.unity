@@ -9383,7 +9383,7 @@ GameObject:
   - component: {fileID: 1619865425}
   - component: {fileID: 1619865424}
   m_Layer: 0
-  m_Name: Room4Collider
+  m_Name: Room3Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
