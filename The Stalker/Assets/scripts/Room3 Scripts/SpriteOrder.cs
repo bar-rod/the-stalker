@@ -12,7 +12,7 @@ public class SpriteOrder : MonoBehaviour
     {
         if (car.transform.position.y < player.transform.position.y)
         {
-            _sprite.sortingOrder = 3;
+            _sprite.sortingOrder = 4;
         }
         else
         {
