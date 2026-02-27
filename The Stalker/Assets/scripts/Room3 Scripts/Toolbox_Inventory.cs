@@ -11,7 +11,10 @@ public class Toolbox_Inventory : PuzzleInteractable
     [SerializeField] private GameObject theCanvas;
     [SerializeField] public bool in_vent; 
     [SerializeField] private KeyToolBox key;
+    [SerializeField] private ObjectOutline outline;
     //[SerializeField] private InventoryManager storage;
+    
+    //related to Elisa's dialogue
     public bool hint = false;
     public bool hintWKey = false;
     public bool toolBoxOpen = false;
@@ -21,6 +24,14 @@ public class Toolbox_Inventory : PuzzleInteractable
     [SerializeField] public Sprite newSprite;
 
     private bool bCanvasActive = false;
+
+    void Update()
+    {
+        if(toolBoxOpen)
+        {
+            outline.enabled = false;
+        }
+    }
     public override void UseItem(Item item)
     {
         if (itemIDNeeded == item.id)
