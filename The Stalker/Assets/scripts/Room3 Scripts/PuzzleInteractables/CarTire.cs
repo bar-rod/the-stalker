@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 public class CarTire : PuzzleInteractable
 {
     const int numOfBolts = 5;
@@ -95,7 +96,6 @@ public class CarTire : PuzzleInteractable
         tireImage.enabled = true;
         inventory.RemoveItem(activeItem);
         activeItem = null;
-
         currentState = TireState.PlacingBolts;
         inventory.ToggleInventory();
     }
@@ -105,6 +105,7 @@ public class CarTire : PuzzleInteractable
         if (currentState != TireState.PlacingBolts) return;
         if (activeItem == null || activeItem.id != BOLTS_ID) return;
         bolt.interactable = false;
+        bolt.image.color = new Color(1f, 1f, 1f, 1f);
         boltsPlaced++;
 
         if (boltsPlaced >= numOfBolts)
@@ -128,9 +129,10 @@ public class CarTire : PuzzleInteractable
 
         boltTightenCount[boltIndex]++;
 
-        if (boltTightenCount[boltIndex] >= 3)
+        if (boltTightenCount[boltIndex] >= 1)
         {
             boltButtons[boltIndex].interactable = false;
+            StartCoroutine(RotateButton(boltButtons[boltIndex]));
         }
 
         if (AllBoltsTight())
@@ -144,7 +146,7 @@ public class CarTire : PuzzleInteractable
     {
         foreach (int count in boltTightenCount)
         {
-            if (count < 3) return false;
+            if (count < 1) return false;
         }
         return true;
     }
@@ -165,4 +167,20 @@ public class CarTire : PuzzleInteractable
         ClosePuzzle();
         Debug.Log("Tire puzzle solved!");
     }
+
+    IEnumerator RotateButton(Button button)
+    {
+        float elapsed = 0f;
+        Quaternion startRot = button.transform.rotation;
+
+        while (elapsed < 1f)
+        {
+            elapsed += Time.deltaTime;
+            button.transform.rotation = startRot * Quaternion.Euler(0, 0, 360 * (elapsed / 1f));
+            yield return null;
+        }
+
+        button.transform.rotation = startRot; // Snap back to original
+    }
+
 }
