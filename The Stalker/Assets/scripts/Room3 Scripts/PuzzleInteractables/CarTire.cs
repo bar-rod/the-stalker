@@ -134,12 +134,6 @@ public class CarTire : PuzzleInteractable
             boltButtons[boltIndex].interactable = false;
             StartCoroutine(RotateButton(boltButtons[boltIndex]));
         }
-
-        if (AllBoltsTight())
-        {
-            inventory.RemoveItem(activeItem);
-            CompletePuzzle();
-        }
     }
 
     private bool AllBoltsTight()
@@ -176,11 +170,17 @@ public class CarTire : PuzzleInteractable
         while (elapsed < 1f)
         {
             elapsed += Time.deltaTime;
-            button.transform.rotation = startRot * Quaternion.Euler(0, 0, 360 * (elapsed / 1f));
+            button.transform.rotation = startRot * Quaternion.Euler(0, 0, -360 * (elapsed / 1f));
             yield return null;
         }
 
         button.transform.rotation = startRot; // Snap back to original
+
+        if (AllBoltsTight())
+        {
+            inventory.RemoveItem(activeItem);
+            CompletePuzzle();
+        }
     }
 
 }
