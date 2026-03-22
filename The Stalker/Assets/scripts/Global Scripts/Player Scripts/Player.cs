@@ -88,9 +88,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_bUIOpened) return;
+        if (_bUIOpened)
+            walkSpeed = 0;
+
         Vector2 proposedVelocity = currentMoveInput * walkSpeed;
         rb.linearVelocity = chain.FilterMovement(proposedVelocity) * walkSpeed;
+        
         // Vector2 proposedVelocity = new Vector2(currentMoveInput.x * walkSpeed, currentMoveInput.y * walkSpeed);
         // rb.velocity = chain.FilterMovement(proposedVelocity); // when chain is not enabled, FIlterMovement returns proposedVelocity with no modifications
     }
@@ -168,17 +171,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (LocatorDialogue.Instance != null)
+        if (_bUIOpened || gameOver || ((LocatorDialogue.Instance != null) && (LocatorDialogue.Instance.DialogueScript.StalkerAudioPlaying) ))
         {
-            if (_bUIOpened || LocatorDialogue.Instance.DialogueScript.StalkerAudioPlaying || gameOver)
-            {
-                Freeze(true);
-            }
-            else
-            {
-                Freeze(false);
-            }
+            Debug.Log("Player frozen");
+            Freeze(true);
         }
+        else
+        {
+            Freeze(false);
+        }
+        
 
         Scene currentScene = SceneManager.GetActiveScene();
 
