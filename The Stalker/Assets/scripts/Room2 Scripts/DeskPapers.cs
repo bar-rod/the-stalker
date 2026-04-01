@@ -78,7 +78,7 @@ public class DeskPapers : MonoBehaviour, IPointerUpHandler, IDragHandler, IPoint
         if (isDragging is true)
         {
             isDragging = false;
-            image.color = Color.white;
+            image.color /= 0.7f;
             return;
         }
 
@@ -99,7 +99,7 @@ public class DeskPapers : MonoBehaviour, IPointerUpHandler, IDragHandler, IPoint
     public virtual void OnPointerDown(PointerEventData eventdata)
     {
         Debug.Log("Mouse click down");
-        image.color = Color.black;
+        image.color *= 0.7f;
     }
 
     public void OpenClue()

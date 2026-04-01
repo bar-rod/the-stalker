@@ -173,7 +173,7 @@ public class Player : MonoBehaviour
     {
         if (_bUIOpened || gameOver || ((LocatorDialogue.Instance != null) && (LocatorDialogue.Instance.DialogueScript.StalkerAudioPlaying) ))
         {
-            Debug.Log("Player frozen");
+            // Debug.Log("Player frozen");
             Freeze(true);
         }
         else
