@@ -9471,9 +9471,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrapDoor
   trapDoorSliding: 0
+  trapDoorMoving: 0
   speed: 1
   key: {fileID: 1619865423}
-  order: 0
+  order: 1
   _door: {fileID: 1488917855}
   _openDoorSound: {fileID: 1488917853}
   target: {fileID: 805931583}
@@ -9524,7 +9525,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7272986311787662984, guid: 2725d24deb997454ca5ede5311821196, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12791,6 +12792,7 @@ GameObject:
   - component: {fileID: 2003251485}
   - component: {fileID: 2003251484}
   - component: {fileID: 2003251483}
+  - component: {fileID: 2003251486}
   m_Layer: 0
   m_Name: keypad
   m_TagString: Untagged
@@ -12860,7 +12862,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6825065051723816373, guid: d01506ecbc79a47baa1cdee698da3d96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12947,6 +12949,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectOutline
   outlineSprite: {fileID: -7843302207164974268, guid: 09352efc2399b431fb6bf280c27f3a37, type: 3}
   originalSprite: {fileID: 6825065051723816373, guid: d01506ecbc79a47baa1cdee698da3d96, type: 3}
+--- !u!114 &2003251486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003251480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3759a3cc4b25a4811bd84644bdbdec72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeyPadTrapDoorAnimation
+  keypad: {fileID: 2003251480}
+  trapDoorScript: {fileID: 1488917854}
 --- !u!1 &2009244252
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 public class TrapDoor : MonoBehaviour
 {
     public bool trapDoorSliding = false;
-    private bool trapDoorMoving = false; //for audio
+    public bool trapDoorMoving = false; //for audio
     [SerializeField] private float speed;
     [SerializeField] private GameObject key;
     [SerializeField] private int order = 2;
