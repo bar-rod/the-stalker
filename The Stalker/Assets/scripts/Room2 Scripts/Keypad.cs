@@ -33,11 +33,13 @@ public class Keypad : MonoBehaviour
     }
     
     public void OnButtonClick(string number){
+        if (Current_guess.Length >= 4) return;
+        
         Current_guess += number;
         Check_guess();
     }
-    private void Check_guess(){
-    Guess_text[Current_guess.Length-1].text= Current_guess.Substring(Current_guess.Length-1);
+    private void Check_guess() {
+    Guess_text[Current_guess.Length-1].text = Current_guess.Substring(Current_guess.Length-1);
 
     
     if (Current_guess.Length == 4){
