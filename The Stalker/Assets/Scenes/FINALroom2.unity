@@ -7379,7 +7379,7 @@ GameObject:
   - component: {fileID: 702984784}
   - component: {fileID: 702984783}
   m_Layer: 5
-  m_Name: Cabinet
+  m_Name: CabinetCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
