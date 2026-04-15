@@ -38,6 +38,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             Debug.Log(item.name + " was clicked.");
             inventory.UseItem(item);
+
         }
     }
     private void UpdateSlot()

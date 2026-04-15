@@ -99,7 +99,6 @@ public class CarTire : PuzzleInteractable
         inventory.RemoveItem(activeItem);
         activeItem = null;
         currentState = TireState.PlacingBolts;
-        inventory.ToggleInventory();
     }
 
     public void OnBoltPlaced(Button bolt)

@@ -5,7 +5,7 @@ public class Tire : Item
     public AudioSource _itemPickedUp;
     public override bool UseItem()
     {
-        _itemPickedUp.Play();
+        //_itemPickedUp.Play();
         return RemoveOnUse;
     }
 

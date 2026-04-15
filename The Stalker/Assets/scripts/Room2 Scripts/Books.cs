@@ -11,9 +11,11 @@ public class Books : MonoBehaviour
     [SerializeField] private GameObject spotlight;
     [SerializeField] private GameObject doorcollider;
 
+    public bool solved = false;
 
     public void Solved()
     {
+        solved = true;
         _sprite.sprite = completed;
         player.SetUiOpenFalse();
         bookshelf.SetActive(false);

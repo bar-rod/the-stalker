@@ -129,5 +129,10 @@ public class Toolbox_Inventory : PuzzleInteractable
 
     }
     // helper functions are ok, just make them private if possible
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        CloseUI();
+    }
 }
 

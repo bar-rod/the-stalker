@@ -1508,6 +1508,7 @@ MonoBehaviour:
   carpet: {fileID: 1513970345}
   spoon: {fileID: 216995396}
   collider: {fileID: 825123220}
+  carpetUp: 0
 --- !u!4 &106453900
 Transform:
   m_ObjectHideFlags: 0
@@ -5076,6 +5077,7 @@ MonoBehaviour:
   spoon: {fileID: 216995396}
   spotlight: {fileID: 1616929804}
   doorcollider: {fileID: 825123220}
+  solved: 0
 --- !u!1 &476807953
 GameObject:
   m_ObjectHideFlags: 0
@@ -8450,7 +8452,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825123220}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -14062,7 +14064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1314208287
 SpriteRenderer:
   serializedVersion: 2
@@ -14173,6 +14175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotDoor
   _animator: {fileID: 1314208289}
+  _books: {fileID: 456029985}
+  _controller: {fileID: 106453898}
 --- !u!61 &1314208291
 BoxCollider2D:
   m_ObjectHideFlags: 0

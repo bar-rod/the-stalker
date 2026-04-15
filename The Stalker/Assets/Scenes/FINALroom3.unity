@@ -2736,7 +2736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5148317e592500947979f2782bc9e04e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bolts
-  RemoveOnUse: 1
+  RemoveOnUse: 0
   itemName: Bolts
   itemSprite: {fileID: 1712432301216384921, guid: 63ff17ee917a56c40b21101b3aa5d863, type: 3}
   itemSpriteInv: {fileID: 1712432301216384921, guid: 63ff17ee917a56c40b21101b3aa5d863, type: 3}
@@ -6960,8 +6960,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -4.5870433, y: -2.4517014}
-  m_Radius: 4.4882736
+  m_Offset: {x: -4.1503, y: -3.221748}
+  m_Radius: 3.2814858
 --- !u!114 &1035305284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7692,7 +7692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ef05ddf3258aa43ba813fa4c6a2707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tire
-  RemoveOnUse: 1
+  RemoveOnUse: 0
   itemName: Tire
   itemSprite: {fileID: -2241211731023232299, guid: 191c7f1219832594bb769cbb11a1b4ee, type: 3}
   itemSpriteInv: {fileID: -2241211731023232299, guid: 191c7f1219832594bb769cbb11a1b4ee, type: 3}
