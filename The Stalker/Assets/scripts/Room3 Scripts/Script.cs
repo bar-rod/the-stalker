@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
+// Now this is a descriptive name for a script!
 public class Script : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
