@@ -2743,7 +2743,6 @@ MonoBehaviour:
   description: 
   id: 6
   initiallyActive: 0
-  _itemPickedUp: {fileID: 237803976}
 --- !u!212 &237803975
 SpriteRenderer:
   serializedVersion: 2
@@ -6620,7 +6619,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d2a3393dd58875d4a86bc185ab5a714c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
