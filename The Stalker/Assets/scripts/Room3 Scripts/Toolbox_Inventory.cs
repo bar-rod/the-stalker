@@ -18,6 +18,8 @@ public class Toolbox_Inventory : PuzzleInteractable
     public bool hintWKey = false;
     public bool toolBoxOpen = false;
 
+    public AudioSource _tbOpenedSound;
+
 
     // new sprite
     [SerializeField] public Sprite newSprite;
@@ -38,7 +40,7 @@ public class Toolbox_Inventory : PuzzleInteractable
                 // this is where behavior would go for solving the puzzle
                 Debug.Log(item.name + (" is the correct item"));
                 //inventory.ToggleInventory(); why is this here?
-
+                _tbOpenedSound.Play();
                 theCanvas.SetActive(false);
                 screwDriver.SetActive(true);
                 isSolved = true;

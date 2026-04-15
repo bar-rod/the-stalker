@@ -4,6 +4,7 @@ public class FrontDoor : PuzzleInteractable
 {
     [Header("UI")]
     [SerializeField] private Canvas puzzleCanvas;
+    public AudioSource _doorOpenedSound;
 
     private bool isOpen = false;
 
@@ -27,6 +28,7 @@ public class FrontDoor : PuzzleInteractable
         // If canvas open → close it
         else
         {
+            _doorOpenedSound.Play();
             puzzleCanvas.gameObject.SetActive(false);
             isOpen = false;
             CloseUI();

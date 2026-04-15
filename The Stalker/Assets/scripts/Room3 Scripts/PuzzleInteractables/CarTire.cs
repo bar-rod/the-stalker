@@ -19,6 +19,8 @@ public class CarTire : PuzzleInteractable
     [SerializeField] private int BOLTS_ID;
     [SerializeField] private int WRENCH_ID;
 
+    public AudioSource _screwBolt;
+
     private TireState currentState = TireState.Idle;
     private Item activeItem;
 
@@ -128,6 +130,7 @@ public class CarTire : PuzzleInteractable
         if (activeItem == null || activeItem.id != WRENCH_ID) return;
 
         boltTightenCount[boltIndex]++;
+        _screwBolt.Play();
 
         if (boltTightenCount[boltIndex] >= 1)
         {

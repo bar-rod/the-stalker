@@ -4,6 +4,8 @@ public class Trunk : PuzzleInteractable
 {
 
     [SerializeField] private Canvas trunkCanvas;
+    public AudioSource _trunkOpenedSound;
+
     void Start()
     {
         base.Start();
@@ -34,6 +36,7 @@ public class Trunk : PuzzleInteractable
 
     private void OpenCanvas()
     {
+        _trunkOpenedSound.Play();
         trunkCanvas.gameObject.SetActive(true);
     }
 
