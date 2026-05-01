@@ -1,3 +1,4 @@
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class personalComputer : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] int itemIDRequired;
     [SerializeField] Sprite newSprite; 
+    bool hint = false;
+    private AudioSource[] audioSources;
 
     private Image uiImage;
 
@@ -21,6 +24,8 @@ public class personalComputer : MonoBehaviour
         {
             Debug.LogWarning("personalComputer: No Image component found on the GameObject. Cannot change UI sprite.");
         }
+
+        audioSources = GetComponents<AudioSource>();
     }
 
     // this replaces the interact method of puzzleInteractable
@@ -38,8 +43,10 @@ public class personalComputer : MonoBehaviour
     public void useItem(Item item)
     {
         if (item == null)
+        {
+            hint = true;
             return;
-
+        }
         if (item.id == itemIDRequired)
         {
             Debug.Log(item.name + (" is the correct item"));
@@ -48,7 +55,17 @@ public class personalComputer : MonoBehaviour
         }
 
         else
+        {
+            hint = true;
             Debug.Log(item.name + (" is not the correct item"));
+        }
+
+        if(hint)
+        {
+            int randomHint = Random.Range(0, audioSources.Length);
+            audioSources[randomHint].Play();
+            hint = false;
+        }
     }
 
     // If we split this into an abstract class, put this as an overridden function.

@@ -77,8 +77,10 @@ public class Item : MonoBehaviour, Iinteractable
     public void Pickup()
     {
         Debug.Log("Picked up " + itemName + ", sound is not null: " + (_collectSound != null) + " and it is " + (_collectSound.ToString()));
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.GetComponent<Image>().enabled = false; 
+        if(gameObject.GetComponent<SpriteRenderer>() != null)
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        if(gameObject.GetComponent<Image>() != null)
+            gameObject.GetComponent<Image>().enabled = false; 
         GameManager.ItemPickedUp.Invoke(this);
         _isActive = false;
     }

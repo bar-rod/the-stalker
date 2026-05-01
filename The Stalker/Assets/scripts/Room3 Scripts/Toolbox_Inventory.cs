@@ -19,6 +19,7 @@ public class Toolbox_Inventory : PuzzleInteractable
     public bool toolBoxOpen = false;
 
     public AudioSource _tbOpenedSound;
+    public AudioSource _tbLocked;
 
 
     // new sprite
@@ -31,6 +32,12 @@ public class Toolbox_Inventory : PuzzleInteractable
         if(toolBoxOpen)
         {
             outline.enabled = false;
+        }
+
+        if(hint)
+        {
+            _tbLocked.Play();
+            hint = false;
         }
     }
     public override void UseItem(Item item)
@@ -63,10 +70,8 @@ public class Toolbox_Inventory : PuzzleInteractable
         else
         {
             // this is where you would have a hint message pop up to guide the player to the correct item (or a different fail condition)
-            Debug.Log(item.name + " is the incorrect item");
             hint = true;
         }
-        //base.CloseUI(null);
     }
     public override bool Interact()
     {
