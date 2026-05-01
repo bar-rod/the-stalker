@@ -16,9 +16,9 @@ public class Item : MonoBehaviour, Iinteractable
     public string description; // the description displayed when hovered in the inventory
     public int id; // the ID of the item (needs to match puzzleInteractable where the item can be used. Use -1 if item is NOT used on a puzzleInteractable)
     public bool initiallyActive; // 'true' if the item should be active on scene load. 'false' if it should be hidden.
-
+    private bool _isActive = true; // whether the item is active in the scene or not. This is used to determine whether the item can be interacted with or not. It is set to 'initiallyActive' on scene load, but can be changed by other scripts (e.g. if solving a puzzle causes an item to appear)
     private AudioSource _collectSound; // sound for picking up the item 
-                                       // we should maybe have a default value here
+                                      // we should maybe have a default value here
     
     protected virtual void Start()
     {
@@ -28,10 +28,24 @@ public class Item : MonoBehaviour, Iinteractable
         _collectSound = GetComponent<AudioSource>();
     }
 
+    protected virtual void FixedUpdate()
+    {
+        // Once the sound finishes playing, we can disable the game object.
+        if (!_collectSound.isPlaying && !gameObject.GetComponent<SpriteRenderer>().enabled)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     // Interact just calls the Pickup() function. It should not be overriden in most cases
     public virtual bool Interact()
     {
-        Pickup();
+        
+        _collectSound.Play();
+        
+        if(_isActive)
+            Pickup();
+
         return false;
     }
 
@@ -52,12 +66,15 @@ public class Item : MonoBehaviour, Iinteractable
     // This is NOT virtual, so do not repeat implementation if you override this function
     public void Pickup()
     {
-        Debug.Log("Picked up " + itemName + ", sound is not null: " + (_collectSound != null));
-        if (_collectSound != null) _collectSound.Play();
+        Debug.Log("Picked up " + itemName + ", sound is not null: " + (_collectSound != null) + " and it is " + (_collectSound.ToString()));
+        
+        // why can't i hear it? 
+        
 
-        gameObject.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         GameManager.ItemPickedUp.Invoke(this);
+        _isActive = false;
     }
 
     // runs when the player clicks an item in their inventory

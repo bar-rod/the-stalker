@@ -1,9 +1,7 @@
 using UnityEngine;
 
 public class Wrench : Item
-{
-public AudioSource _itemPickedUp;
- 
+{ 
     public override bool UseItem()
     {
         return RemoveOnUse;
