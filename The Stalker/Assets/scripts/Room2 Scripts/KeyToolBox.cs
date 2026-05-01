@@ -4,8 +4,6 @@ public class KeyToolBox : Item
 {
     [SerializeField] private Toolbox_Inventory Vent;
 
-    public AudioSource _itemPickedUp;
-
     public override bool UseItem()
     {
 
@@ -22,8 +20,7 @@ public class KeyToolBox : Item
 
     public void onClick()
     {
-        _itemPickedUp.Play();
-        Pickup();
+        Interact();
     }
 }
 

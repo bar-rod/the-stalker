@@ -1,5 +1,6 @@
 using System.Data;
 using UnityEngine;
+using UnityEngine.UI;
 
 [ExecuteInEditMode]
 public class Item : MonoBehaviour, Iinteractable
@@ -17,7 +18,7 @@ public class Item : MonoBehaviour, Iinteractable
     public int id; // the ID of the item (needs to match puzzleInteractable where the item can be used. Use -1 if item is NOT used on a puzzleInteractable)
     public bool initiallyActive; // 'true' if the item should be active on scene load. 'false' if it should be hidden.
     private bool _isActive = true; // whether the item is active in the scene or not. This is used to determine whether the item can be interacted with or not. It is set to 'initiallyActive' on scene load, but can be changed by other scripts (e.g. if solving a puzzle causes an item to appear)
-    private AudioSource _collectSound; // sound for picking up the item 
+    private AudioSource[] _collectSound; // sound for picking up the item 
                                       // we should maybe have a default value here
     
     protected virtual void Start()
@@ -25,13 +26,20 @@ public class Item : MonoBehaviour, Iinteractable
         if (initiallyActive) gameObject.SetActive(true);
         GetComponent<SpriteRenderer>().sprite = itemSprite;
 
-        _collectSound = GetComponent<AudioSource>();
+        _collectSound = GetComponents<AudioSource>();
     }
 
     protected virtual void FixedUpdate()
     {
         // Once the sound finishes playing, we can disable the game object.
-        if (!_collectSound.isPlaying && !gameObject.GetComponent<SpriteRenderer>().enabled)
+
+        bool soundComplete = true;
+
+        for(int i = 0; i < _collectSound.Length; i++)
+            if(_collectSound[i].isPlaying)
+                soundComplete = false;
+
+        if (soundComplete && !gameObject.GetComponent<SpriteRenderer>().enabled)
         {
             gameObject.SetActive(false);
         }
@@ -40,10 +48,12 @@ public class Item : MonoBehaviour, Iinteractable
     // Interact just calls the Pickup() function. It should not be overriden in most cases
     public virtual bool Interact()
     {
-        
-        _collectSound.Play();
-        
-        if(_isActive)
+        for(int i = 0; i < _collectSound.Length; i++)
+        {
+            _collectSound[i].Play();
+        }
+
+        if (_isActive)
             Pickup();
 
         return false;
@@ -67,12 +77,8 @@ public class Item : MonoBehaviour, Iinteractable
     public void Pickup()
     {
         Debug.Log("Picked up " + itemName + ", sound is not null: " + (_collectSound != null) + " and it is " + (_collectSound.ToString()));
-        
-        // why can't i hear it? 
-        
-
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-
+        gameObject.GetComponent<Image>().enabled = false; 
         GameManager.ItemPickedUp.Invoke(this);
         _isActive = false;
     }
