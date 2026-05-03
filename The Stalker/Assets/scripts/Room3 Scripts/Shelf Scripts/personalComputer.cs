@@ -28,6 +28,16 @@ public class personalComputer : MonoBehaviour
         audioSources = GetComponents<AudioSource>();
     }
 
+    private void FixedUpdate()
+    {
+            if (hint)
+            {
+                int randomHint = Random.Range(0, audioSources.Length);
+                audioSources[randomHint].Play();
+                hint = false;
+        }
+    }
+
     // this replaces the interact method of puzzleInteractable
     // you make a button component then connect this method to it
     public void onClick()
@@ -37,6 +47,7 @@ public class personalComputer : MonoBehaviour
 
         else
         {
+            hint = true;
             inventory.ToggleInventory();
         }
     }
@@ -44,27 +55,17 @@ public class personalComputer : MonoBehaviour
     {
         if (item == null)
         {
-            hint = true;
             return;
         }
         if (item.id == itemIDRequired)
         {
             Debug.Log(item.name + (" is the correct item"));
-            isSolved = true;
             solve();
         }
 
         else
         {
-            hint = true;
             Debug.Log(item.name + (" is not the correct item"));
-        }
-
-        if(hint)
-        {
-            int randomHint = Random.Range(0, audioSources.Length);
-            audioSources[randomHint].Play();
-            hint = false;
         }
     }
 
