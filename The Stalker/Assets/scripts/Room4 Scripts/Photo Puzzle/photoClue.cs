@@ -28,12 +28,16 @@ public class photoClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
+        // TODO: Change sprite to front facing
+
         transform.SetAsLastSibling();
         rectTransform.anchoredPosition += eventData.delta;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        // TODO: revert sprite to angled
+
         cg.blocksRaycasts = true; 
         cg.alpha = 1f; // delete this if you delete the semi-transparency ondrag
 
